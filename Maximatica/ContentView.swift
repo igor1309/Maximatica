@@ -38,34 +38,16 @@ struct ContentView: View {
                                endPoint: .bottomTrailing)
                     .edgesIgnoringSafeArea(.all)
                 VStack(spacing: 16) {
-                    Group {
-                        if isRunning {
-                            QuestionView(questions: questions,
-                                         isRunning: $isRunning,
-                                         arithmetic: arithmetic)
-                            Spacer()
-                        } else {
-                            VStack(spacing: 8) {
-                                //                                Picker("Сложность", selection: $settings.сomplexity) {
-                                //                                    ForEach(Complexity.allCases, id: \.self) { сomplexity in
-                                //                                        Text(сomplexity.rawValue).tag(сomplexity)
-                                //                                    }
-                                //                                }
-                                //                                .pickerStyle(SegmentedPickerStyle())
-                                
-                                QuestionQtyPicker()
-                            }
-                            .padding()
-                            
-                            ForEach(Arithmetic.allCases, id: \.self) { arithmetic in
-                                MathCard(arithmetic.id) { self.run(arithmetic) }
-                            }
-                            
-                            MathCard("Всё сразу", color: .yellow) { self.run(nil) }
-                            
-                            Spacer()
-                        }
+                    if isRunning {
+                        QuestionView(questions: questions,
+                                     isRunning: $isRunning,
+                                     arithmetic: arithmetic)
+                    } else {
+                        GameSelectionView(isRunning: $isRunning,
+                                          arithmetic: $arithmetic,
+                                          questions: $questions)
                     }
+                    Spacer()
                 }
             }
             .onAppear {
@@ -80,8 +62,10 @@ struct ContentView: View {
                             self.showModal = true }
                         TrailingButtonSFSymbol("chart.bar") {
                             self.modal = .history
-                            self.showModal = true }}
+                            self.showModal = true }
+                            .disabled(userData.history.isListEmpty) }
                         .accentColor(.white)
+                        .opacity(isRunning ? 0.4 : 1)
                         .disabled(isRunning))
                 
                 .sheet(isPresented: $showModal) {
@@ -98,21 +82,21 @@ struct ContentView: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
-    private func run(_ arithmetic: Arithmetic?) {
-        if hapticsAvailable {
-            let generator = UIImpactFeedbackGenerator(style: .light)
-            generator.impactOccurred()
-        }
-        self.arithmetic = arithmetic
-        //  MARK: додумать анимацию
-        //  rotation?
-        withAnimation() {
-            questions = QuestionGenerator(questionQty: settings.questionQty,
-                                          arithmetic: arithmetic ?? Arithmetic.allCases.randomElement()!,
-                                          complexity: settings.сomplexity).questions
-            isRunning = true
-        }
-    }
+//    private func run(_ arithmetic: Arithmetic?) {
+//        if hapticsAvailable {
+//            let generator = UIImpactFeedbackGenerator(style: .light)
+//            generator.impactOccurred()
+//        }
+//        self.arithmetic = arithmetic
+//        //  MARK: додумать анимацию
+//        //  rotation?
+//        withAnimation() {
+//            questions = QuestionGenerator(questionQty: settings.questionQty,
+//                                          arithmetic: arithmetic ?? Arithmetic.allCases.randomElement()!,
+//                                          complexity: settings.сomplexity).questions
+//            isRunning = true
+//        }
+//    }
 }
 
 struct ContentView_Previews: PreviewProvider {

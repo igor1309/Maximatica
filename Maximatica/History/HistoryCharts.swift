@@ -11,8 +11,17 @@ import SwiftUI
 struct HistoryCharts: View {
     @EnvironmentObject var userData: UserData
     var body: some View {
-        VStack {
-            BarsView(title: "Правильные ответы",
+        VStack(alignment: .leading) {
+            #if DEBUG
+            BarsView(title: "Правильные ответы, доля (выборка)",
+                     bars: userData.history.results
+                        .prefix(5)
+                        .map { $0.correctAnswersShare }
+                        .reversed())
+            Divider()
+            #endif
+            
+            BarsView(title: "Правильные ответы, доля",
                      bars: userData.history.results.map { $0.correctAnswersShare }
                         .reversed())
             Divider()
@@ -38,7 +47,9 @@ struct HistoryCharts: View {
 struct HistoryCharts_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            HistoryCharts()
+            ScrollView {
+                HistoryCharts()
+            }
         }
         .environmentObject(UserData())
     }

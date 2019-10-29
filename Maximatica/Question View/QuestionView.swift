@@ -65,7 +65,7 @@ struct QuestionView: View {
                         }
                         Spacer()
                         
-                        if settings.showTimer {
+                        if !settings.hideTimer {
                             TimerView(timer: $timer)
                             Spacer()
                         }
@@ -161,11 +161,22 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(questions: QuestionGenerator(questionQty: 2,
+        NavigationView {
+        ZStack {
+            LinearGradient(gradient:
+                Gradient(colors: [.blue, .green]),
+                           startPoint: .topLeading,
+                           endPoint: .bottomTrailing)
+                .edgesIgnoringSafeArea(.all)
+            HStack {
+                QuestionView(questions: QuestionGenerator(questionQty: 2,
                                                   arithmetic: .addition,
                                                   complexity: .basic).questions,
                      isRunning: .constant(true),
                      arithmetic: nil)
+            }
+        }
+        }
             .environmentObject(UserData())
             .environmentObject(SettingsStore())
     }

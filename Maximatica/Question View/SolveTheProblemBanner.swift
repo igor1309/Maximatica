@@ -11,14 +11,14 @@ import SwiftUI
 struct SolveTheProblemBanner: View {
     var body: some View {
         Text("Реши задачу!".uppercased())
-        .font(.largeTitle)
-        .fontWeight(.bold)
-        .foregroundColor(.white)
-        .padding(6)
-        .frame(maxWidth: .infinity)
-        .background(RoundedRectangle(cornerRadius: 8, style: .continuous)
-            .foregroundColor(.red))
-        .padding()
+            .font(.largeTitle)
+            .fontWeight(.bold)
+            .foregroundColor(.white)
+            .padding(6)
+            .padding(.horizontal)
+            .background(RoundedRectangle(cornerRadius: 8, style: .continuous)
+                .foregroundColor(.red))
+            .padding()
     }
 }
 

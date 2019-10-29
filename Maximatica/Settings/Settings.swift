@@ -50,19 +50,21 @@ struct Settings: View {
                     .labelsHidden()
                 }
                 
+                #if DEBUG
                 Section(header: Text("Правильный ответ".uppercased()),
-                        footer: Text("Правильный ответ можно показыать сразу или в конце.")) {
-                    Toggle("Показывать сразу", isOn: $settings.showCorrectAnswer)
-                        .font(.subheadline)
+                        footer: Text("Правильный ответ можно показывать сразу или в конце.")) {
+                            Toggle("Показывать сразу", isOn: $settings.showCorrectAnswer)
+                                .font(.subheadline)
                 }
                 .disabled(true)
-
+                
                 Section(header: Text("Таймер".uppercased()),
-                        footer: Text("Показывать ли таймер при выполнении задания.")) {
-                    Toggle("Показывать таймер", isOn: $settings.showTimer)
-                        .font(.subheadline)
+                        footer: Text("Скрывать ли таймер при выполнении задания.")) {
+                            Toggle("Скрывать таймер", isOn: $settings.hideTimer)
+                                .font(.subheadline)
                 }
                 .disabled(true)
+                #endif
             }
             .navigationBarTitle("Настройки")
             .navigationBarItems(leading: LeadingButton("Закрыть") { self.presentation.wrappedValue.dismiss() })

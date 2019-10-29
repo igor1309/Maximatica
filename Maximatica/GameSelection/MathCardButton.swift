@@ -1,5 +1,5 @@
 //
-//  MathCard.swift
+//  MathCardButton.swift
 //  Maximatica
 //
 //  Created by Igor Malyarov on 28.10.2019.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct MathCard: View {
+struct MathCardButton: View {
     
     let name: String
     let color: Color
@@ -35,11 +35,11 @@ struct MathCard: View {
     }
 }
 
-struct MathCard_Previews: PreviewProvider {
+struct MathCardButton_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing:  16) {
-            MathCard("Вычитание") {}
-            MathCard("Сложение", color: .pink) {}
+            MathCardButton("Вычитание") {}
+            MathCardButton("Сложение", color: .pink) {}
         }
         .padding().padding().padding()
         .background(Color.purple)

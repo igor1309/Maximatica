@@ -39,20 +39,9 @@ struct HistoryRow_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List() {
-                HistoryRow(result: TestResult(dateTime: Date(),
-                                              totalAnswers: 20,
-                                              correctAnswers: 18,
-                                              timeSpent: 77,
-                                              ageGroup: .sevenToNine,
-                                              complexity: .basic,
-                                              arithmetic: nil))
-                HistoryRow(result: TestResult(dateTime: Date(),
-                                              totalAnswers: 20,
-                                              correctAnswers: 18,
-                                              timeSpent: 77,
-                                              ageGroup: .sevenToNine,
-                                              complexity: .basic,
-                                              arithmetic: .addition))
+                ForEach(loadHistory.results) { result in
+                    HistoryRow(result: result)
+                }
             }
         }
         .environment(\.sizeCategory, .extraLarge)

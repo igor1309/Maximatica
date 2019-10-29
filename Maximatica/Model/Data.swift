@@ -18,20 +18,18 @@ func loadHistoryData() -> History {
 var loadHistory: History {
     
     #if DEBUG
-    return History(results: [TestResult(dateTime: Date(),
-                                        totalAnswers: 20,
-                                        correctAnswers: 18,
-                                        timeSpent: 77,
-                                        ageGroup: .sevenToNine,
-                                        complexity: .basic,
-                                        arithmetic: nil),
-                             TestResult(dateTime: Date(),
-                                        totalAnswers: 40,
-                                        correctAnswers: 32,
-                                        timeSpent: 189,
-                                        ageGroup: .sevenToNine,
-                                        complexity: .basic,
-                                        arithmetic: .addition)])
+    var results: [TestResult] = []
+    for _ in 0..<80 {
+        let totalAnswers = Double(Int.random(in: 2...5)) * 10
+        results.append(TestResult(dateTime: Date().addingTimeInterval(TimeInterval(Int.random(in: -1_000_000...1_000_000))),
+                                  totalAnswers: totalAnswers,
+                                  correctAnswers: Double(Int.random(in: 1...Int(totalAnswers / 10)-1) * 10),
+                                  timeSpent: TimeInterval(Int.random(in: 30...400)),
+                                  ageGroup: AgeGroup.allCases.randomElement()!,
+                                  complexity: Complexity.allCases.randomElement()!,
+                                  arithmetic: Arithmetic.allCases.randomElement()!))
+    }
+    return History(results: results)
     #else
     return History(results: [])
     #endif
