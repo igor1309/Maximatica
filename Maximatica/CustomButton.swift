@@ -23,7 +23,7 @@ struct CustomButton<Something: View>: View {
             content
             .padding()
                 .frame(maxWidth: .infinity)
-                .background(Capsule().fill(Color.systemBlue))
+                .background(Capsule().fill(Color.blue))
                 .foregroundColor(.white)
         }
     }

@@ -19,8 +19,8 @@ extension Color {
     public static var systemGray5 = Color(UIColor.systemGray5)
     public static var systemGray6 = Color(UIColor.systemGray6)
 
-    public static var systemBlue = Color(UIColor.systemBlue)
-    public static var systemGreen = Color(UIColor.systemGreen)
+    public static var systemBlue = Color(UIColor.blue)
+    public static var systemGreen = Color(UIColor.green)
     public static var systemIndigo = Color(UIColor.systemIndigo)
     public static var systemOrange = Color(UIColor.systemOrange)
     public static var systemPink = Color(UIColor.systemPink)

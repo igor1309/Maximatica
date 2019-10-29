@@ -14,11 +14,11 @@ struct PadButton: View {
         Text(face)
             .font(.largeTitle)
             .fontWeight(.heavy)
-            .foregroundColor(.systemBlue)
+            .foregroundColor(.blue)
             .frame(width: 100, height: 56, alignment: .center)
             .background(
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .foregroundColor(face.isEmpty ? .clear : .systemYellow))
+                    .foregroundColor(face.isEmpty ? .clear : .yellow))
             
             .contentShape(Rectangle())
     }

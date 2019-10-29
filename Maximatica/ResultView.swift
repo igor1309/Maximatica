@@ -18,41 +18,41 @@ struct ResultView: View {
         VStack(spacing: 16) {
             VStack(alignment: .leading, spacing: 3) {
                 Group {
-                Text("Правильно ")
-                + Text("\(result.correctAnswers.formattedGrouped) из \(result.totalAnswers.formattedGrouped) ")
+                    Text("Правильно ")
+                        + Text("\(result.correctAnswers.formattedGrouped) из \(result.totalAnswers.formattedGrouped) ").bold()
                     
-                Text("\(result.correctAnswersShare.formattedPercentage) ").bold()
+                    Text("\(result.correctAnswersShare.formattedPercentage) ")
                     
-                Text("время \(result.timeSpent.formatMinuteSecond)")
+                    Text("время \(result.timeSpent.formatMinuteSecond)")
                 }
                 .foregroundColor(.white)
                 
                 Group {
                     Text("\(result.velocity.formattedGrouped) ответов в минуту")
-                    Text("(\(result.pace.formattedGrouped) сек. на ответ)")
+                    Text("(\(result.pace.formattedGroupedWith1Decimal) сек. на ответ)")
                 }
                 .foregroundColor(.white)
                 .opacity(0.7)
                 
                 Group {
-                    Text("Арифметика: \(result.arithmetic?.id ?? "все"), ")
+                    Text("Арифметика: \(result.arithmetic?.id ?? "все")")
                         .padding(.top)
                     Text("\(result.complexity.id), ")
-                    + Text("\(result.ageGroup.id)")
+                        + Text("\(result.ageGroup.id)")
                     Text(result.dateTime.dateAndTimetoString())
-                    //                        .font(.subheadline)
+                        .font(.subheadline)
+                        .padding(.top)
                 }
                 .foregroundColor(.systemTeal)
             }
             .font(.title)
-            .padding()
+            .padding().padding()
             
             Button(action: {
                 if hapticsAvailable {
                     let generator = UIImpactFeedbackGenerator(style: .light)
                     generator.impactOccurred()
                 }
-                
                 self.isRunning = false
             }) {
                 Text("OK")
@@ -61,7 +61,7 @@ struct ResultView: View {
                     .foregroundColor(.white)
                     .padding().padding(.horizontal)
                     .background(Capsule(style: .circular)
-                        .stroke().foregroundColor(.systemGreen))
+                        .stroke().foregroundColor(.white))
                 
             }
         }
@@ -72,12 +72,15 @@ struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ZStack {
-            LinearGradient(gradient:
-                Gradient(colors: [.systemBlue, .systemGreen]),
-                           startPoint: .topLeading,
-                           endPoint: .bottomTrailing)
-                .edgesIgnoringSafeArea(.all)
-                ResultView(isRunning: .constant(true))
+                LinearGradient(gradient:
+                    Gradient(colors: [.blue, .green]),
+                               startPoint: .topLeading,
+                               endPoint: .bottomTrailing)
+                    .edgesIgnoringSafeArea(.all)
+                HStack {
+                    ResultView(isRunning: .constant(true))
+                        .offset(x: 0, y: -150)
+                }
             }
         }
         .environmentObject(UserData())

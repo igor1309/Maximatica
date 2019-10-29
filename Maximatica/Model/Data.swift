@@ -24,8 +24,14 @@ var loadHistory: History {
                                         timeSpent: 77,
                                         ageGroup: .sevenToNine,
                                         complexity: .basic,
-                                        arithmetic: nil)
-    ])
+                                        arithmetic: nil),
+                             TestResult(dateTime: Date(),
+                                        totalAnswers: 40,
+                                        correctAnswers: 32,
+                                        timeSpent: 189,
+                                        ageGroup: .sevenToNine,
+                                        complexity: .basic,
+                                        arithmetic: .addition)])
     #else
     return History(results: [])
     #endif

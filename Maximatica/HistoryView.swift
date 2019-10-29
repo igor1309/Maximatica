@@ -24,13 +24,33 @@ struct HistoryTable: View {
 struct HistoryView: View {
     @Environment(\.presentationMode) var presentation
     @EnvironmentObject var userData: UserData
+    @State private var showModal = false
+    
     var body: some View {
         NavigationView {
-            HistoryTable()
+            ScrollView(.vertical, showsIndicators: false) {
+                HistoryCharts()
+            }
+            .padding()
+            .background(LinearGradient(gradient:
+                Gradient(colors: [.orange, .yellow, .blue]),
+                                       startPoint: .topLeading,
+                                       endPoint: .bottomTrailing)
+                .opacity(0.99)
+                .edgesIgnoringSafeArea(.all))
+                
                 .navigationBarTitle("История")
                 .navigationBarItems(leading: LeadingButton("Закрыть") {
-                    self.presentation.wrappedValue.dismiss() })
-            
+                    self.presentation.wrappedValue.dismiss() },
+                                    trailing: TrailingButtonSFSymbol("table") {
+                                        self.showModal = true })
+                .sheet(isPresented: $showModal) {
+                    NavigationView {
+                        HistoryTable()
+                            .environmentObject(self.userData)
+                            .navigationBarTitle("История (таблица)")
+                            .navigationBarItems(leading: LeadingButton("Закрыть") {
+                                self.presentation.wrappedValue.dismiss() })}}
         }
     }
 }

@@ -33,7 +33,7 @@ struct ContentView: View {
         NavigationView {
             ZStack(alignment: .center) {
                 LinearGradient(gradient:
-                    Gradient(colors: [.systemBlue, .systemGreen]),
+                    Gradient(colors: [.blue, .green]),
                                startPoint: .topLeading,
                                endPoint: .bottomTrailing)
                     .edgesIgnoringSafeArea(.all)
@@ -46,28 +46,22 @@ struct ContentView: View {
                             Spacer()
                         } else {
                             VStack(spacing: 8) {
-//                                Picker("Сложность", selection: $settings.сomplexity) {
-//                                    ForEach(Complexity.allCases, id: \.self) { сomplexity in
-//                                        Text(сomplexity.rawValue).tag(сomplexity)
-//                                    }
-//                                }
-//                                .pickerStyle(SegmentedPickerStyle())
+                                //                                Picker("Сложность", selection: $settings.сomplexity) {
+                                //                                    ForEach(Complexity.allCases, id: \.self) { сomplexity in
+                                //                                        Text(сomplexity.rawValue).tag(сomplexity)
+                                //                                    }
+                                //                                }
+                                //                                .pickerStyle(SegmentedPickerStyle())
                                 
-                                Picker("Количество вопросов", selection: $settings.questionQty) {
-                                    ForEach([2, 10, 20, 50, 100], id: \.self) { qty in
-                                        Text("\(qty)").tag(qty)
-                                    }
-                                }
-                                .pickerStyle(SegmentedPickerStyle())
+                                QuestionQtyPicker()
                             }
-                            .labelsHidden()
                             .padding()
                             
                             ForEach(Arithmetic.allCases, id: \.self) { arithmetic in
                                 MathCard(arithmetic.id) { self.run(arithmetic) }
                             }
                             
-                            MathCard("Всё сразу", color: .systemYellow) { self.run(nil) }
+                            MathCard("Всё сразу", color: .yellow) { self.run(nil) }
                             
                             Spacer()
                         }
@@ -76,15 +70,7 @@ struct ContentView: View {
             }
             .onAppear {
                 if self.settings.questionQty == 0 {
-                    self.settings.questionQty = 10
-                }
-            }
-                //            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                //            .background(LinearGradient(gradient:
-                //                Gradient(colors: [.systemBlue, .systemGreen]),
-                //                                       startPoint: .topLeading,
-                //                                       endPoint: .bottomTrailing))
-                //                .edgesIgnoringSafeArea(.all)
+                    self.settings.questionQty = 10 }}
                 
                 .navigationBarTitle(Text("Maximatica"))
                 .navigationBarItems(trailing:

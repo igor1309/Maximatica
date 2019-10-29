@@ -14,14 +14,9 @@ struct QuestionSubView: View {
     
     var body: some View {
         Text("\(question.left) \(question.sign) \(question.right) = \(answer)")
-            //            .font(.largeTitle)
             .font(Font.system(size: 64))
             .fontWeight(.bold)
             .frame(maxWidth: .infinity, maxHeight: 100, alignment: .leading)
-            //            .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous)
-            //                .stroke()
-            //                .opacity(1)
-            //                .foregroundColor(.systemOrange))
             .padding()
     }
 }
@@ -66,7 +61,7 @@ struct QuestionView: View {
                                 .padding(.horizontal, 6)
                                 .background(Capsule(style: .circular)
                                     //                                    .stroke()
-                                    .foregroundColor(.systemRed))
+                                    .foregroundColor(.red))
                         }
                         Spacer()
                         
@@ -95,7 +90,7 @@ struct QuestionView: View {
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding().padding(.horizontal)
-                            .background(Capsule(style: .circular).foregroundColor(.systemBlue))
+                            .background(Capsule(style: .circular).foregroundColor(.blue))
                     }
                 }
                 .padding()
@@ -145,7 +140,7 @@ struct QuestionView: View {
             }
             return
         }
-
+        
         // записать ответ
         if Int(answer) == questions[progress].result { correctAnswerCount += 1 }
         

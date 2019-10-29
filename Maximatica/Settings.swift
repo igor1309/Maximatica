@@ -27,13 +27,7 @@ struct Settings: View {
         NavigationView {
             Form {
                 Section(header: Text("Количество вопросов".uppercased())) {
-                    Picker("Количество вопросов", selection: $settings.questionQty) {
-                        ForEach([2, 10, 20, 50, 100], id: \.self) { qty in
-                            Text("\(qty)").tag(qty)
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .labelsHidden()
+                    QuestionQtyPicker()
                 }
                 
                 Section(header: Text("Уровень сложности".uppercased())) {

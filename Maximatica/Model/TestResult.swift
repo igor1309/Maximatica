@@ -27,7 +27,7 @@ struct TestResult: Codable, Identifiable {
 
 extension TestResult {
     // Скорость решения, вопросов в минуту
-    var velocity: Double { totalAnswers / timeSpent * 60 }
+    var velocity: Double { timeSpent == 0 ? 0 : totalAnswers / timeSpent * 60 }
     // Тепм(?) решения: секунд на вопрос
     var pace: Double { timeSpent / totalAnswers }
     // Доля правильных ответов
