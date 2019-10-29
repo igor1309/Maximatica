@@ -34,7 +34,6 @@ struct Settings: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .labelsHidden()
-                    
                 }
                 
                 Section(header: Text("Уровень сложности".uppercased())) {

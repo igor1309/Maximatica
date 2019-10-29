@@ -44,10 +44,22 @@ struct ContentView: View {
                                      arithmetic: arithmetic)
                         Spacer()
                     } else {
+                        Picker("Количество вопросов", selection: $settings.questionQty) {
+                            ForEach([2, 10, 20, 50, 100], id: \.self) { qty in
+                                Text("\(qty)").tag(qty)
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .labelsHidden()
+                        .padding()
+                        
                         ForEach(Arithmetic.allCases, id: \.self) { arithmetic in
                             MathCard(arithmetic.id) { self.run(arithmetic) }
                         }
+                        
                         MathCard("Всё сразу", color: .systemYellow) { self.run(nil) }
+                        
+                        Spacer()
                     }
                 }
             }
@@ -82,7 +94,7 @@ struct ContentView: View {
                             .environmentObject(self.settings) }
                     
                     if self.modal == .history {
-                        Text("TBD: History & Graph")
+                        HistoryView()
                     }
             }
         }

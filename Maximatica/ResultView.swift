@@ -14,6 +14,11 @@ struct ResultView: View {
         VStack(spacing: 16) {
             Text("TBD: Result")
             Button(action: {
+                if hapticsAvailable {
+                    let generator = UIImpactFeedbackGenerator(style: .light)
+                    generator.impactOccurred()
+                }
+
                 self.isRunning = false
             }) {
                 Text("OK")

@@ -28,6 +28,7 @@ struct QuestionSubView: View {
 
 
 struct QuestionView: View {
+    @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore
     
     var questions: [Question]
@@ -106,6 +107,11 @@ struct QuestionView: View {
     }
     
     func stop() {
+        if hapticsAvailable {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+        }
+        
         print("stop func called")
         //  stop timer
         //  check result
@@ -117,7 +123,13 @@ struct QuestionView: View {
     }
     
     func saveHistory() {
-        
+        userData.history.add(TestResult(dateTime: Date(),
+                                        totalAnswers: Double(progress),
+                                        correctAnswers: -1,
+                                        timeSpent: timer,
+                                        ageGroup: settings.ageGroup,
+                                        complexity: settings.сomplexity,
+                                        arithmetic: arithmetic))
     }
     
     func nextQuestion() {
@@ -136,6 +148,14 @@ struct QuestionView: View {
         }
         
         if progress < settings.questionQty - 1 {
+            if hapticsAvailable {
+                let generator = UIImpactFeedbackGenerator(style: .light)
+                generator.impactOccurred()
+            }
+            
+            // записать ответ
+            
+            //  next question
             answer = ""
             withAnimation {
                 progress += 1
@@ -156,6 +176,7 @@ struct QuestionView_Previews: PreviewProvider {
                                                   complexity: .basic).questions,
                      isRunning: .constant(true),
                      arithmetic: nil)
+            .environmentObject(UserData())
             .environmentObject(SettingsStore())
     }
 }

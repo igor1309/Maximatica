@@ -57,22 +57,3 @@ struct Question {
         self.sign = sign
     }
 }
-
-
-
-struct QuestionGenerator {
-    var questionQty: Int
-    var arithmetic: Arithmetic
-    var complexity: Complexity
-}
-
-extension QuestionGenerator {
-    var questions: [Question] {
-        var questions: [Question] = []
-        for _ in (0..<questionQty) {
-            let question = Question(arithmetic: arithmetic, complexity: complexity)
-            questions.append(question)
-        }
-        return questions
-    }
-}
