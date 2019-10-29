@@ -13,8 +13,9 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var settings: SettingsStore
     @State private var isRunning = false
+    @State private var arithmetic: Arithmetic? = nil
+    @State private var questions: [Question] = []
     @State private var showModal = false
-    @State private var arithmetic: Arithmetic = .addition
     @State private var modal: Modal = .settings
     
     private enum Modal { case settings, history }
@@ -29,24 +30,39 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
+            ZStack(alignment: .center) {
+                LinearGradient(gradient:
+                Gradient(colors: [.systemBlue, .systemGreen]),
+                                       startPoint: .topLeading,
+                                       endPoint: .bottomTrailing)
+                .edgesIgnoringSafeArea(.all)
             VStack(spacing: 16) {
                 Group {
                     if isRunning {
-                        MathCard("работаем…")
+                        QuestionView(questions: questions,
+                                     isRunning: $isRunning,
+                                     arithmetic: arithmetic)
+                        Spacer()
                     } else {
                         ForEach(Arithmetic.allCases, id: \.self) { arithmetic in
-                            MathCard(arithmetic.id)
-                                .onTapGesture { self.run(arithmetic) }
+                            MathCard(arithmetic.id) { self.run(arithmetic) }
                         }
+                        MathCard("Всё сразу", color: .systemYellow) { self.run(nil) }
                     }
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(LinearGradient(gradient:
-                Gradient(colors: [.systemBlue, .systemGreen]),
-                                       startPoint: .topLeading,
-                                       endPoint: .bottomTrailing))
-                .edgesIgnoringSafeArea(.all)
+        }
+            .onAppear {
+                if self.settings.questionQty == 0 {
+                    self.settings.questionQty = 10
+                }
+            }
+//            .frame(maxWidth: .infinity, maxHeight: .infinity)
+//            .background(LinearGradient(gradient:
+//                Gradient(colors: [.systemBlue, .systemGreen]),
+//                                       startPoint: .topLeading,
+//                                       endPoint: .bottomTrailing))
+//                .edgesIgnoringSafeArea(.all)
                 
                 .navigationBarTitle(Text("Maximatica"))
                 .navigationBarItems(trailing:
@@ -57,7 +73,8 @@ struct ContentView: View {
                         TrailingButtonSFSymbol("chart.bar") {
                             self.modal = .history
                             self.showModal = true }}
-                        .accentColor(.white))
+                        .accentColor(.white)
+                        .disabled(isRunning))
                 
                 .sheet(isPresented: $showModal) {
                     if self.modal == .settings {
@@ -72,11 +89,18 @@ struct ContentView: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
-    private func run(_ arithmetic: Arithmetic) {
+    private func run(_ arithmetic: Arithmetic?) {
+        if hapticsAvailable {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+        }
         self.arithmetic = arithmetic
         //  MARK: додумать анимацию
         //  rotation?
         withAnimation() {
+            questions = QuestionGenerator(questionQty: settings.questionQty,
+                                          arithmetic: arithmetic ?? Arithmetic.allCases.randomElement()!,
+                                          complexity: settings.сomplexity).questions
             isRunning = true
         }
     }

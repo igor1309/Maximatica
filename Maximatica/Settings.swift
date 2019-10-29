@@ -7,6 +7,9 @@
 //
 
 import SwiftUI
+import CoreHaptics
+
+var hapticsAvailable: Bool { CHHapticEngine.capabilitiesForHardware().supportsHaptics }
 
 struct Settings: View {
     @Environment(\.presentationMode) var presentation
@@ -25,7 +28,7 @@ struct Settings: View {
             Form {
                 Section(header: Text("Количество вопросов".uppercased())) {
                     Picker("Количество вопросов", selection: $settings.questionQty) {
-                        ForEach([10, 20, 50, 100], id: \.self) { qty in
+                        ForEach([2, 10, 20, 50, 100], id: \.self) { qty in
                             Text("\(qty)").tag(qty)
                         }
                     }
@@ -46,13 +49,25 @@ struct Settings: View {
                 }
                 
                 Section(header: Text("Возраст".uppercased())) {
-                    Picker("Возраст", selection: $settings.age) {
+                    Picker("Возраст", selection: $settings.ageGroup) {
                         ForEach(AgeGroup.allCases, id: \.self) { age in
                             Text(age.rawValue).tag(age)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .labelsHidden()
+                }
+                
+                Section(header: Text("Правильный ответ".uppercased()),
+                        footer: Text("Правильный ответ можно показыать сразу или в конце.")) {
+                    Toggle("Показывать сразу", isOn: $settings.showCorrectAnswer)
+                        .font(.subheadline)
+                }
+
+                Section(header: Text("Таймер".uppercased()),
+                        footer: Text("Показывать ли таймер при выполнении задания.")) {
+                    Toggle("Показывать таймер", isOn: $settings.showTimer)
+                        .font(.subheadline)
                 }
             }
             .navigationBarTitle("Настройки")

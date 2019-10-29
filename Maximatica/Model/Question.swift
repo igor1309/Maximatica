@@ -16,6 +16,8 @@ struct Question {
     var right: Int
     var result: Int
     
+    var sign: String
+    
     init(arithmetic: Arithmetic, complexity: Complexity) {
         self.arithmetic = arithmetic
         self.complexity = complexity
@@ -31,7 +33,6 @@ struct Question {
             self.left = Int.random(in: 2...9)
             self.right = Int.random(in: 1...left)
             self.result = left - right
-            
         case .multiplication:
             self.left = Int.random(in: 1...9)
             self.right = Int.random(in: 1...9)
@@ -41,6 +42,19 @@ struct Question {
             self.result = Int.random(in: 1...9)
             self.left = right * result
         }
+        
+        var sign: String
+        switch arithmetic {
+        case .addition:
+            sign = "+"
+        case .subtraction:
+            sign = "-"
+        case .multiplication:
+            sign = "×"
+        case .division:
+            sign = "÷"
+        }
+        self.sign = sign
     }
 }
 
@@ -51,6 +65,7 @@ struct QuestionGenerator {
     var arithmetic: Arithmetic
     var complexity: Complexity
 }
+
 extension QuestionGenerator {
     var questions: [Question] {
         var questions: [Question] = []

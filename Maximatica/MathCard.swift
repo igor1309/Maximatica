@@ -9,28 +9,41 @@
 import SwiftUI
 
 struct MathCard: View {
-    var name: String
     
-    init(_ name: String) {
+    let name: String
+    let color: Color
+    let action: () -> Void
+    
+    init(_ name: String, color: Color = .white, action: @escaping () -> Void) {
         self.name = name
+        self.color = color
+        self.action = action
     }
     
     var body: some View {
-        Text(name.uppercased())
-            .font(.title)
-            .foregroundColor(.white)
-            .frame(width: 240, height: 50)
-            .modifier(CardView(borderColor: .white,
-                               cornerRadius: 16))
-        //        .padding([.horizontal, .bottom])
+        Button(action: action) {
+            Text(name.uppercased())
+                .font(.title)
+                .foregroundColor(color)
+                .frame(width: 240, height: 50)
+                .padding()
+                .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .stroke()
+                    .opacity(1)
+                    .foregroundColor(color))
+        }
     }
 }
 
 struct MathCard_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            MathCard("Сложение")
+        VStack(spacing:  16) {
+            MathCard("Вычитание") {}
+            MathCard("Сложение", color: .pink) {}
         }
-        .environment(\.colorScheme, .dark)
+        .padding().padding().padding()
+        .background(Color.purple)
+            //        .environment(\.colorScheme, .dark)
+            .previewLayout(.fixed(width: 350, height: 500))
     }
 }

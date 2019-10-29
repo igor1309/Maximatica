@@ -8,23 +8,154 @@
 
 import SwiftUI
 
-struct QuestionView: View {
-    @EnvironmentObject var settings: SettingsStore
-    var arithmetic: Arithmetic
-    
-    var questions: [Question] { QuestionGenerator(questionQty: settings.questionQty,
-                                                  arithmetic: arithmetic,
-                                                  complexity: settings.сomplexity).questions }
-    
+struct QuestionSubView: View {
+    var question: Question
+    var answer: String
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("\(question.left) \(question.sign) \(question.right) = \(answer)")
+            //            .font(.largeTitle)
+            .font(Font.system(size: 64))
+            .fontWeight(.bold)
+            .frame(maxWidth: .infinity, maxHeight: 100, alignment: .leading)
+            //            .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous)
+            //                .stroke()
+            //                .opacity(1)
+            //                .foregroundColor(.systemOrange))
+            .padding()
+    }
+}
+
+
+struct QuestionView: View {
+    @EnvironmentObject var settings: SettingsStore
+    
+    var questions: [Question]
+    
+    @Binding var isRunning: Bool
+    
+    var arithmetic: Arithmetic?
+    
+    @State private var answer = ""
+    @State private var showSolveTheProblem = false
+    @State private var showResult = false
+    @State private var progress = 0
+    //  MARK: как засечь время??
+    @State private var timer: TimeInterval = 0
+    
+    var body: some View {
+        VStack(spacing: 16) {
+            if showResult {
+                ResultView(isRunning: $isRunning)
+            } else {
+                if showSolveTheProblem {
+                    SolveTheProblemBanner()
+                        .frame(minHeight: 85)
+                } else {
+                    HStack {
+                        Button(action: {
+                            self.stop()
+                        }) {
+                            Text("Стоп".uppercased())
+                                .fontWeight(.black)
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding(6)
+                                .padding(.horizontal, 6)
+                                .background(Capsule(style: .circular)
+                                    //                                    .stroke()
+                                    .foregroundColor(.systemRed))
+                        }
+                        Spacer()
+                        
+                        if settings.showTimer {
+                            TimerView(timer: $timer)
+                            Spacer()
+                        }
+                        
+                        ProgressView(progress: Double(progress) / Double(settings.questionQty))
+                    }
+                    .padding(.horizontal)
+                    .frame(minHeight: 85)
+                }
+                
+                QuestionSubView(question: questions[progress], answer: answer)
+                
+                HStack {
+                    Spacer()
+                    
+                    Button(action: {
+                        //  MARK: action...
+                        self.saveHistory()
+                        self.nextQuestion()
+                    }) {
+                        Text("Дальше".uppercased())
+                            .fontWeight(.heavy)
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding().padding(.horizontal)
+                            .background(Capsule(style: .circular).foregroundColor(.systemBlue))
+                    }
+                }
+                .padding()
+                
+                NumberPad(text: $answer)
+                    .padding(.top).padding(.top)
+            }
+        }
+    }
+    
+    func stop() {
+        print("stop func called")
+        //  stop timer
+        //  check result
+        
+        //  save result
+        saveHistory()
+        //  show result
+        showResult = true
+    }
+    
+    func saveHistory() {
+        
+    }
+    
+    func nextQuestion() {
+        if answer.isEmpty {
+            if hapticsAvailable {
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.error)
+            }
+            withAnimation(.easeIn(duration: 0.3)) {
+                showSolveTheProblem = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                self.showSolveTheProblem = false
+            }
+            return
+        }
+        
+        if progress < settings.questionQty - 1 {
+            answer = ""
+            withAnimation {
+                progress += 1
+            }
+            return
+        }
+        
+        print("calling stop func")
+        stop()
+        //isRunning = false
     }
 }
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(arithmetic: .addition)
+        QuestionView(questions: QuestionGenerator(questionQty: 2,
+                                                  arithmetic: .addition,
+                                                  complexity: .basic).questions,
+                     isRunning: .constant(true),
+                     arithmetic: nil)
             .environmentObject(SettingsStore())
     }
 }
