@@ -37,7 +37,6 @@ struct Settings: View {
                 }
                 
                 Section(header: Text("Уровень сложности".uppercased())) {
-                    
                     Picker("Сложность", selection: $settings.сomplexity) {
                         ForEach(Complexity.allCases, id: \.self) { сomplexity in
                             Text(сomplexity.rawValue).tag(сomplexity)
@@ -62,12 +61,14 @@ struct Settings: View {
                     Toggle("Показывать сразу", isOn: $settings.showCorrectAnswer)
                         .font(.subheadline)
                 }
+                .disabled(true)
 
                 Section(header: Text("Таймер".uppercased()),
                         footer: Text("Показывать ли таймер при выполнении задания.")) {
                     Toggle("Показывать таймер", isOn: $settings.showTimer)
                         .font(.subheadline)
                 }
+                .disabled(true)
             }
             .navigationBarTitle("Настройки")
             .navigationBarItems(leading: LeadingButton("Закрыть") { self.presentation.wrappedValue.dismiss() })

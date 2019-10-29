@@ -11,6 +11,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore
     @State private var isRunning = false
     @State private var arithmetic: Arithmetic? = nil
@@ -32,49 +33,58 @@ struct ContentView: View {
         NavigationView {
             ZStack(alignment: .center) {
                 LinearGradient(gradient:
-                Gradient(colors: [.systemBlue, .systemGreen]),
-                                       startPoint: .topLeading,
-                                       endPoint: .bottomTrailing)
-                .edgesIgnoringSafeArea(.all)
-            VStack(spacing: 16) {
-                Group {
-                    if isRunning {
-                        QuestionView(questions: questions,
-                                     isRunning: $isRunning,
-                                     arithmetic: arithmetic)
-                        Spacer()
-                    } else {
-                        Picker("Количество вопросов", selection: $settings.questionQty) {
-                            ForEach([2, 10, 20, 50, 100], id: \.self) { qty in
-                                Text("\(qty)").tag(qty)
+                    Gradient(colors: [.systemBlue, .systemGreen]),
+                               startPoint: .topLeading,
+                               endPoint: .bottomTrailing)
+                    .edgesIgnoringSafeArea(.all)
+                VStack(spacing: 16) {
+                    Group {
+                        if isRunning {
+                            QuestionView(questions: questions,
+                                         isRunning: $isRunning,
+                                         arithmetic: arithmetic)
+                            Spacer()
+                        } else {
+                            VStack(spacing: 8) {
+//                                Picker("Сложность", selection: $settings.сomplexity) {
+//                                    ForEach(Complexity.allCases, id: \.self) { сomplexity in
+//                                        Text(сomplexity.rawValue).tag(сomplexity)
+//                                    }
+//                                }
+//                                .pickerStyle(SegmentedPickerStyle())
+                                
+                                Picker("Количество вопросов", selection: $settings.questionQty) {
+                                    ForEach([2, 10, 20, 50, 100], id: \.self) { qty in
+                                        Text("\(qty)").tag(qty)
+                                    }
+                                }
+                                .pickerStyle(SegmentedPickerStyle())
                             }
+                            .labelsHidden()
+                            .padding()
+                            
+                            ForEach(Arithmetic.allCases, id: \.self) { arithmetic in
+                                MathCard(arithmetic.id) { self.run(arithmetic) }
+                            }
+                            
+                            MathCard("Всё сразу", color: .systemYellow) { self.run(nil) }
+                            
+                            Spacer()
                         }
-                        .pickerStyle(SegmentedPickerStyle())
-                        .labelsHidden()
-                        .padding()
-                        
-                        ForEach(Arithmetic.allCases, id: \.self) { arithmetic in
-                            MathCard(arithmetic.id) { self.run(arithmetic) }
-                        }
-                        
-                        MathCard("Всё сразу", color: .systemYellow) { self.run(nil) }
-                        
-                        Spacer()
                     }
                 }
             }
-        }
             .onAppear {
                 if self.settings.questionQty == 0 {
                     self.settings.questionQty = 10
                 }
             }
-//            .frame(maxWidth: .infinity, maxHeight: .infinity)
-//            .background(LinearGradient(gradient:
-//                Gradient(colors: [.systemBlue, .systemGreen]),
-//                                       startPoint: .topLeading,
-//                                       endPoint: .bottomTrailing))
-//                .edgesIgnoringSafeArea(.all)
+                //            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                //            .background(LinearGradient(gradient:
+                //                Gradient(colors: [.systemBlue, .systemGreen]),
+                //                                       startPoint: .topLeading,
+                //                                       endPoint: .bottomTrailing))
+                //                .edgesIgnoringSafeArea(.all)
                 
                 .navigationBarTitle(Text("Maximatica"))
                 .navigationBarItems(trailing:
@@ -95,6 +105,7 @@ struct ContentView: View {
                     
                     if self.modal == .history {
                         HistoryView()
+                            .environmentObject(self.userData)
                     }
             }
         }
@@ -121,6 +132,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(UserData())
             .environmentObject(SettingsStore())
             .environment(\.sizeCategory, .extraLarge)
     }

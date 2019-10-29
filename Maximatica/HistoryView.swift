@@ -8,15 +8,29 @@
 
 import SwiftUI
 
+struct HistoryTable: View {
+    @EnvironmentObject var userData: UserData
+    
+    var body: some View {
+        List {
+            ForEach(userData.history.results) { result in
+                HistoryRow(result: result)
+            }
+        }
+    }
+}
+
+
 struct HistoryView: View {
+    @Environment(\.presentationMode) var presentation
     @EnvironmentObject var userData: UserData
     var body: some View {
         NavigationView {
-            List {
-                ForEach(userData.history.results) { result in
-                    HistoryRow(result: result)
-                }
-            }
+            HistoryTable()
+                .navigationBarTitle("История")
+                .navigationBarItems(leading: LeadingButton("Закрыть") {
+                    self.presentation.wrappedValue.dismiss() })
+            
         }
     }
 }

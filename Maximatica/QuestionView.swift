@@ -37,6 +37,7 @@ struct QuestionView: View {
     
     var arithmetic: Arithmetic?
     
+    @State private var correctAnswerCount = 0
     @State private var answer = ""
     @State private var showSolveTheProblem = false
     @State private var showResult = false
@@ -87,7 +88,6 @@ struct QuestionView: View {
                     
                     Button(action: {
                         //  MARK: action...
-                        self.saveHistory()
                         self.nextQuestion()
                     }) {
                         Text("Дальше".uppercased())
@@ -112,7 +112,6 @@ struct QuestionView: View {
             generator.impactOccurred()
         }
         
-        print("stop func called")
         //  stop timer
         //  check result
         
@@ -124,8 +123,8 @@ struct QuestionView: View {
     
     func saveHistory() {
         userData.history.add(TestResult(dateTime: Date(),
-                                        totalAnswers: Double(progress),
-                                        correctAnswers: -1,
+                                        totalAnswers: Double(progress + 1),
+                                        correctAnswers: Double(correctAnswerCount),
                                         timeSpent: timer,
                                         ageGroup: settings.ageGroup,
                                         complexity: settings.сomplexity,
@@ -146,26 +145,22 @@ struct QuestionView: View {
             }
             return
         }
+
+        // записать ответ
+        if Int(answer) == questions[progress].result { correctAnswerCount += 1 }
         
         if progress < settings.questionQty - 1 {
             if hapticsAvailable {
                 let generator = UIImpactFeedbackGenerator(style: .light)
                 generator.impactOccurred()
             }
-            
-            // записать ответ
-            
             //  next question
             answer = ""
-            withAnimation {
-                progress += 1
-            }
+            withAnimation { progress += 1 }
             return
         }
         
-        print("calling stop func")
         stop()
-        //isRunning = false
     }
 }
 
