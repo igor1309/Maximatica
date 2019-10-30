@@ -10,33 +10,35 @@ import SwiftUI
 
 struct HistoryCharts: View {
     @EnvironmentObject var userData: UserData
+    
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(spacing: 32) {
             #if DEBUG
-            BarChartView(title: "Правильные ответы, доля (выборка)",
+            BarChartView(title: "ОТЛАДКА: 5 последних правильных ответов",
+                         subtitle: "Показывается только при отладке. Возможно нужна аналогичная опция, например селектором последние 5/30/все…",
                          bars: userData.history.results
                             .prefix(5)
                             .map { $0.correctAnswersShare }
                             .reversed())
-            Divider()
             #endif
             
-            BarChartView(title: "Правильные ответы, доля",
+            BarChartView(title: "Правильные ответы",
+                         subtitle: "Доля правильных ответов",
                          bars: userData.history.results.map { $0.correctAnswersShare }
                             .reversed())
-            Divider()
             
             BarChartView(title: "Количество задач",
+                         subtitle: "Количество задач в серии",
                          bars: userData.history.results.map { $0.totalAnswers }
                             .reversed())
-            Divider()
             
             BarChartView(title: "Скорость",
+                         subtitle: "Задач в минуту",
                          bars: userData.history.results.map { $0.velocity }
                             .reversed())
-            Divider()
             
             BarChartView(title: "Темп",
+                         subtitle: "Секунд на одну задачу",
                          bars: userData.history.results.map { $0.pace }
                             .reversed())
         }

@@ -60,7 +60,7 @@ struct ContentView: View {
                         TrailingButtonSFSymbol("chart.bar") {
                             self.modal = .history
                             self.showModal = true }
-                            .disabled(userData.history.isListEmpty) }
+                            .opacity(userData.history.isListEmpty ? 0.3 : 1) }
                         .accentColor(.white)
                         .opacity(isRunning ? 0.4 : 1)
                         .disabled(isRunning))

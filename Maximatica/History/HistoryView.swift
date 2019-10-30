@@ -28,6 +28,7 @@ struct HistoryView: View {
                     Text("Нет данных для графиков")
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .padding(.vertical)
                 } else {
                     HistoryCharts()
                 }
@@ -41,7 +42,9 @@ struct HistoryView: View {
                 leading: LeadingButton("Закрыть") {
                     self.presentation.wrappedValue.dismiss() },
                 trailing: TrailingButtonSFSymbol("table") {
-                    self.showModal = true })
+                    self.showModal = true }
+                .disabled(userData.history.isListEmpty)
+            .opacity(userData.history.isListEmpty ? 0.3 : 1))
                 .sheet(isPresented: $showModal) {
                     HistoryTableView()
                         .environmentObject(self.userData) }

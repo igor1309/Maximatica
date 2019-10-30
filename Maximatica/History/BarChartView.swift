@@ -10,6 +10,7 @@ import SwiftUI
 
 struct BarChartView: View {
     var title: String = ""
+    var subtitle: String = ""
     var bars: [Double]
     
     var body: some View {
@@ -35,9 +36,14 @@ struct BarChartView: View {
                     
                     BarsView(bars: bars, minBar: CGFloat(minBar), maxBar: CGFloat(maxBar))
                 }
-                .padding(.vertical)
+//                .padding(.vertical)
+                
+                Text(verbatim: subtitle)
+                    .font(.subheadline)
+                    .foregroundColor(.white)
             }
         }
+        .padding(.horizontal)
     }
 }
 
@@ -47,7 +53,8 @@ struct BarChartView_Previews: PreviewProvider {
             ZStack {
                 HistoryGradient()
                 
-                BarChartView(title: "title",
+                BarChartView(title: "Заголовок графика",
+                             subtitle: "Подзаголовок графика/комментарий",
                              bars: [10, 20, 15, 18, 0, 10, 22, 15, 18, 32, 27, 1])
                 //        .padding()
             }

@@ -19,7 +19,7 @@ var loadHistory: History {
     
     #if DEBUG
     var results: [TestResult] = []
-    for _ in 0..<80 {
+    for _ in 0..<40 {
         let totalAnswers = Double(Int.random(in: 2...5)) * 10
         results.append(TestResult(dateTime: Date().addingTimeInterval(TimeInterval(Int.random(in: -1_000_000...1_000_000))),
                                   totalAnswers: totalAnswers,

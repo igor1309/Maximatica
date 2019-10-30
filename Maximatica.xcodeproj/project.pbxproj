@@ -137,6 +137,7 @@
 				2AB5C47E2368647E009D0613 /* Settings */,
 				2AB5C47D23686411009D0613 /* History */,
 				2A4805E82366DFB800E95FE7 /* Model */,
+				2A9B56F523697B3100ACEE8F /* Data */,
 				2A4805E32366CAEE00E95FE7 /* Extensions */,
 				2A4805CC2366C08E00E95FE7 /* Assets.xcassets */,
 				2A4805D12366C08E00E95FE7 /* LaunchScreen.storyboard */,
@@ -185,10 +186,17 @@
 				2A7718D62367047000BF9408 /* Question.swift */,
 				2A54D9B22368204100A50CF1 /* History.swift */,
 				2A54D9AE23681E3A00A50CF1 /* TestResult.swift */,
-				2A54D9B023681F5000A50CF1 /* Data.swift */,
 				2A54D9AC23681DEF00A50CF1 /* WorkWithJSON.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2A9B56F523697B3100ACEE8F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2A54D9B023681F5000A50CF1 /* Data.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		2AB5C47D23686411009D0613 /* History */ = {

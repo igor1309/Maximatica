@@ -51,19 +51,20 @@ struct Settings: View {
                 }
                 
                 #if DEBUG
+                Text("Следующие секции показываются только при отладке:")
+                    .font(.subheadline).bold()
+                
                 Section(header: Text("Правильный ответ".uppercased()),
                         footer: Text("Правильный ответ можно показывать сразу или в конце.")) {
                             Toggle("Показывать сразу", isOn: $settings.showCorrectAnswer)
                                 .font(.subheadline)
                 }
-                .disabled(true)
                 
                 Section(header: Text("Таймер".uppercased()),
                         footer: Text("Скрывать ли таймер при выполнении задания.")) {
                             Toggle("Скрывать таймер", isOn: $settings.hideTimer)
                                 .font(.subheadline)
                 }
-                .disabled(true)
                 #endif
             }
             .navigationBarTitle("Настройки")

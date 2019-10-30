@@ -16,13 +16,21 @@ struct VerticalBar: View {
     var height: CGFloat
     
     var body: some View {
-        ZStack(alignment: .bottom) {
+        
+        let spectrum = Gradient(colors: [.blue, .systemTeal])
+        let linear = LinearGradient(gradient: spectrum, startPoint: .top, endPoint: .bottom)
+       
+        let spectrumMinMax = Gradient(colors: [.systemIndigo, .purple])
+        let linearMin = LinearGradient(gradient: spectrumMinMax, startPoint: .top, endPoint: .bottom)
+        let linearMax = LinearGradient(gradient: spectrumMinMax, startPoint: .top, endPoint: .bottom)
+
+        return ZStack(alignment: .bottom) {
             Capsule()
                 .frame(width: width, height: height)
                 .opacity(0.1)
             Capsule()
+                .fill(bar == maxBar ? linearMax : bar == minBar ? linearMin : linear)
                 .frame(width: width, height: bar / maxBar * height)
-                .foregroundColor(bar == maxBar ? .blue : bar == minBar ? .blue : .systemTeal)
         }
     }
 }
