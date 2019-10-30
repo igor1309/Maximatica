@@ -53,12 +53,12 @@ struct ContentView: View {
                     self.settings.questionQty = 10 }}
                 
                 .navigationBarTitle(Text("Maximatica"))
-                .navigationBarItems(trailing:
-                    HStack {
+                .navigationBarItems(
+                    trailing: HStack {
                         TrailingButtonSFSymbol("gear") {
                             self.modal = .settings
                             self.showModal = true }
-                        TrailingButtonSFSymbol("chart.bar") {
+                        TrailingButtonSFSymbol("chart.bar.fill") {
                             self.modal = .history
                             self.showModal = true }
                             .opacity(userData.history.isListEmpty ? 0.3 : 1) }
@@ -69,32 +69,16 @@ struct ContentView: View {
                 .sheet(isPresented: $showModal) {
                     if self.modal == .settings {
                         Settings()
+                            .environmentObject(self.userData)
                             .environmentObject(self.settings) }
                     
                     if self.modal == .history {
                         HistoryView()
                             .environmentObject(self.userData)
-                    }
-            }
+                            .environmentObject(self.settings) }}
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
-    
-//    private func run(_ arithmetic: Arithmetic?) {
-//        if hapticsAvailable {
-//            let generator = UIImpactFeedbackGenerator(style: .light)
-//            generator.impactOccurred()
-//        }
-//        self.arithmetic = arithmetic
-//        //  MARK: додумать анимацию
-//        //  rotation?
-//        withAnimation() {
-//            questions = QuestionGenerator(questionQty: settings.questionQty,
-//                                          arithmetic: arithmetic ?? Arithmetic.allCases.randomElement()!,
-//                                          complexity: settings.сomplexity).questions
-//            isRunning = true
-//        }
-//    }
 }
 
 struct ContentView_Previews: PreviewProvider {

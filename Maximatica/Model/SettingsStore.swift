@@ -22,6 +22,13 @@ final class SettingsStore: ObservableObject {
         }
     }
     
+    @Published var period = Period(rawValue: UserDefaults.standard.string(forKey: "period") ?? "Неделя")!
+        {
+        didSet {
+            UserDefaults.standard.set(period.rawValue, forKey: "period")
+        }
+    }
+    
     @Published var questionQty = UserDefaults.standard.integer(forKey: "questionQty") {
         didSet {
             print("questionQty \(questionQty)")

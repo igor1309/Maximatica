@@ -28,10 +28,10 @@ struct TestResult: Codable, Identifiable {
 extension TestResult {
     // Скорость решения, вопросов в минуту
     var velocity: Double { timeSpent == 0 ? 0 : totalAnswers / timeSpent * 60 }
-    // Тепм(?) решения: секунд на вопрос
-    var pace: Double { timeSpent / totalAnswers }
-    // Доля правильных ответов
-    var correctAnswersShare: Double { correctAnswers / totalAnswers }
     
-    //    везде добавить проверку деления на ноль!! Либо не добавлять — не нужно записывать в историю пустые результаты!!!
+    // Тепм(?) решения: секунд на вопрос
+    var pace: Double { totalAnswers == 0 ? 0 : timeSpent / totalAnswers }
+    
+    // Доля правильных ответов
+    var correctAnswersShare: Double { totalAnswers == 0 ? 0 : correctAnswers / totalAnswers }
 }

@@ -14,7 +14,9 @@ var hapticsAvailable: Bool { CHHapticEngine.capabilitiesForHardware().supportsHa
 
 struct Settings: View {
     @Environment(\.presentationMode) var presentation
+    @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore
+    @State private var showModal = false
     
     init() {
         //Use this if NavigationBarTitle is with Large Font
@@ -51,6 +53,15 @@ struct Settings: View {
                     .labelsHidden()
                 }
                 
+                Section(header: Text("Результаты".uppercased())) {
+                    Button("Таблица результатов") {
+                        self.showModal = true
+                    }
+                    .sheet(isPresented: $showModal) {
+                        HistoryTableView()
+                            .environmentObject(self.userData) }
+                }
+                
                 #if DEBUG
                 Text("Следующие секции показываются только при отладке:")
                     .font(.subheadline).bold()
@@ -77,6 +88,7 @@ struct Settings: View {
 struct Settings_Previews: PreviewProvider {
     static var previews: some View {
         Settings()
+            .environmentObject(UserData())
             .environmentObject(SettingsStore())
             //                    .environment(\.colorScheme, .dark)
             .environment(\.sizeCategory, .extraLarge)

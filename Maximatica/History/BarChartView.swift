@@ -22,9 +22,16 @@ struct BarChartView: View {
                 Text("Нет данных для графиков")
                     .foregroundColor(.white)
             } else {
-                Text(verbatim: title)
-                    .font(.headline)
-                    .foregroundColor(.white)
+                HStack {
+                    Text(verbatim: title)
+                        .font(.headline)
+                
+                    Spacer()
+                    
+                    Text(verbatim: subtitle)
+                        .font(.callout)
+                }
+                .foregroundColor(.white)
                 
                 VStack(alignment: .leading, spacing: 8) {
                     HStack {
@@ -32,15 +39,10 @@ struct BarChartView: View {
                         Text("\(minBar.smartFormatted) - \(maxBar.smartFormatted)")
                             .foregroundColor(.white)
                     }
-                    .font(.subheadline)
+                    .font(.footnote)
                     
                     BarsView(bars: bars, minBar: CGFloat(minBar), maxBar: CGFloat(maxBar))
                 }
-//                .padding(.vertical)
-                
-                Text(verbatim: subtitle)
-                    .font(.subheadline)
-                    .foregroundColor(.white)
             }
         }
         .padding(.horizontal)
@@ -54,9 +56,8 @@ struct BarChartView_Previews: PreviewProvider {
                 HistoryGradient()
                 
                 BarChartView(title: "Заголовок графика",
-                             subtitle: "Подзаголовок графика/комментарий",
+                             subtitle: "9999999",
                              bars: [10, 20, 15, 18, 0, 10, 22, 15, 18, 32, 27, 1])
-                //        .padding()
             }
         }
     }

@@ -19,9 +19,9 @@ var loadHistory: History {
     
     #if DEBUG
     var results: [TestResult] = []
-    for _ in 0..<40 {
+    for _ in 0..<80 {
         let totalAnswers = Double(Int.random(in: 2...5)) * 10
-        results.append(TestResult(dateTime: Date().addingTimeInterval(TimeInterval(Int.random(in: -1_000_000...1_000_000))),
+        results.append(TestResult(dateTime: Date().addingTimeInterval(TimeInterval(Int.random(in: -15_000_000...0))),
                                   totalAnswers: totalAnswers,
                                   correctAnswers: Double(Int.random(in: 1...Int(totalAnswers / 10)-1) * 10),
                                   timeSpent: TimeInterval(Int.random(in: 30...400)),
@@ -29,7 +29,12 @@ var loadHistory: History {
                                   complexity: Complexity.allCases.randomElement()!,
                                   arithmetic: Arithmetic.allCases.randomElement()!))
     }
-    return History(results: results)
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\ngenerated \(results.count) records")
+    for res in results {
+        print("\(res.dateTime.toString()) \(res.correctAnswers) \(res.totalAnswers) \(res.correctAnswersShare.formattedPercentage)")
+    }
+    
+    return History(results: results.sorted(by: { $0.dateTime >= $1.dateTime }))
     #else
     return History(results: [])
     #endif

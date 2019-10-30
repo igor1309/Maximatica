@@ -1,8 +1,8 @@
 //
-//  HistoryChart.swift
+//  HistoryCharts.swift
 //  Maximatica
 //
-//  Created by Igor Malyarov on 29.10.2019.
+//  Created by Igor Malyarov on 30.10.2019.
 //  Copyright © 2019 Igor Malyarov. All rights reserved.
 //
 
@@ -10,37 +10,48 @@ import SwiftUI
 
 struct HistoryCharts: View {
     @EnvironmentObject var userData: UserData
+    @EnvironmentObject var settings: SettingsStore
+    
+    var count: Int { self.userData.history.historySlice(period: self.settings.period).count }
     
     var body: some View {
-        VStack(spacing: 32) {
-            #if DEBUG
-            BarChartView(title: "ОТЛАДКА: 5 последних правильных ответов",
-                         subtitle: "Показывается только при отладке. Возможно нужна аналогичная опция, например селектором последние 5/30/все…",
-                         bars: userData.history.results
-                            .prefix(5)
-                            .map { $0.correctAnswersShare }
-                            .reversed())
-            #endif
+        VStack(spacing: 16) {
             
-            BarChartView(title: "Правильные ответы",
-                         subtitle: "Доля правильных ответов",
-                         bars: userData.history.results.map { $0.correctAnswersShare }
-                            .reversed())
+            Picker("Period Selector", selection: $settings.period) {
+                ForEach(Period.allCases, id: \.self) { period in
+                    Text(period.id).tag(period)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .labelsHidden()
+            .padding([.top, .horizontal])
             
-            BarChartView(title: "Количество задач",
-                         subtitle: "Количество задач в серии",
-                         bars: userData.history.results.map { $0.totalAnswers }
-                            .reversed())
+            Text("Всего сеансов: \(count.formattedGrouped)".uppercased())
+                .font(.headline)
+                .foregroundColor(.white)
             
-            BarChartView(title: "Скорость",
-                         subtitle: "Задач в минуту",
-                         bars: userData.history.results.map { $0.velocity }
-                            .reversed())
-            
-            BarChartView(title: "Темп",
-                         subtitle: "Секунд на одну задачу",
-                         bars: userData.history.results.map { $0.pace }
-                            .reversed())
+            if count > 0 {
+                VStack(spacing: 44) {
+                    #if DEBUG
+                    BarChartView(title: "ОТЛАДКА: 7 последних сессий: доля правильных ответов",
+                                 bars: userData.history.results
+                                    .prefix(7)
+                                    .map { $0.correctAnswersShare })
+                    #endif
+                    
+                    ForEach(History.HistoryDataType.allCases, id: \.self) { type in
+                        
+                        BarChartView(title: type.id,
+                                     subtitle: self.userData.history.histotyData(type, for: self.settings.period).smartFormatted,
+                                     bars: self.userData.history.historySlice(type, for: self.settings.period))
+                    }
+                    
+                    Text("© photoigor")
+                        .font(.caption)
+                        .foregroundColor(.white)
+                        .opacity(0.2)
+                }
+            }
         }
     }
 }
@@ -53,6 +64,7 @@ struct HistoryCharts_Previews: PreviewProvider {
                 
                 ScrollView {
                     HistoryCharts()
+                        .environmentObject(SettingsStore())
                 }
             }
         }

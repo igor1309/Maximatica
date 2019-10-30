@@ -2,7 +2,7 @@
 //  HistoryView.swift
 //  Maximatica
 //
-//  Created by Igor Malyarov on 29.10.2019.
+//  Created by Igor Malyarov on 30.10.2019.
 //  Copyright © 2019 Igor Malyarov. All rights reserved.
 //
 
@@ -12,7 +12,6 @@ import SwiftPI
 struct HistoryView: View {
     @Environment(\.presentationMode) var presentation
     @EnvironmentObject var userData: UserData
-    @State private var showModal = false
     
     init() {
         //Use this if NavigationBarTitle is with Large Font
@@ -41,14 +40,7 @@ struct HistoryView: View {
             .navigationBarTitle("История")
             .navigationBarItems(
                 leading: LeadingButton("Закрыть") {
-                    self.presentation.wrappedValue.dismiss() },
-                trailing: TrailingButtonSFSymbol("table") {
-                    self.showModal = true }
-                .disabled(userData.history.isListEmpty)
-            .opacity(userData.history.isListEmpty ? 0.3 : 1))
-                .sheet(isPresented: $showModal) {
-                    HistoryTableView()
-                        .environmentObject(self.userData) }
+                    self.presentation.wrappedValue.dismiss() })
         }
     }
 }
@@ -57,5 +49,6 @@ struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
         HistoryView()
             .environmentObject(UserData())
+            .environmentObject(SettingsStore())
     }
 }

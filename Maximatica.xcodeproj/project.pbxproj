@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A0184E62369B383000DFFA5 /* SwiftPI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A0184E52369B383000DFFA5 /* SwiftPI */; };
+		2A0184E82369B3F1000DFFA5 /* VerticalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0184E72369B3F1000DFFA5 /* VerticalBar.swift */; };
+		2A0184EA2369B41A000DFFA5 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0184E92369B41A000DFFA5 /* BarChartView.swift */; };
+		2A1EE39E236A138A00FFF5C3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EE39D236A138A00FFF5C3 /* HistoryView.swift */; };
+		2A1EE3A0236A13CC00FFF5C3 /* HistoryCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EE39F236A13CC00FFF5C3 /* HistoryCharts.swift */; };
 		2A420EF8236781D3002B628A /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A420EF7236781D3002B628A /* TimerView.swift */; };
 		2A420EFC236783FC002B628A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A420EFB236783FC002B628A /* CustomButton.swift */; };
 		2A4805C72366C08D00E95FE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4805C62366C08D00E95FE7 /* AppDelegate.swift */; };
@@ -26,28 +31,27 @@
 		2A54D9B123681F5000A50CF1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9B023681F5000A50CF1 /* Data.swift */; };
 		2A54D9B32368204100A50CF1 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9B22368204100A50CF1 /* History.swift */; };
 		2A54D9B52368226D00A50CF1 /* QuestionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9B42368226D00A50CF1 /* QuestionGenerator.swift */; };
-		2A54D9B7236823F400A50CF1 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9B6236823F400A50CF1 /* HistoryView.swift */; };
 		2A54D9BB236825CF00A50CF1 /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9BA236825CF00A50CF1 /* HistoryRow.swift */; };
 		2A54D9BD2368400400A50CF1 /* QuestionQtyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9BC2368400400A50CF1 /* QuestionQtyPicker.swift */; };
-		2A54D9E72368484000A50CF1 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9E62368484000A50CF1 /* BarChartView.swift */; };
-		2A54D9E923684A5500A50CF1 /* HistoryCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9E823684A5500A50CF1 /* HistoryCharts.swift */; };
 		2A7718D52367045900BF9408 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718D42367045900BF9408 /* QuestionView.swift */; };
 		2A7718D72367047000BF9408 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718D62367047000BF9408 /* Question.swift */; };
 		2A7718D92367421400BF9408 /* NumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718D82367421400BF9408 /* NumberPad.swift */; };
 		2A7718DB2367479E00BF9408 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718DA2367479E00BF9408 /* ProgressView.swift */; };
-		2A9B56EE23695D8000ACEE8F /* VerticalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B56ED23695D8000ACEE8F /* VerticalBar.swift */; };
-		2A9B56F02369621900ACEE8F /* BarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B56EF2369621900ACEE8F /* BarsView.swift */; };
 		2A9B56F2236967A800ACEE8F /* HistoryGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B56F1236967A800ACEE8F /* HistoryGradient.swift */; };
 		2A9B56F42369683500ACEE8F /* MainGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B56F32369683500ACEE8F /* MainGradient.swift */; };
-		2A9B57212369A16700ACEE8F /* SwiftPI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A9B57202369A16700ACEE8F /* SwiftPI */; };
 		2AA9070D23677E750051CCB1 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9070C23677E750051CCB1 /* ResultView.swift */; };
 		2AA9070F23677EF80051CCB1 /* SolveTheProblemBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9070E23677EF80051CCB1 /* SolveTheProblemBanner.swift */; };
 		2AB5C4822368670D009D0613 /* GameSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5C4812368670D009D0613 /* GameSelectionView.swift */; };
 		2AB5C48523687CC4009D0613 /* HistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5C48423687CC4009D0613 /* HistoryTableView.swift */; };
 		2AB5C48723687FCA009D0613 /* HistoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5C48623687FCA009D0613 /* HistoryTable.swift */; };
+		2AF4338A2369B2D80087C782 /* BarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF433872369B2D80087C782 /* BarsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A0184E72369B3F1000DFFA5 /* VerticalBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalBar.swift; sourceTree = "<group>"; };
+		2A0184E92369B41A000DFFA5 /* BarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
+		2A1EE39D236A138A00FFF5C3 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		2A1EE39F236A13CC00FFF5C3 /* HistoryCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCharts.swift; sourceTree = "<group>"; };
 		2A420EF7236781D3002B628A /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		2A420EFB236783FC002B628A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		2A4805C32366C08D00E95FE7 /* Maximatica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maximatica.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,17 +73,12 @@
 		2A54D9B023681F5000A50CF1 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		2A54D9B22368204100A50CF1 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		2A54D9B42368226D00A50CF1 /* QuestionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionGenerator.swift; sourceTree = "<group>"; };
-		2A54D9B6236823F400A50CF1 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		2A54D9BA236825CF00A50CF1 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
 		2A54D9BC2368400400A50CF1 /* QuestionQtyPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionQtyPicker.swift; sourceTree = "<group>"; };
-		2A54D9E62368484000A50CF1 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
-		2A54D9E823684A5500A50CF1 /* HistoryCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCharts.swift; sourceTree = "<group>"; };
 		2A7718D42367045900BF9408 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		2A7718D62367047000BF9408 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		2A7718D82367421400BF9408 /* NumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPad.swift; sourceTree = "<group>"; };
 		2A7718DA2367479E00BF9408 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
-		2A9B56ED23695D8000ACEE8F /* VerticalBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalBar.swift; sourceTree = "<group>"; };
-		2A9B56EF2369621900ACEE8F /* BarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarsView.swift; sourceTree = "<group>"; };
 		2A9B56F1236967A800ACEE8F /* HistoryGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryGradient.swift; sourceTree = "<group>"; };
 		2A9B56F32369683500ACEE8F /* MainGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGradient.swift; sourceTree = "<group>"; };
 		2AA9070C23677E750051CCB1 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
@@ -87,6 +86,22 @@
 		2AB5C4812368670D009D0613 /* GameSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectionView.swift; sourceTree = "<group>"; };
 		2AB5C48423687CC4009D0613 /* HistoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableView.swift; sourceTree = "<group>"; };
 		2AB5C48623687FCA009D0613 /* HistoryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTable.swift; sourceTree = "<group>"; };
+		2AC9C96F2369B3540025835B /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
+		2AC9C9712369B3540025835B /* SwiftPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPITests.swift; sourceTree = "<group>"; };
+		2AC9C9722369B3540025835B /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		2AC9C9732369B3540025835B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2AC9C9742369B3540025835B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		2AC9C9752369B3540025835B /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		2AC9C9782369B3540025835B /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		2AC9C9792369B3540025835B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		2AC9C97A2369B3540025835B /* Format+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Format+Extensions.swift"; sourceTree = "<group>"; };
+		2AC9C97B2369B3540025835B /* SwiftPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPI.swift; sourceTree = "<group>"; };
+		2AC9C97C2369B3540025835B /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		2AC9C97D2369B3540025835B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		2AC9C9802369B3540025835B /* package.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = package.xcworkspace; sourceTree = "<group>"; };
+		2AC9C9842369B3540025835B /* xcschememanagement.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = xcschememanagement.plist; sourceTree = "<group>"; };
+		2AC9C9852369B36D0025835B /* SwiftPI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftPI; path = ../SwiftPI; sourceTree = "<group>"; };
+		2AF433872369B2D80087C782 /* BarsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A9B57212369A16700ACEE8F /* SwiftPI in Frameworks */,
+				2A0184E62369B383000DFFA5 /* SwiftPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,8 +119,10 @@
 		2A4805BA2366C08D00E95FE7 = {
 			isa = PBXGroup;
 			children = (
+				2AC9C9852369B36D0025835B /* SwiftPI */,
 				2A4805C52366C08D00E95FE7 /* Maximatica */,
 				2A4805C42366C08D00E95FE7 /* Products */,
+				2AA70A9F2369ABAD00080F1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,15 +198,23 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		2AA70A9F2369ABAD00080F1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2AC9C96D2369B3540025835B /* SwiftPI */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2AB5C47D23686411009D0613 /* History */ = {
 			isa = PBXGroup;
 			children = (
-				2A54D9B6236823F400A50CF1 /* HistoryView.swift */,
+				2A1EE39D236A138A00FFF5C3 /* HistoryView.swift */,
+				2A1EE39F236A13CC00FFF5C3 /* HistoryCharts.swift */,
 				2A9B56F1236967A800ACEE8F /* HistoryGradient.swift */,
-				2A54D9E823684A5500A50CF1 /* HistoryCharts.swift */,
-				2A54D9E62368484000A50CF1 /* BarChartView.swift */,
-				2A9B56EF2369621900ACEE8F /* BarsView.swift */,
-				2A9B56ED23695D8000ACEE8F /* VerticalBar.swift */,
+				2A0184E92369B41A000DFFA5 /* BarChartView.swift */,
+				2A0184E72369B3F1000DFFA5 /* VerticalBar.swift */,
+				2AF433872369B2D80087C782 /* BarsView.swift */,
 				2AB5C48423687CC4009D0613 /* HistoryTableView.swift */,
 				2AB5C48623687FCA009D0613 /* HistoryTable.swift */,
 				2A54D9BA236825CF00A50CF1 /* HistoryRow.swift */,
@@ -234,6 +259,100 @@
 			path = GameSelection;
 			sourceTree = "<group>";
 		};
+		2AC9C96D2369B3540025835B /* SwiftPI */ = {
+			isa = PBXGroup;
+			children = (
+				2AC9C96E2369B3540025835B /* Tests */,
+				2AC9C9732369B3540025835B /* README.md */,
+				2AC9C9742369B3540025835B /* .gitignore */,
+				2AC9C9752369B3540025835B /* Package.swift */,
+				2AC9C9762369B3540025835B /* Sources */,
+				2AC9C97E2369B3540025835B /* .swiftpm */,
+			);
+			name = SwiftPI;
+			path = ../SwiftPI;
+			sourceTree = "<group>";
+		};
+		2AC9C96E2369B3540025835B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2AC9C96F2369B3540025835B /* LinuxMain.swift */,
+				2AC9C9702369B3540025835B /* SwiftPITests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		2AC9C9702369B3540025835B /* SwiftPITests */ = {
+			isa = PBXGroup;
+			children = (
+				2AC9C9712369B3540025835B /* SwiftPITests.swift */,
+				2AC9C9722369B3540025835B /* XCTestManifests.swift */,
+			);
+			path = SwiftPITests;
+			sourceTree = "<group>";
+		};
+		2AC9C9762369B3540025835B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2AC9C9772369B3540025835B /* SwiftPI */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2AC9C9772369B3540025835B /* SwiftPI */ = {
+			isa = PBXGroup;
+			children = (
+				2AC9C9782369B3540025835B /* Buttons.swift */,
+				2AC9C9792369B3540025835B /* String+Extensions.swift */,
+				2AC9C97A2369B3540025835B /* Format+Extensions.swift */,
+				2AC9C97B2369B3540025835B /* SwiftPI.swift */,
+				2AC9C97C2369B3540025835B /* Color+Extensions.swift */,
+				2AC9C97D2369B3540025835B /* Date+Extensions.swift */,
+			);
+			path = SwiftPI;
+			sourceTree = "<group>";
+		};
+		2AC9C97E2369B3540025835B /* .swiftpm */ = {
+			isa = PBXGroup;
+			children = (
+				2AC9C97F2369B3540025835B /* xcode */,
+			);
+			path = .swiftpm;
+			sourceTree = "<group>";
+		};
+		2AC9C97F2369B3540025835B /* xcode */ = {
+			isa = PBXGroup;
+			children = (
+				2AC9C9802369B3540025835B /* package.xcworkspace */,
+				2AC9C9812369B3540025835B /* xcuserdata */,
+			);
+			path = xcode;
+			sourceTree = "<group>";
+		};
+		2AC9C9812369B3540025835B /* xcuserdata */ = {
+			isa = PBXGroup;
+			children = (
+				2AC9C9822369B3540025835B /* igormalyarov.xcuserdatad */,
+			);
+			path = xcuserdata;
+			sourceTree = "<group>";
+		};
+		2AC9C9822369B3540025835B /* igormalyarov.xcuserdatad */ = {
+			isa = PBXGroup;
+			children = (
+				2AC9C9832369B3540025835B /* xcschemes */,
+			);
+			path = igormalyarov.xcuserdatad;
+			sourceTree = "<group>";
+		};
+		2AC9C9832369B3540025835B /* xcschemes */ = {
+			isa = PBXGroup;
+			children = (
+				2AC9C9842369B3540025835B /* xcschememanagement.plist */,
+			);
+			path = xcschemes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -251,7 +370,7 @@
 			);
 			name = Maximatica;
 			packageProductDependencies = (
-				2A9B57202369A16700ACEE8F /* SwiftPI */,
+				2A0184E52369B383000DFFA5 /* SwiftPI */,
 			);
 			productName = Maximatica;
 			productReference = 2A4805C32366C08D00E95FE7 /* Maximatica.app */;
@@ -316,13 +435,14 @@
 				2A4805C72366C08D00E95FE7 /* AppDelegate.swift in Sources */,
 				2A420EFC236783FC002B628A /* CustomButton.swift in Sources */,
 				2A9B56F2236967A800ACEE8F /* HistoryGradient.swift in Sources */,
-				2A54D9E923684A5500A50CF1 /* HistoryCharts.swift in Sources */,
 				2A54D9AF23681E3A00A50CF1 /* TestResult.swift in Sources */,
+				2A0184EA2369B41A000DFFA5 /* BarChartView.swift in Sources */,
 				2AA9070D23677E750051CCB1 /* ResultView.swift in Sources */,
 				2A54D9B52368226D00A50CF1 /* QuestionGenerator.swift in Sources */,
-				2A9B56F02369621900ACEE8F /* BarsView.swift in Sources */,
 				2A7718D92367421400BF9408 /* NumberPad.swift in Sources */,
 				2A7718D52367045900BF9408 /* QuestionView.swift in Sources */,
+				2A1EE3A0236A13CC00FFF5C3 /* HistoryCharts.swift in Sources */,
+				2AF4338A2369B2D80087C782 /* BarsView.swift in Sources */,
 				2A54D9BB236825CF00A50CF1 /* HistoryRow.swift in Sources */,
 				2A4805EA2366E2C100E95FE7 /* Settings.swift in Sources */,
 				2A9B56F42369683500ACEE8F /* MainGradient.swift in Sources */,
@@ -331,18 +451,17 @@
 				2AB5C48723687FCA009D0613 /* HistoryTable.swift in Sources */,
 				2A420EF8236781D3002B628A /* TimerView.swift in Sources */,
 				2AA9070F23677EF80051CCB1 /* SolveTheProblemBanner.swift in Sources */,
+				2A0184E82369B3F1000DFFA5 /* VerticalBar.swift in Sources */,
 				2A4805C92366C08D00E95FE7 /* SceneDelegate.swift in Sources */,
 				2A54D9B123681F5000A50CF1 /* Data.swift in Sources */,
-				2A9B56EE23695D8000ACEE8F /* VerticalBar.swift in Sources */,
 				2A7718D72367047000BF9408 /* Question.swift in Sources */,
 				2A54D9BD2368400400A50CF1 /* QuestionQtyPicker.swift in Sources */,
 				2A54D9AD23681DEF00A50CF1 /* WorkWithJSON.swift in Sources */,
-				2A54D9B7236823F400A50CF1 /* HistoryView.swift in Sources */,
 				2A7718DB2367479E00BF9408 /* ProgressView.swift in Sources */,
 				2A54D9B32368204100A50CF1 /* History.swift in Sources */,
 				2A4805E52366CC4600E95FE7 /* MathCardButton.swift in Sources */,
 				2A4805CB2366C08D00E95FE7 /* ContentView.swift in Sources */,
-				2A54D9E72368484000A50CF1 /* BarChartView.swift in Sources */,
+				2A1EE39E236A138A00FFF5C3 /* HistoryView.swift in Sources */,
 				2AB5C48523687CC4009D0613 /* HistoryTableView.swift in Sources */,
 				2A54D9AB23681D8500A50CF1 /* UserData.swift in Sources */,
 			);
@@ -481,7 +600,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"Maximatica/Preview Content\"";
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
 				ENABLE_PREVIEWS = YES;
@@ -491,7 +610,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.093;
+				MARKETING_VERSION = 0.095;
 				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.Maximatica;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -504,7 +623,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"Maximatica/Preview Content\"";
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
 				ENABLE_PREVIEWS = YES;
@@ -514,7 +633,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.093;
+				MARKETING_VERSION = 0.095;
 				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.Maximatica;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -557,9 +676,8 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2A9B57202369A16700ACEE8F /* SwiftPI */ = {
+		2A0184E52369B383000DFFA5 /* SwiftPI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2A9B571F2369A16700ACEE8F /* XCRemoteSwiftPackageReference "SwiftPI" */;
 			productName = SwiftPI;
 		};
 /* End XCSwiftPackageProductDependency section */

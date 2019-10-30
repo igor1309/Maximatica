@@ -32,3 +32,14 @@ enum Complexity: String, CaseIterable, Codable, Hashable {
     
     var id: String { rawValue }
 }
+
+public enum Period: String, CaseIterable, Codable, Hashable {
+    case day = "День"
+    case week = "Неделя"
+    case month = "Месяц"
+    case year = "Год"
+    
+    public var id: String {
+        return rawValue
+    }
+}
