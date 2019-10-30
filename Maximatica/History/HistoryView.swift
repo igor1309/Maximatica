@@ -34,19 +34,14 @@ struct HistoryView: View {
             }
             .padding(.vertical, 1)
             .padding(.horizontal)
-            .background(LinearGradient(gradient:
-                Gradient(colors: [.orange, .yellow, .blue]),
-                                       startPoint: .topLeading,
-                                       endPoint: .bottomTrailing)
-                .opacity(0.9)
-                .edgesIgnoringSafeArea(.all))
+            .background(HistoryGradient())
                 
-                .navigationBarTitle("История")
-                .navigationBarItems(
-                    leading: LeadingButton("Закрыть") {
-                        self.presentation.wrappedValue.dismiss() },
-                    trailing: TrailingButtonSFSymbol("table") {
-                        self.showModal = true })
+            .navigationBarTitle("История")
+            .navigationBarItems(
+                leading: LeadingButton("Закрыть") {
+                    self.presentation.wrappedValue.dismiss() },
+                trailing: TrailingButtonSFSymbol("table") {
+                    self.showModal = true })
                 .sheet(isPresented: $showModal) {
                     HistoryTableView()
                         .environmentObject(self.userData) }

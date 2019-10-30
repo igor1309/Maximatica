@@ -12,7 +12,17 @@ struct ResultView: View {
     @EnvironmentObject var userData: UserData
     @Binding var isRunning: Bool
     
-    var result: TestResult { userData.history.results[0] }
+    //  в реальности userData.history.results[0] не может быть пустым — на этот экран попадаем после прохождения теста
+    //  но при отладке может быть пустой массив результатов
+    //  поэтому dummy data
+    var result: TestResult { userData.history.isListEmpty ? TestResult(dateTime: Date(),
+                                                                       totalAnswers: 10,
+                                                                       correctAnswers: 9,
+                                                                       timeSpent: 14,
+                                                                       ageGroup: .sevenToNine,
+                                                                       complexity: .basic)
+        : userData.history.results[0]
+    }
     
     var body: some View {
         VStack(spacing: 16) {
@@ -72,18 +82,12 @@ struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ZStack {
-                LinearGradient(gradient:
-                    Gradient(colors: [.blue, .green]),
-                               startPoint: .topLeading,
-                               endPoint: .bottomTrailing)
-                    .edgesIgnoringSafeArea(.all)
-                HStack {
-                    ResultView(isRunning: .constant(true))
-                        .offset(x: 0, y: -150)
-                }
+                MainGradient()
+                
+                ResultView(isRunning: .constant(true))
+                    .offset(x: 0, y: -150)
             }
         }
         .environmentObject(UserData())
-        //        .environment(\.colorScheme, .dark)
     }
 }

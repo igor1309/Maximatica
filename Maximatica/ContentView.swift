@@ -32,11 +32,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack(alignment: .center) {
-                LinearGradient(gradient:
-                    Gradient(colors: [.blue, .green]),
-                               startPoint: .topLeading,
-                               endPoint: .bottomTrailing)
-                    .edgesIgnoringSafeArea(.all)
+                MainGradient()
+                
                 VStack(spacing: 16) {
                     if isRunning {
                         QuestionView(questions: questions,

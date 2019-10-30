@@ -28,11 +28,8 @@ struct ProgressView: View {
 struct ProgressViewUsage: View {
     var body: some View {
         ZStack {
-            LinearGradient(gradient:
-                Gradient(colors: [.blue, .green]),
-                           startPoint: .topLeading,
-                           endPoint: .bottomTrailing)
-                .edgesIgnoringSafeArea(.all)
+            MainGradient()
+            
             ProgressView(progress: 0.35)
                 .offset(x: 100, y: -250)
         }

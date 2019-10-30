@@ -162,22 +162,17 @@ struct QuestionView: View {
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-        ZStack {
-            LinearGradient(gradient:
-                Gradient(colors: [.blue, .green]),
-                           startPoint: .topLeading,
-                           endPoint: .bottomTrailing)
-                .edgesIgnoringSafeArea(.all)
-            HStack {
+            ZStack {
+                MainGradient()
+                
                 QuestionView(questions: QuestionGenerator(questionQty: 2,
-                                                  arithmetic: .addition,
-                                                  complexity: .basic).questions,
-                     isRunning: .constant(true),
-                     arithmetic: nil)
+                                                          arithmetic: .addition,
+                                                          complexity: .basic).questions,
+                             isRunning: .constant(true),
+                             arithmetic: nil)
             }
         }
-        }
-            .environmentObject(UserData())
-            .environmentObject(SettingsStore())
+        .environmentObject(UserData())
+        .environmentObject(SettingsStore())
     }
 }

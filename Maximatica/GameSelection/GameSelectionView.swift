@@ -46,11 +46,7 @@ struct GameSelectionView: View {
 struct GameSelectionView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            LinearGradient(gradient:
-                Gradient(colors: [.blue, .green]),
-                           startPoint: .topLeading,
-                           endPoint: .bottomTrailing)
-                .edgesIgnoringSafeArea(.all)
+            MainGradient()
             
             VStack(spacing: 16) {
                 GameSelectionView(isRunning: .constant(true),
