@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftPI
 
 struct VerticalBar: View {
     var bar: CGFloat

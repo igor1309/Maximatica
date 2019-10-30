@@ -8,6 +8,7 @@
 
 import SwiftUI
 import CoreHaptics
+import SwiftPI
 
 var hapticsAvailable: Bool { CHHapticEngine.capabilitiesForHardware().supportsHaptics }
 
