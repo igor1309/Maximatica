@@ -15,9 +15,8 @@ struct GameSelectionView: View {
     @Binding var questions: [Question]
     
     var body: some View {
-        Group {
-            QuestionQtyPicker()
-                .padding()
+        VStack(spacing: 16) {
+//            MissionOptionsSelector().padding()
             
             ForEach(Arithmetic.allCases, id: \.self) { arithmetic in
                 MathCardButton(arithmetic.id) { self.run(arithmetic) }
@@ -26,6 +25,7 @@ struct GameSelectionView: View {
             MathCardButton("Всё сразу", color: .yellow) { self.run(nil) }
         }
     }
+    
     private func run(_ arithmetic: Arithmetic?) {
         if hapticsAvailable {
             let generator = UIImpactFeedbackGenerator(style: .light)

@@ -43,7 +43,7 @@ struct QuestionView: View {
     var body: some View {
         VStack(spacing: 16) {
             if showResult {
-                ResultView(isRunning: $isRunning)
+                ResultViewOLD(isRunning: $isRunning)
             } else {
                 if showSolveTheProblem {
                     SolveTheProblemBanner()

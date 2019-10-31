@@ -9,20 +9,26 @@
 import Foundation
 
 final class SettingsStore: ObservableObject {
-    @Published var ageGroup = AgeGroup(rawValue: UserDefaults.standard.string(forKey: "ageGroup") ?? "7-9 лет")! {
+    @Published var mission = Mission(rawValue: UserDefaults.standard.string(forKey: "mission") ?? Mission.time.id)! {
+        didSet {
+            UserDefaults.standard.set(mission.rawValue, forKey: "mission")
+        }
+    }
+    
+    @Published var ageGroup = AgeGroup(rawValue: UserDefaults.standard.string(forKey: "ageGroup") ?? AgeGroup.sevenToNine.id)! {
         didSet {
             UserDefaults.standard.set(ageGroup.rawValue, forKey: "ageGroup")
         }
     }
-
-    @Published var сomplexity = Complexity(rawValue: UserDefaults.standard.string(forKey: "сomplexity") ?? "Начальный")!
+    
+    @Published var сomplexity = Complexity(rawValue: UserDefaults.standard.string(forKey: "сomplexity") ?? Complexity.basic.id)!
         {
         didSet {
             UserDefaults.standard.set(сomplexity.rawValue, forKey: "сomplexity")
         }
     }
     
-    @Published var period = Period(rawValue: UserDefaults.standard.string(forKey: "period") ?? "Неделя")!
+    @Published var period = Period(rawValue: UserDefaults.standard.string(forKey: "period") ?? Period.week.id)!
         {
         didSet {
             UserDefaults.standard.set(period.rawValue, forKey: "period")
@@ -31,8 +37,13 @@ final class SettingsStore: ObservableObject {
     
     @Published var questionQty = UserDefaults.standard.integer(forKey: "questionQty") {
         didSet {
-            print("questionQty \(questionQty)")
             UserDefaults.standard.set(questionQty, forKey: "questionQty")
+        }
+    }
+    
+    @Published var missionTime = UserDefaults.standard.integer(forKey: "missionTime") {
+        didSet {
+            UserDefaults.standard.set(missionTime, forKey: "missionTime")
         }
     }
     

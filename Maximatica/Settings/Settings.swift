@@ -30,7 +30,7 @@ struct Settings: View {
         NavigationView {
             Form {
                 Section(header: Text("Количество вопросов".uppercased())) {
-                    QuestionQtyPicker()
+                    MissionQtySelector()
                 }
                 
                 Section(header: Text("Уровень сложности".uppercased())) {

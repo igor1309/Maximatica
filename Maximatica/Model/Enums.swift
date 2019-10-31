@@ -8,6 +8,16 @@
 
 import Foundation
 
+enum Status { case score, setup, play, result }
+
+
+enum Mission: String, CaseIterable, Codable, Hashable {
+    case time = "На время"
+    case qty = "Количество"
+    
+    var id: String { rawValue }
+}
+
 enum AgeGroup: String, CaseIterable, Codable, Hashable {
     case upToseven = "До семи лет"
     case sevenToNine = "7-9 лет"

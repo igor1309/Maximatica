@@ -1,5 +1,5 @@
 //
-//  ResultView.swift
+//  ScoreView.swift
 //  GameStatesTesting
 //
 //  Created by Igor Malyarov on 01.11.2019.
@@ -8,19 +8,22 @@
 
 import SwiftUI
 
-struct ResultView: View {
+struct ScoreView: View {
     @Binding var status: Status
     
     var body: some View {
         VStack(spacing: 32) {
-            GameStatusTitle(title: "Результат")
+            GameStatusTitle(title: "Maximatica", withButtons: true)
+            
             Spacer()
             
-            Text("Игра: вот результат")
+            Text("статус игрока")
+            
             Spacer()
             
-            GameButton(action: { self.status = .score }) {
-                Text("Ok".uppercased())
+            GameButton(action: { self.status = .setup }) {
+                //  выбрать миссию
+                Text("Хочу еще!".uppercased())
             }
             
             Spacer()
@@ -28,12 +31,12 @@ struct ResultView: View {
     }
 }
 
-struct ResultView_Previews: PreviewProvider {
+struct ScoreView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             MainGradient()
             
-            ResultView(status: .constant(.result))
+            ScoreView(status: .constant(.score))
         }
     }
 }

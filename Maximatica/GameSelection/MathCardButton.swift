@@ -25,7 +25,7 @@ struct MathCardButton: View {
             Text(name.uppercased())
                 .font(.title)
                 .foregroundColor(color)
-                .frame(width: 240, height: 50)
+                .frame(width: 240, height: 24)
                 .padding()
                 .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .stroke()
