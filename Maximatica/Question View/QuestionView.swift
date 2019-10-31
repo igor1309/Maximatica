@@ -110,10 +110,15 @@ struct QuestionView: View {
         //  stop timer
         //  check result
         
-        //  save result
-        saveHistory()
-        //  show result
-        showResult = true
+        if progress == 0 {
+            //  СТОП тапнут без решения задач вообще
+            self.isRunning = false
+        } else {
+            //  save result
+            saveHistory()
+            //  show result
+            showResult = true
+        }
     }
     
     func saveHistory() {
