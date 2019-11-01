@@ -67,3 +67,11 @@ struct Question {
         }
     }
 }
+
+extension Question {
+    init() {
+        self = Question(arithmetic: Arithmetic.allCases.randomElement()!,
+                        complexity: Complexity.allCases.randomElement()!,
+                        ageGroup: AgeGroup.allCases.randomElement()!)
+    }
+}

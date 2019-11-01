@@ -9,19 +9,6 @@
 import Foundation
 
 final class SettingsStore: ObservableObject {
-    @Published var ageGroup = AgeGroup(rawValue: UserDefaults.standard.string(forKey: "ageGroup") ?? AgeGroup.sevenToNine.id)! {
-        didSet {
-            UserDefaults.standard.set(ageGroup.rawValue, forKey: "ageGroup")
-        }
-    }
-    
-    @Published var сomplexity = Complexity(rawValue: UserDefaults.standard.string(forKey: "сomplexity") ?? Complexity.basic.id)!
-        {
-        didSet {
-            UserDefaults.standard.set(сomplexity.rawValue, forKey: "сomplexity")
-        }
-    }
-    
     @Published var period = Period(rawValue: UserDefaults.standard.string(forKey: "period") ?? Period.week.id)!
         {
         didSet {

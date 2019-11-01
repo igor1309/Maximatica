@@ -9,25 +9,47 @@
 import SwiftUI
 
 struct GameStatusTitle: View {
+    @EnvironmentObject var userData: UserData
+    @EnvironmentObject var settings: SettingsStore
     var title: String
     var withButtons = false
+    @State private var showModal = false
+    @State private var modal: Modal = .settings
+    
+    private enum Modal { case settings, history }
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
             if withButtons {
                 HStack {
-                    Button(action: {}) {
+                    Button(action: {
+                        self.modal = .settings
+                        self.showModal = true
+                    }) {
                         Image(systemName: "gear")
                             .padding(.top, 8)
                             .padding(.trailing, 16)
                     }
-                    Button(action: {}) {
+                    Button(action: {
+                        self.modal = .history
+                        self.showModal = true
+                    }) {
                         Image(systemName: "chart.bar.fill")
                             .padding(.top, 8)
                             .padding(.trailing, 16)
                     }
                 }
                 .foregroundColor(.white)
+                .sheet(isPresented: $showModal) {
+                    if self.modal == .settings {
+                        Settings()
+                            .environmentObject(self.userData)
+                            .environmentObject(self.settings) }
+                    
+                    if self.modal == .history {
+                        HistoryView()
+                            .environmentObject(self.userData)
+                            .environmentObject(self.settings) }}
             }
             
             HStack {
@@ -58,5 +80,7 @@ struct GameStatusTitle_Previews: PreviewProvider {
             }
         }
         .environment(\.colorScheme, .dark)
+        .environmentObject(UserData())
+        .environmentObject(SettingsStore())
     }
 }

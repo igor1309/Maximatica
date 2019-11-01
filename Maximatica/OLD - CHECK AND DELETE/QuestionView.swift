@@ -112,8 +112,8 @@ struct QuestionView: View {
                                         totalAnswers: Double(progress + 1),
                                         correctAnswers: Double(correctAnswerCount),
                                         timeSpent: timer,
-                                        ageGroup: settings.ageGroup,
-                                        complexity: settings.сomplexity,
+                                        ageGroup: userData.ageGroup,
+                                        complexity: userData.complexity,
                                         arithmetic: arithmetic))
     }
     
@@ -156,10 +156,7 @@ struct QuestionView_Previews: PreviewProvider {
             ZStack {
                 MainGradient()
                 
-                QuestionView(questions: QuestionGenerator(questionQty: 2,
-                                                          arithmetic: .addition,
-                                                          complexity: .basic,
-                                                          ageGroup: .sevenToNine).questions,
+                QuestionView(questions: [Question(), Question(), Question(), Question()],
                              isRunning: .constant(true),
                              arithmetic: nil)
             }

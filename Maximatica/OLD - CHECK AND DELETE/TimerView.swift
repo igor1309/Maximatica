@@ -36,5 +36,6 @@ struct TimerViewPreview: View {
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         TimerViewPreview()
+            .background(Color.blue)
     }
 }

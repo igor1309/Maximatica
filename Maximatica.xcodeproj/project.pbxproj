@@ -32,7 +32,6 @@
 		2A54D9AF23681E3A00A50CF1 /* TestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9AE23681E3A00A50CF1 /* TestResult.swift */; };
 		2A54D9B123681F5000A50CF1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9B023681F5000A50CF1 /* Data.swift */; };
 		2A54D9B32368204100A50CF1 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9B22368204100A50CF1 /* History.swift */; };
-		2A54D9B52368226D00A50CF1 /* QuestionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9B42368226D00A50CF1 /* QuestionGenerator.swift */; };
 		2A54D9BB236825CF00A50CF1 /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9BA236825CF00A50CF1 /* HistoryRow.swift */; };
 		2A7718D52367045900BF9408 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718D42367045900BF9408 /* QuestionView.swift */; };
 		2A7718D72367047000BF9408 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718D62367047000BF9408 /* Question.swift */; };
@@ -87,7 +86,6 @@
 		2A54D9AE23681E3A00A50CF1 /* TestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResult.swift; sourceTree = "<group>"; };
 		2A54D9B023681F5000A50CF1 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		2A54D9B22368204100A50CF1 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
-		2A54D9B42368226D00A50CF1 /* QuestionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionGenerator.swift; sourceTree = "<group>"; };
 		2A54D9BA236825CF00A50CF1 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
 		2A7718D42367045900BF9408 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		2A7718D62367047000BF9408 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -174,8 +172,6 @@
 				2AF572B6236B871400AB6A2D /* OLD - CHECK AND DELETE */,
 				2A9B56F32369683500ACEE8F /* MainGradient.swift */,
 				2A4805DC2366C7C100E95FE7 /* Supporting Views */,
-				2AB5C4832368691C009D0613 /* GameSelection */,
-				2AB5C480236864DB009D0613 /* Question View */,
 				2AB5C47E2368647E009D0613 /* Settings */,
 				2AB5C47D23686411009D0613 /* History */,
 				2A4805E82366DFB800E95FE7 /* Model */,
@@ -214,7 +210,6 @@
 				2A54D9AA23681D8500A50CF1 /* UserData.swift */,
 				2A4805EB2366E36A00E95FE7 /* SettingsStore.swift */,
 				2A4805E62366DFB200E95FE7 /* Enums.swift */,
-				2A54D9B42368226D00A50CF1 /* QuestionGenerator.swift */,
 				2A7718D62367047000BF9408 /* Question.swift */,
 				2A54D9B22368204100A50CF1 /* History.swift */,
 				2A54D9AE23681E3A00A50CF1 /* TestResult.swift */,
@@ -269,27 +264,6 @@
 				2AF572CA236B8A5F00AB6A2D /* ResultView.swift */,
 			);
 			path = Result;
-			sourceTree = "<group>";
-		};
-		2AB5C480236864DB009D0613 /* Question View */ = {
-			isa = PBXGroup;
-			children = (
-				2A7718D42367045900BF9408 /* QuestionView.swift */,
-				2AA9070E23677EF80051CCB1 /* SolveTheProblemBanner.swift */,
-				2A420EF7236781D3002B628A /* TimerView.swift */,
-				2A7718DA2367479E00BF9408 /* ProgressView.swift */,
-				2A7718D82367421400BF9408 /* NumberPad.swift */,
-			);
-			path = "Question View";
-			sourceTree = "<group>";
-		};
-		2AB5C4832368691C009D0613 /* GameSelection */ = {
-			isa = PBXGroup;
-			children = (
-				2AB5C4812368670D009D0613 /* GameSelectionView.swift */,
-				2A4805E42366CC4600E95FE7 /* MathCardButton.swift */,
-			);
-			path = GameSelection;
 			sourceTree = "<group>";
 		};
 		2AC9C96D2369B3540025835B /* SwiftPI */ = {
@@ -393,6 +367,10 @@
 				2A4805CA2366C08D00E95FE7 /* ContentViewOLD.swift */,
 				2AF5728A236B25EE00AB6A2D /* MainViewOLD.swift */,
 				2AA9070C23677E750051CCB1 /* ResultViewOLD.swift */,
+				2A7718D42367045900BF9408 /* QuestionView.swift */,
+				2A420EF7236781D3002B628A /* TimerView.swift */,
+				2AB5C4812368670D009D0613 /* GameSelectionView.swift */,
+				2A4805E42366CC4600E95FE7 /* MathCardButton.swift */,
 			);
 			path = "OLD - CHECK AND DELETE";
 			sourceTree = "<group>";
@@ -402,7 +380,10 @@
 			children = (
 				2AF572C9236B8A5E00AB6A2D /* PlayView.swift */,
 				2A436880236C90FB00FDA11F /* ClockView.swift */,
+				2A7718DA2367479E00BF9408 /* ProgressView.swift */,
+				2AA9070E23677EF80051CCB1 /* SolveTheProblemBanner.swift */,
 				2A436882236CBB8000FDA11F /* QuestionSubView.swift */,
+				2A7718D82367421400BF9408 /* NumberPad.swift */,
 			);
 			path = Play;
 			sourceTree = "<group>";
@@ -517,7 +498,6 @@
 				2AA9070D23677E750051CCB1 /* ResultViewOLD.swift in Sources */,
 				2AF5728B236B25EE00AB6A2D /* MainViewOLD.swift in Sources */,
 				2AF572CC236B8A5F00AB6A2D /* ScoreView.swift in Sources */,
-				2A54D9B52368226D00A50CF1 /* QuestionGenerator.swift in Sources */,
 				2AF572B3236B86A300AB6A2D /* ContentView.swift in Sources */,
 				2A7718D92367421400BF9408 /* NumberPad.swift in Sources */,
 				2A7718D52367045900BF9408 /* QuestionView.swift in Sources */,

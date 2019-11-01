@@ -9,22 +9,16 @@
 import Foundation
 import Combine
 
-struct Mission {
-    var id = UUID()
-}
-
 final class UserData: ObservableObject {
+    
+    func question() -> Question {
+        Question(arithmetic: arithmetic, complexity: complexity, ageGroup: ageGroup)
+    }
     
     @Published var status: Status = .score
     
-    var question: Question? = nil
+//    var question = Question(arithmetic: arithmetic, complexity: complexity, ageGroup: ageGroup)
     
-    var questions: [Question] = QuestionGenerator(questionQty: 2,
-                                                  arithmetic: .addition,
-                                                  complexity: .basic,
-                                                  ageGroup: .sevenToNine).questions
-    
-        
     @Published var missionTimeCount: TimeInterval = 0
     
     var isGameOver: AnyPublisher<Bool, Never> {
@@ -56,6 +50,19 @@ final class UserData: ObservableObject {
     @Published var history: History = historyData {
         didSet {    // save data to local JSON
             saveJSON(data: history, filename: "history.json")
+        }
+    }
+    
+    @Published var ageGroup = AgeGroup(rawValue: UserDefaults.standard.string(forKey: "ageGroup") ?? AgeGroup.sevenToNine.id)! {
+        didSet {
+            UserDefaults.standard.set(ageGroup.rawValue, forKey: "ageGroup")
+        }
+    }
+    
+    @Published var complexity = Complexity(rawValue: UserDefaults.standard.string(forKey: "complexity") ?? Complexity.basic.id)!
+        {
+        didSet {
+            UserDefaults.standard.set(complexity.rawValue, forKey: "complexity")
         }
     }
 }

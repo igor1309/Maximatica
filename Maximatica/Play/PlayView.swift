@@ -11,9 +11,15 @@ import SwiftUI
 struct PlayView: View {
     @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore
+    
+    //  MARK: инициализирую question случайным вопросом (потому что userData еще не инициализирован), но в body генерирую вопрос по теме (arithmetic), с учетом complexity и ageGroup
+    //  (плохо)
+    //  MARK: как исправить????
+    @State private var question = Question()
     @State private var answer = ""
     @State private var count = 0
     @State private var correctAnswerCount = 0
+    
     @State private var showCancelGame = false
     @State private var showSolveTheProblem = false
     
@@ -29,7 +35,9 @@ struct PlayView: View {
     }
     
     var body: some View {
-        VStack(spacing: 32) {
+        question = userData.question()
+        
+        return VStack(spacing: 32) {
             ZStack {
                 HStack {
                     ProgressView(progress: Double(progress))
@@ -48,7 +56,7 @@ struct PlayView: View {
             
             Spacer()
             
-            QuestionSubView(question: userData.question, answer: answer)
+            QuestionSubView(question: question, answer: answer)
             
             NumberPad(text: $answer)
             
@@ -104,15 +112,10 @@ struct PlayView: View {
             }
             return
         }
+
         
         // записать правильный ли ответ
-        switch userData.missionMode {
-        case .time:
-            if Int(answer) == userData.question?.result { correctAnswerCount += 1 }
-        case .qty:
-            if Int(answer) == userData.questions[count].result { correctAnswerCount += 1 }
-        }
-        
+        if Int(answer) == question.result { correctAnswerCount += 1 }
         
         
         if count < userData.questionQty - 1 {
@@ -125,13 +128,8 @@ struct PlayView: View {
             withAnimation {
                 count += 1
                 
-                switch userData.missionMode {
-                case .time:
-                    userData.question = Question(arithmetic: userData.arithmetic, complexity: settings.сomplexity, ageGroup: settings.ageGroup)
-                case .qty:
-                    userData.question = userData.questions[count]
-                }
-                
+                question = userData.question()
+                                
             }
             return
         }

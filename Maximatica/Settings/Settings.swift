@@ -34,9 +34,9 @@ struct Settings: View {
                 }
                 
                 Section(header: Text("Уровень сложности".uppercased())) {
-                    Picker("Сложность", selection: $settings.сomplexity) {
-                        ForEach(Complexity.allCases, id: \.self) { сomplexity in
-                            Text(сomplexity.rawValue).tag(сomplexity)
+                    Picker("Сложность", selection: $userData.complexity) {
+                        ForEach(Complexity.allCases, id: \.self) { complexity in
+                            Text(complexity.rawValue).tag(complexity)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
@@ -44,7 +44,7 @@ struct Settings: View {
                 }
                 
                 Section(header: Text("Возраст".uppercased())) {
-                    Picker("Возраст", selection: $settings.ageGroup) {
+                    Picker("Возраст", selection: $userData.ageGroup) {
                         ForEach(AgeGroup.allCases, id: \.self) { age in
                             Text(age.rawValue).tag(age)
                         }
