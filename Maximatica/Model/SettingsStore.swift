@@ -7,9 +7,17 @@
 //
 
 import Foundation
+import Combine
 
 final class SettingsStore: ObservableObject {
     @Published var gameInterval: TimeInterval = 0
+    
+    var isGameOver: AnyPublisher<Bool, Never> {
+        $gameInterval
+//            .debounce(for: 1.1, scheduler: RunLoop.main)
+            .map { $0 == 0 }
+            .eraseToAnyPublisher()
+    }
     
     @Published var missionMode = MissionMode(rawValue: UserDefaults.standard.string(forKey: "missionMode") ?? MissionMode.time.id)! {
         didSet {

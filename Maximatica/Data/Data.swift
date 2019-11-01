@@ -29,10 +29,10 @@ var loadHistory: History {
                                   complexity: Complexity.allCases.randomElement()!,
                                   arithmetic: Arithmetic.allCases.randomElement()!))
     }
-    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\ngenerated \(results.count) records")
-    for res in results {
-        print("\(res.dateTime.toString()) \(res.correctAnswers) \(res.totalAnswers) \(res.correctAnswersShare.formattedPercentage)")
-    }
+//    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\ngenerated \(results.count) records")
+//    for res in results {
+//        print("\(res.dateTime.toString()) \(res.correctAnswers) \(res.totalAnswers) \(res.correctAnswersShare.formattedPercentage)")
+//    }
     
     return History(results: results.sorted(by: { $0.dateTime >= $1.dateTime }))
     #else

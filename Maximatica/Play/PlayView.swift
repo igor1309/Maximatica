@@ -13,7 +13,13 @@ struct ClockView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        Text(settings.gameInterval.formatMinuteSecond)
+        #if DEBUG
+        if settings.gameInterval == 60 {
+           settings.gameInterval = 10
+        }
+        #endif
+        
+        return Text(settings.gameInterval.formatMinuteSecond)
             .font(.subheadline)
             .foregroundColor(.white)
             .onReceive(timer) { _ in
@@ -24,6 +30,7 @@ struct ClockView: View {
                 case .time:
                     if self.settings.gameInterval > 0 {
                         self.settings.gameInterval -= 1
+                        print("gameInterval \(self.settings.gameInterval)")
                     } else {
                         //  GAME OVER
                         //  MARK: HOW???
@@ -45,6 +52,17 @@ struct PlayView: View {
             Spacer()
             
             ClockView()
+                .onReceive(self.settings.isGameOver) { isGameOver in
+                    if isGameOver {
+                    switch self.settings.missionMode {
+                    case .time:
+                        self.stopGame()
+                    case .qty:
+                        //  for this missionMode time countDown is irrelevant
+                        print("continue")
+                    }
+                    }
+            }
             
             Spacer()
             
@@ -67,6 +85,13 @@ struct PlayView: View {
             
             Spacer()
         }
+    }
+    
+    func stopGame() {
+        //  MARK: FINISH THIS
+        
+        //  MARK: JUST TESTINGGGG!!!!!
+        self.status = .result
     }
 }
 

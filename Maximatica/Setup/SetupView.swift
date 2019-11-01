@@ -67,7 +67,6 @@ struct SetupView: View {
         
         switch settings.missionMode {
         case .time:
-            print("settings.missionTime \(settings.missionTime)")
             settings.gameInterval = settings.missionTime
         case .qty:
             settings.gameInterval = 0
