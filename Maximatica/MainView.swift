@@ -9,18 +9,18 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore
-    @State var status: Status = .score
     
     var body: some View {
         VStack(spacing: 32) {
-            if status == .score { ScoreView(status: $status) }
+            if userData.status == .score { ScoreView() }
             
-            if status == .setup { SetupView(status: $status) }
+            if userData.status == .setup { SetupView() }
             
-            if status == .play { PlayView(status: $status) }
+            if userData.status == .play { PlayView() }
             
-            if status == .result { ResultView(status: $status) }
+            if userData.status == .result { ResultView() }
         }
     }
 }
@@ -32,6 +32,7 @@ struct MainView_Previews: PreviewProvider {
             
             MainView()
         }
+        .environmentObject(UserData())
         .environmentObject(SettingsStore())
     }
 }

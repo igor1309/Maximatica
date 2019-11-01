@@ -10,7 +10,6 @@ import SwiftUI
 
 struct ResultView: View {
     @EnvironmentObject var userData: UserData
-    @Binding var status: Status
     
     var result: TestResult { userData.history.isListEmpty ? TestResult(dateTime: Date(),
                                                                        totalAnswers: 10,
@@ -60,7 +59,7 @@ struct ResultView: View {
             
             Spacer()
             
-            GameButton(action: { self.status = .score }) {
+            GameButton(action: { self.userData.status = .score }) {
                 Text("Ok".uppercased())
             }
             
@@ -74,7 +73,7 @@ struct ResultView_Previews: PreviewProvider {
         ZStack {
             MainGradient()
             
-            ResultView(status: .constant(.result))
+            ResultView()
                 .environmentObject(UserData())
         }
     }

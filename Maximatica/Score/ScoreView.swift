@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct ScoreView: View {
+    @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore
-    @Binding var status: Status
     
     var body: some View {
         VStack(spacing: 32) {
@@ -22,7 +22,7 @@ struct ScoreView: View {
             
             Spacer()
             
-            GameButton(action: { self.status = .setup }) {
+            GameButton(action: { self.userData.status = .setup }) {
                 //  выбрать миссию
                 Text("Хочу еще!".uppercased())
             }
@@ -37,8 +37,9 @@ struct ScoreView_Previews: PreviewProvider {
         ZStack {
             MainGradient()
             
-            ScoreView(status: .constant(.score))
+            ScoreView()
         }
+        .environmentObject(UserData())
         .environmentObject(SettingsStore())
     }
 }

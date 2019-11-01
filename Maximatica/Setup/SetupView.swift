@@ -11,7 +11,6 @@ import SwiftUI
 struct SetupView: View {
     @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore
-    @Binding var status: Status
     @State private var selected = 5
     
     var body: some View {
@@ -57,7 +56,7 @@ struct SetupView: View {
     }
     
     private func goBack() {
-        status = .score
+        userData.status = .score
     }
     
     private func runGame() {
@@ -71,7 +70,7 @@ struct SetupView: View {
         
         
         //  MARK: FINISH THE CODE
-
+        
         
         switch userData.missionMode {
         case .time:
@@ -88,7 +87,7 @@ struct SetupView: View {
         }
         
         
-        status = .play
+        userData.status = .play
     }
 }
 
@@ -97,7 +96,8 @@ struct SetupView_Previews: PreviewProvider {
         ZStack {
             MainGradient()
             
-            SetupView(status: .constant(.setup))
+            SetupView()
+                .environmentObject(UserData())
                 .environmentObject(SettingsStore())
         }
     }

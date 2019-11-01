@@ -10,10 +10,13 @@ import Foundation
 import Combine
 
 struct Mission {
-    id = UUID()
+    var id = UUID()
 }
 
 final class UserData: ObservableObject {
+    
+    @Published var status: Status = .score
+    
     var question: Question? = nil
     
     var questions: [Question] = QuestionGenerator(questionQty: 2,

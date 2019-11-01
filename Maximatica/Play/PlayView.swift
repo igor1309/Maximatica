@@ -11,7 +11,6 @@ import SwiftUI
 struct PlayView: View {
     @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore
-    @Binding var status: Status
     @State private var answer = ""
     @State private var count = 0
     @State private var correctAnswerCount = 0
@@ -87,7 +86,7 @@ struct PlayView: View {
         
         //  MARK: Начислить штраф
         
-        status = .setup
+        userData.status = .setup
     }
     
     func nextStep() {
@@ -148,7 +147,7 @@ struct PlayView: View {
         //  MARK: FINISH THIS
         
         //  MARK: JUST TESTINGGGG!!!!!
-        self.status = .result
+        userData.status = .result
     }
 }
 
@@ -157,7 +156,7 @@ struct PlayView_Previews: PreviewProvider {
         ZStack {
             MainGradient()
             
-            PlayView(status: .constant(.play))
+            PlayView()
         }
         .environmentObject(UserData())
         .environmentObject(SettingsStore())
