@@ -22,7 +22,7 @@ struct PlayView: View {
         withAnimation {
             switch userData.missionMode {
             case .time:
-                return Double(userData.gameInterval) / Double(userData.missionTime)
+                return Double(userData.missionTimeCount) / Double(userData.missionTime)
             case .qty:
                 return Double(count) / Double(userData.questionQty)
             }

@@ -75,11 +75,11 @@ struct SetupView: View {
         
         switch userData.missionMode {
         case .time:
-            userData.gameInterval = userData.missionTime
+            userData.missionTimeCount = userData.missionTime
             userData.question = Question(arithmetic: userData.arithmetic, complexity: settings.сomplexity, ageGroup: settings.ageGroup)
             userData.questions = []
         case .qty:
-            userData.gameInterval = 0
+            userData.missionTimeCount = 0
             userData.questions = QuestionGenerator(questionQty: userData.questionQty,
                                                    arithmetic: userData.arithmetic,
                                                    complexity: settings.сomplexity,

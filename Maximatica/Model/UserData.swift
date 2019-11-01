@@ -9,8 +9,11 @@
 import Foundation
 import Combine
 
+struct Mission {
+    id = UUID()
+}
+
 final class UserData: ObservableObject {
-    
     var question: Question? = nil
     
     var questions: [Question] = QuestionGenerator(questionQty: 2,
@@ -18,10 +21,11 @@ final class UserData: ObservableObject {
                                                   complexity: .basic,
                                                   ageGroup: .sevenToNine).questions
     
-    @Published var gameInterval: TimeInterval = 0
+        
+    @Published var missionTimeCount: TimeInterval = 0
     
     var isGameOver: AnyPublisher<Bool, Never> {
-        $gameInterval
+        $missionTimeCount
             .map { $0 == 0 && self.missionMode == .time }
             .eraseToAnyPublisher()
     }

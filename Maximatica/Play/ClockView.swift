@@ -14,24 +14,24 @@ struct ClockView: View {
     
     var body: some View {
         #if DEBUG
-        if userData.gameInterval == 60 {
-            userData.gameInterval = 10
+        if userData.missionTimeCount == 60 {
+            userData.missionTimeCount = 10
         }
         #endif
         
-        return Text(userData.gameInterval.formatMinuteSecond)
+        return Text(userData.missionTimeCount.formatMinuteSecond)
             .font(.subheadline)
             .foregroundColor(.white)
             .onReceive(timer) { _ in
                 switch self.userData.missionMode {
                 case .qty:
                     //  MARK: what here??????
-                    self.userData.gameInterval += 1
+                    self.userData.missionTimeCount += 1
                 case .time:
-                    if self.userData.gameInterval > 0 {
-                        self.userData.gameInterval -= 1
+                    if self.userData.missionTimeCount > 0 {
+                        self.userData.missionTimeCount -= 1
                         #if DEBUG
-                        print("gameInterval \(self.userData.gameInterval)")
+                        print("missionTimeCount \(self.userData.missionTimeCount)")
                         #endif
                     } else {
                         //  GAME OVER
