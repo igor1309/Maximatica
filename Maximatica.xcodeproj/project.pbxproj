@@ -14,6 +14,7 @@
 		2A1EE3A0236A13CC00FFF5C3 /* HistoryCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EE39F236A13CC00FFF5C3 /* HistoryCharts.swift */; };
 		2A420EF8236781D3002B628A /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A420EF7236781D3002B628A /* TimerView.swift */; };
 		2A420EFC236783FC002B628A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A420EFB236783FC002B628A /* CustomButton.swift */; };
+		2A436881236C90FB00FDA11F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A436880236C90FB00FDA11F /* ClockView.swift */; };
 		2A4805C72366C08D00E95FE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4805C62366C08D00E95FE7 /* AppDelegate.swift */; };
 		2A4805C92366C08D00E95FE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4805C82366C08D00E95FE7 /* SceneDelegate.swift */; };
 		2A4805CB2366C08D00E95FE7 /* ContentViewOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4805CA2366C08D00E95FE7 /* ContentViewOLD.swift */; };
@@ -65,6 +66,7 @@
 		2A1EE39F236A13CC00FFF5C3 /* HistoryCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCharts.swift; sourceTree = "<group>"; };
 		2A420EF7236781D3002B628A /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		2A420EFB236783FC002B628A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		2A436880236C90FB00FDA11F /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		2A4805C32366C08D00E95FE7 /* Maximatica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maximatica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A4805C62366C08D00E95FE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A4805C82366C08D00E95FE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF572C9236B8A5E00AB6A2D /* PlayView.swift */,
+				2A436880236C90FB00FDA11F /* ClockView.swift */,
 			);
 			path = Play;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				2A54D9A923680F0100A50CF1 /* MathButtonStyle.swift in Sources */,
 				2AF5728D236B284400AB6A2D /* StatusView.swift in Sources */,
 				2A4805C72366C08D00E95FE7 /* AppDelegate.swift in Sources */,
+				2A436881236C90FB00FDA11F /* ClockView.swift in Sources */,
 				2A420EFC236783FC002B628A /* CustomButton.swift in Sources */,
 				2AF572B5236B870900AB6A2D /* MainView.swift in Sources */,
 				2AF572D0236B8A5F00AB6A2D /* GameStatusTitle.swift in Sources */,

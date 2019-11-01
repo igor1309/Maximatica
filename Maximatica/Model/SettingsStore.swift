@@ -14,8 +14,7 @@ final class SettingsStore: ObservableObject {
     
     var isGameOver: AnyPublisher<Bool, Never> {
         $gameInterval
-//            .debounce(for: 1.1, scheduler: RunLoop.main)
-            .map { $0 == 0 }
+            .map { $0 == 0 && self.missionMode == .time }
             .eraseToAnyPublisher()
     }
     
