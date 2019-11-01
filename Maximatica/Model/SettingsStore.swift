@@ -7,23 +7,8 @@
 //
 
 import Foundation
-import Combine
 
 final class SettingsStore: ObservableObject {
-    @Published var gameInterval: TimeInterval = 0
-    
-    var isGameOver: AnyPublisher<Bool, Never> {
-        $gameInterval
-            .map { $0 == 0 && self.missionMode == .time }
-            .eraseToAnyPublisher()
-    }
-    
-    @Published var missionMode = MissionMode(rawValue: UserDefaults.standard.string(forKey: "missionMode") ?? MissionMode.time.id)! {
-        didSet {
-            UserDefaults.standard.set(missionMode.rawValue, forKey: "missionMode")
-        }
-    }
-    
     @Published var ageGroup = AgeGroup(rawValue: UserDefaults.standard.string(forKey: "ageGroup") ?? AgeGroup.sevenToNine.id)! {
         didSet {
             UserDefaults.standard.set(ageGroup.rawValue, forKey: "ageGroup")
@@ -41,18 +26,6 @@ final class SettingsStore: ObservableObject {
         {
         didSet {
             UserDefaults.standard.set(period.rawValue, forKey: "period")
-        }
-    }
-    
-    @Published var questionQty = UserDefaults.standard.integer(forKey: "questionQty") {
-        didSet {
-            UserDefaults.standard.set(questionQty, forKey: "questionQty")
-        }
-    }
-    
-    @Published var missionTime = TimeInterval(UserDefaults.standard.integer(forKey: "missionTime")) {
-        didSet {
-            UserDefaults.standard.set(missionTime, forKey: "missionTime")
         }
     }
     

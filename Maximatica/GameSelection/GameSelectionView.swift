@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct GameSelectionView: View {
+    @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore
     @Binding var isRunning: Bool
     @Binding var arithmetic: Arithmetic?
@@ -35,7 +36,7 @@ struct GameSelectionView: View {
         
         //  MARK: додумать анимацию
         //  rotation?
-            questions = QuestionGenerator(questionQty: settings.questionQty,
+            questions = QuestionGenerator(questionQty: userData.questionQty,
                                           arithmetic: arithmetic,
                                           complexity: settings.сomplexity,
                                           ageGroup: settings.ageGroup).questions

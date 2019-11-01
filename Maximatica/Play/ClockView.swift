@@ -9,29 +9,29 @@
 import SwiftUI
 
 struct ClockView: View {
-    @EnvironmentObject var settings: SettingsStore
+    @EnvironmentObject var userData: UserData
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         #if DEBUG
-        if settings.gameInterval == 60 {
-            settings.gameInterval = 10
+        if userData.gameInterval == 60 {
+            userData.gameInterval = 10
         }
         #endif
         
-        return Text(settings.gameInterval.formatMinuteSecond)
+        return Text(userData.gameInterval.formatMinuteSecond)
             .font(.subheadline)
             .foregroundColor(.white)
             .onReceive(timer) { _ in
-                switch self.settings.missionMode {
+                switch self.userData.missionMode {
                 case .qty:
                     //  MARK: what here??????
-                    self.settings.gameInterval += 1
+                    self.userData.gameInterval += 1
                 case .time:
-                    if self.settings.gameInterval > 0 {
-                        self.settings.gameInterval -= 1
+                    if self.userData.gameInterval > 0 {
+                        self.userData.gameInterval -= 1
                         #if DEBUG
-                        print("gameInterval \(self.settings.gameInterval)")
+                        print("gameInterval \(self.userData.gameInterval)")
                         #endif
                     } else {
                         //  GAME OVER
@@ -48,6 +48,6 @@ struct ClockView_Previews: PreviewProvider {
         ClockView()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.blue)
-            .environmentObject(SettingsStore())
+            .environmentObject(UserData())
     }
 }

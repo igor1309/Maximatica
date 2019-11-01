@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct SetupView: View {
+    @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore
     @Binding var status: Status
     @State var arithmetic: Arithmetic?
@@ -65,11 +66,11 @@ struct SetupView: View {
             generator.impactOccurred()
         }
         
-        switch settings.missionMode {
+        switch userData.missionMode {
         case .time:
-            settings.gameInterval = settings.missionTime
+            userData.gameInterval = userData.missionTime
         case .qty:
-            settings.gameInterval = 0
+            userData.gameInterval = 0
         }
 
         //  MARK: додумать анимацию

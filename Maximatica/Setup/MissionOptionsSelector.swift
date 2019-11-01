@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct MissionOptionsSelector: View {
-    @EnvironmentObject var settings: SettingsStore
+    @EnvironmentObject var userData: UserData
     
     var body: some View {
         VStack {
-//            Text("Выбери миссию".uppercased())
-//                .font(.headline)
-//                .foregroundColor(.white)
-            Picker("Миссия", selection: $settings.missionMode
+            //            Text("Выбери миссию".uppercased())
+            //                .font(.headline)
+            //                .foregroundColor(.white)
+            Picker("Миссия", selection: $userData.missionMode
                 .animation(Animation.easeOut(duration: 0.5))) {
                     
                     ForEach(MissionMode.allCases, id: \.self) { mission in
@@ -26,7 +26,7 @@ struct MissionOptionsSelector: View {
             .pickerStyle(SegmentedPickerStyle())
             .labelsHidden()
             
-            if settings.missionMode == .qty {
+            if userData.missionMode == .qty {
                 MissionQtySelector()
             } else {
                 MissionTimeSelector()
@@ -36,8 +36,7 @@ struct MissionOptionsSelector: View {
 }
 
 struct MissionQtySelector: View {
-    @EnvironmentObject var settings: SettingsStore
-    
+    @EnvironmentObject var userData: UserData
     private var qtyArray: [Int] {
         #if DEBUG
         return [2, 10, 20, 50, 100]
@@ -47,7 +46,7 @@ struct MissionQtySelector: View {
     }
     
     var body: some View {
-        Picker("Количество вопросов", selection: $settings.questionQty.animation()) {
+        Picker("Количество вопросов", selection: $userData.questionQty.animation()) {
             ForEach(qtyArray, id: \.self) { qty in
                 Text("\(qty)").tag(qty)
             }
@@ -55,14 +54,14 @@ struct MissionQtySelector: View {
         .pickerStyle(SegmentedPickerStyle())
         .labelsHidden()
         .onAppear {
-            if self.settings.questionQty == 0 {
-                self.settings.questionQty = 10 }
+            if self.userData.questionQty == 0 {
+                self.userData.questionQty = 10 }
         }
     }
 }
 
 struct MissionTimeSelector: View {
-    @EnvironmentObject var settings: SettingsStore
+    @EnvironmentObject var userData: UserData
     
     private var timeArray: [Int] {
         #if DEBUG
@@ -73,7 +72,7 @@ struct MissionTimeSelector: View {
     }
     
     var body: some View {
-        Picker("Время миссии", selection: $settings.missionTime.animation()) {
+        Picker("Время миссии", selection: $userData.missionTime.animation()) {
             ForEach(timeArray, id: \.self) { item in
                 Text("\(item) минут").tag(TimeInterval(item * 60))
             }
@@ -81,9 +80,9 @@ struct MissionTimeSelector: View {
         .pickerStyle(SegmentedPickerStyle())
         .labelsHidden()
         .onAppear {
-            if self.settings.missionTime == 0 {
+            if self.userData.missionTime == 0 {
                 //  10 minutes = 600 seconds
-                self.settings.missionTime = 600
+                self.userData.missionTime = 600
             }
         }
     }

@@ -70,7 +70,7 @@ struct QuestionView: View {
                             Spacer()
                         }
                         
-                        ProgressView(progress: Double(progress) / Double(settings.questionQty))
+                        ProgressView(progress: Double(progress) / Double(userData.questionQty))
                     }
                     .padding(.horizontal)
                     .frame(minHeight: 85)
@@ -149,7 +149,7 @@ struct QuestionView: View {
         // записать ответ
         if Int(answer) == questions[progress].result { correctAnswerCount += 1 }
         
-        if progress < settings.questionQty - 1 {
+        if progress < userData.questionQty - 1 {
             if hapticsAvailable {
                 let generator = UIImpactFeedbackGenerator(style: .light)
                 generator.impactOccurred()

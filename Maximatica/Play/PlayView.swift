@@ -9,27 +9,20 @@
 import SwiftUI
 
 struct PlayView: View {
+    @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore
     @Binding var status: Status
+    @State private var progress = 0
     @State private var showCancelGame = false
     
     var body: some View {
         VStack(spacing: 32) {
-            GameStatusTitle(title: "ИГРА…")
-            Spacer()
+            //            GameStatusTitle(title: "ИГРА…")
+            //            Spacer()
             
             ClockView()
-                .onReceive(self.settings.isGameOver) { isGameOver in
+                .onReceive(self.userData.isGameOver) { isGameOver in
                     if isGameOver { self.stopGame() }
-                    //                    if isGameOver {
-                    //                        switch self.settings.missionMode {
-                    //                        case .time:
-                    //                            self.stopGame()
-                    //                        case .qty:
-                    //                            //  for this missionMode time countDown is irrelevant
-                    //                            print("continue")
-                    //                        }
-                    //                    }
             }
             
             Spacer()
@@ -48,12 +41,17 @@ struct PlayView: View {
                                 buttons: [
                                     .default(Text("Продолжить миссию")),
                                     .destructive(Text("Принять штраф"),
-                                                 action: { self.status = .setup })])
+                                                 action: {
+                                                    //  MARK: Начислить штраф
+                                                    self.status = .setup })])
                 }
                 
                 Spacer()
                 
-                GameButton(action: { self.status = .result }) {
+                GameButton(action: {
+                    self.status = .result
+                    
+                }) {
                     Text("Дальше".uppercased())
                 }
             }
@@ -62,6 +60,13 @@ struct PlayView: View {
             
             Spacer()
         }
+    }
+    
+    func nextQuestion() {
+        
+    }
+    
+    func saveHistory() {
     }
     
     func stopGame() {
@@ -79,6 +84,7 @@ struct PlayView_Previews: PreviewProvider {
             
             PlayView(status: .constant(.play))
         }
+        .environmentObject(UserData())
         .environmentObject(SettingsStore())
     }
 }
