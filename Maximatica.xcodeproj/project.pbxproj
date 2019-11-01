@@ -55,6 +55,7 @@
 		2AF572CF236B8A5F00AB6A2D /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF572C8236B8A5E00AB6A2D /* GameButton.swift */; };
 		2AF572D0236B8A5F00AB6A2D /* GameStatusTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF572C7236B8A5E00AB6A2D /* GameStatusTitle.swift */; };
 		2AF572D1236B8A5F00AB6A2D /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF572C9236B8A5E00AB6A2D /* PlayView.swift */; };
+		2AF572D6236C1BEF00AB6A2D /* SelectableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF572D5236C1BEF00AB6A2D /* SelectableButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +123,7 @@
 		2AF572C9236B8A5E00AB6A2D /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 		2AF572CA236B8A5F00AB6A2D /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		2AF572CB236B8A5F00AB6A2D /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		2AF572D5236C1BEF00AB6A2D /* SelectableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF572C8236B8A5E00AB6A2D /* GameButton.swift */,
+				2AF572D5236C1BEF00AB6A2D /* SelectableButton.swift */,
 				2AF572C7236B8A5E00AB6A2D /* GameStatusTitle.swift */,
 				2A420EFB236783FC002B628A /* CustomButton.swift */,
 				2A54D9A823680F0100A50CF1 /* MathButtonStyle.swift */,
@@ -525,6 +528,7 @@
 				2A0184E82369B3F1000DFFA5 /* VerticalBar.swift in Sources */,
 				2A4805C92366C08D00E95FE7 /* SceneDelegate.swift in Sources */,
 				2A54D9B123681F5000A50CF1 /* Data.swift in Sources */,
+				2AF572D6236C1BEF00AB6A2D /* SelectableButton.swift in Sources */,
 				2A7718D72367047000BF9408 /* Question.swift in Sources */,
 				2A54D9AD23681DEF00A50CF1 /* WorkWithJSON.swift in Sources */,
 				2A7718DB2367479E00BF9408 /* ProgressView.swift in Sources */,

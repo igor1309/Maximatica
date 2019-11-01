@@ -37,10 +37,12 @@ struct GameButton<Something: View>: View {
                 .foregroundColor(.white)
                 .padding(color == .red ? 4 : 16)
                 .padding(.horizontal)
-                .background(Capsule().fill(color)
+                .background(Capsule(style: .circular)
+                    .fill(color)
                     .opacity(color == .red ? 1 : 0.3))
                 .background(Capsule(style: .circular)
-                    .stroke().foregroundColor(.white))
+                    .stroke()
+                    .foregroundColor(.white))
         }
     }
 }
@@ -53,10 +55,13 @@ struct GameButton_Previews: PreviewProvider {
             VStack(spacing: 16) {
                 GameButton(action: {}) { Text("default color") }
                 
-                GameButton(color: .purple, action: {}) { Text("Purple") }
+                GameButton(color: .purple, action: {}) { Text("Purple".uppercased()) }
                 
                 GameButton(color: .red, action: {}) { Text("red") }
+                
+                Spacer()
             }
+            .padding(.top).padding(.top)
         }
     }
 }

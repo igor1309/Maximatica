@@ -32,12 +32,13 @@ struct GameSelectionView: View {
             generator.impactOccurred()
         }
         self.arithmetic = arithmetic
+        
         //  MARK: додумать анимацию
         //  rotation?
-        withAnimation() {
             questions = QuestionGenerator(questionQty: settings.questionQty,
                                           arithmetic: arithmetic ?? Arithmetic.allCases.randomElement()!,
                                           complexity: settings.сomplexity).questions
+        withAnimation() {
             isRunning = true
         }
     }

@@ -11,6 +11,8 @@ import SwiftUI
 struct SetupView: View {
     @EnvironmentObject var settings: SettingsStore
     @Binding var status: Status
+    @State var arithmetic: Arithmetic?
+    @State private var selected = 5
     
     var body: some View {
         VStack(spacing: 16) {
@@ -20,19 +22,16 @@ struct SetupView: View {
                 MissionOptionsSelector()
                     .padding(.horizontal)
             }
-
+            
             Spacer()
-
             
+            SelectableButton(title: "Вперемешку", selected: self.$selected, index: 5) { self.arithmetic = nil }
             
-            ForEach(Arithmetic.allCases, id: \.self) { arithmetic in
-                MathCardButton(arithmetic.id) {  }
+            ForEach(Arithmetic.allCases.indices, id: \.self) { index in
+                
+                SelectableButton(title: Arithmetic.allCases[index].id, selected: self.$selected, index: index) { self.arithmetic = Arithmetic.allCases[index] }
             }
-            
-            MathCardButton("Всё сразу", color: .yellow) {  }
-            
-            
-            
+
             Spacer()
             
             HStack {
@@ -41,15 +40,33 @@ struct SetupView: View {
                 }
                 Spacer()
                 
-                GameButton(action: { self.status = .play }) {
+                GameButton(action: {
+                    //  MARK: FINISH THE CODE
+                    self.status = .play
+                }) {
                     Text("играть".uppercased())
                 }
             }
             .padding(.horizontal)
             .padding(.horizontal)
-
+            
             Spacer()
         }
+    }
+    
+    private func run(_ arithmetic: Arithmetic?) {
+        if hapticsAvailable {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+        }
+        self.arithmetic = arithmetic
+
+        //  MARK: додумать анимацию
+        //  rotation?
+        
+        
+        //  MARK: FINISH THE CODE
+        
     }
 }
 
