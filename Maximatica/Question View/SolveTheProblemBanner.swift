@@ -16,9 +16,9 @@ struct SolveTheProblemBanner: View {
             .foregroundColor(.white)
             .padding(6)
             .padding(.horizontal)
-            .background(RoundedRectangle(cornerRadius: 8, style: .continuous)
+            .background(RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .foregroundColor(.red))
-            .padding()
+            .padding(.horizontal)
     }
 }
 

@@ -10,16 +10,18 @@ import SwiftUI
 
 struct ProgressView: View {
     var progress: Double
+    let width: CGFloat = 120
+    let height: CGFloat = 8
     
     var body: some View {
         ZStack(alignment: .leading) {
-            RoundedRectangle(cornerRadius: 8)
-                .foregroundColor(.white)
-                .frame(width: 120, height: 16)
+            Capsule()
+                .foregroundColor(.white).opacity(0.4)
+                .frame(width: width, height: height)
             
-            RoundedRectangle(cornerRadius: 8)
-                .foregroundColor(.blue)
-                .frame(width: 120 * CGFloat(progress), height: 16)
+            Capsule()
+                .foregroundColor(.yellow)
+                .frame(width: width * CGFloat(progress), height: height)
             
         }
     }

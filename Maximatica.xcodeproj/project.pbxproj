@@ -15,6 +15,7 @@
 		2A420EF8236781D3002B628A /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A420EF7236781D3002B628A /* TimerView.swift */; };
 		2A420EFC236783FC002B628A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A420EFB236783FC002B628A /* CustomButton.swift */; };
 		2A436881236C90FB00FDA11F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A436880236C90FB00FDA11F /* ClockView.swift */; };
+		2A436883236CBB8000FDA11F /* QuestionSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A436882236CBB8000FDA11F /* QuestionSubView.swift */; };
 		2A4805C72366C08D00E95FE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4805C62366C08D00E95FE7 /* AppDelegate.swift */; };
 		2A4805C92366C08D00E95FE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4805C82366C08D00E95FE7 /* SceneDelegate.swift */; };
 		2A4805CB2366C08D00E95FE7 /* ContentViewOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4805CA2366C08D00E95FE7 /* ContentViewOLD.swift */; };
@@ -67,6 +68,7 @@
 		2A420EF7236781D3002B628A /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		2A420EFB236783FC002B628A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		2A436880236C90FB00FDA11F /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		2A436882236CBB8000FDA11F /* QuestionSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSubView.swift; sourceTree = "<group>"; };
 		2A4805C32366C08D00E95FE7 /* Maximatica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maximatica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A4805C62366C08D00E95FE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A4805C82366C08D00E95FE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 			children = (
 				2AF572C9236B8A5E00AB6A2D /* PlayView.swift */,
 				2A436880236C90FB00FDA11F /* ClockView.swift */,
+				2A436882236CBB8000FDA11F /* QuestionSubView.swift */,
 			);
 			path = Play;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				2A7718D52367045900BF9408 /* QuestionView.swift in Sources */,
 				2A1EE3A0236A13CC00FFF5C3 /* HistoryCharts.swift in Sources */,
 				2AF4338A2369B2D80087C782 /* BarsView.swift in Sources */,
+				2A436883236CBB8000FDA11F /* QuestionSubView.swift in Sources */,
 				2A54D9BB236825CF00A50CF1 /* HistoryRow.swift in Sources */,
 				2A4805EA2366E2C100E95FE7 /* Settings.swift in Sources */,
 				2A9B56F42369683500ACEE8F /* MainGradient.swift in Sources */,

@@ -11,6 +11,13 @@ import Combine
 
 final class UserData: ObservableObject {
     
+    var question: Question? = nil
+    
+    var questions: [Question] = QuestionGenerator(questionQty: 2,
+                                                  arithmetic: .addition,
+                                                  complexity: .basic,
+                                                  ageGroup: .sevenToNine).questions
+    
     @Published var gameInterval: TimeInterval = 0
     
     var isGameOver: AnyPublisher<Bool, Never> {
@@ -36,6 +43,8 @@ final class UserData: ObservableObject {
             UserDefaults.standard.set(questionQty, forKey: "questionQty")
         }
     }
+    
+    var arithmetic: Arithmetic?
     
     @Published var history: History = historyData {
         didSet {    // save data to local JSON

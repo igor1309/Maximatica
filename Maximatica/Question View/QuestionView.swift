@@ -8,20 +8,6 @@
 
 import SwiftUI
 
-struct QuestionSubView: View {
-    var question: Question
-    var answer: String
-    
-    var body: some View {
-        Text("\(question.left) \(question.sign) \(question.right) = \(answer)")
-            .font(Font.system(size: 64))
-            .fontWeight(.bold)
-            .frame(maxWidth: .infinity, maxHeight: 100, alignment: .leading)
-            .padding()
-    }
-}
-
-
 struct QuestionView: View {
     @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore

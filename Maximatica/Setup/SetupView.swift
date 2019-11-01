@@ -12,7 +12,6 @@ struct SetupView: View {
     @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore
     @Binding var status: Status
-    @State var arithmetic: Arithmetic?
     @State private var selected = 5
     
     var body: some View {
@@ -26,13 +25,13 @@ struct SetupView: View {
             
             Spacer()
             
-            SelectableButton(title: "Вперемешку", selected: self.$selected, index: 5) { self.arithmetic = nil }
+            SelectableButton(title: "Вперемешку", selected: self.$selected, index: 5) { self.userData.arithmetic = nil }
             
             ForEach(Arithmetic.allCases.indices, id: \.self) { index in
                 
-                SelectableButton(title: Arithmetic.allCases[index].id, selected: self.$selected, index: index) { self.arithmetic = Arithmetic.allCases[index] }
+                SelectableButton(title: Arithmetic.allCases[index].id, selected: self.$selected, index: index) { self.userData.arithmetic = Arithmetic.allCases[index] }
             }
-
+            
             Spacer()
             
             Text("За прерывание миссии штраф 10 баллов.")
@@ -41,15 +40,12 @@ struct SetupView: View {
                 .shadow(color: .systemIndigo, radius: 8)
             
             HStack {
-                GameButton(color: .clear, action: { self.status = .score }) {
+                GameButton(color: .clear, action: { self.goBack() }) {
                     Text("Отмена".uppercased())
                 }
                 Spacer()
                 
-                GameButton(action: {
-                    //  MARK: FINISH THE CODE
-                    self.runGame()
-                }) {
+                GameButton(action: { self.runGame() }) {
                     Text("играть".uppercased())
                 }
             }
@@ -60,24 +56,38 @@ struct SetupView: View {
         }
     }
     
+    private func goBack() {
+        status = .score
+    }
+    
     private func runGame() {
         if hapticsAvailable {
             let generator = UIImpactFeedbackGenerator(style: .light)
             generator.impactOccurred()
         }
         
-        switch userData.missionMode {
-        case .time:
-            userData.gameInterval = userData.missionTime
-        case .qty:
-            userData.gameInterval = 0
-        }
-
         //  MARK: додумать анимацию
         //  rotation?
         
         
         //  MARK: FINISH THE CODE
+
+        
+        switch userData.missionMode {
+        case .time:
+            userData.gameInterval = userData.missionTime
+            userData.question = Question(arithmetic: userData.arithmetic, complexity: settings.сomplexity, ageGroup: settings.ageGroup)
+            userData.questions = []
+        case .qty:
+            userData.gameInterval = 0
+            userData.questions = QuestionGenerator(questionQty: userData.questionQty,
+                                                   arithmetic: userData.arithmetic,
+                                                   complexity: settings.сomplexity,
+                                                   ageGroup: settings.ageGroup).questions
+            userData.question = userData.questions[0]
+        }
+        
+        
         status = .play
     }
 }
