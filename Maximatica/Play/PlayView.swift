@@ -19,11 +19,11 @@ struct PlayView: View {
     
     var progress: Double {
         withAnimation {
-            switch userData.missionMode {
+            switch userData.mission.missionMode {
             case .time:
-                return Double(userData.missionTimeCount) / Double(userData.missionTime)
+                return Double(userData.missionTimeCount) / Double(userData.mission.missionTime)
             case .qty:
-                return Double(count) / Double(userData.questionQty)
+                return Double(count) / Double(userData.mission.questionQty)
             }
         }
     }
@@ -48,7 +48,7 @@ struct PlayView: View {
             
             Spacer()
             
-            QuestionSubView(question: userData.question, answer: answer)
+            QuestionSubView(question: userData.mission.question, answer: answer)
             
             NumberPad(text: $answer)
             
@@ -106,16 +106,16 @@ struct PlayView: View {
         }
         
         // записать правильный ли ответ
-        switch userData.missionMode {
+        switch userData.mission.missionMode {
         case .time:
-            if Int(answer) == userData.question?.result { correctAnswerCount += 1 }
+            if Int(answer) == userData.mission.question?.result { correctAnswerCount += 1 }
         case .qty:
-            if Int(answer) == userData.questions[count].result { correctAnswerCount += 1 }
+            if Int(answer) == userData.mission.questions[count].result { correctAnswerCount += 1 }
         }
         
         
         
-        if count < userData.questionQty - 1 {
+        if count < userData.mission.questionQty - 1 {
             if hapticsAvailable {
                 let generator = UIImpactFeedbackGenerator(style: .light)
                 generator.impactOccurred()
@@ -125,11 +125,11 @@ struct PlayView: View {
             withAnimation {
                 count += 1
                 
-                switch userData.missionMode {
+                switch userData.mission.missionMode {
                 case .time:
-                    userData.question = Question(arithmetic: userData.arithmetic, complexity: settings.сomplexity, ageGroup: settings.ageGroup)
+                    userData.mission.question = Question(arithmetic: userData.mission.arithmetic, complexity: settings.сomplexity, ageGroup: settings.ageGroup)
                 case .qty:
-                    userData.question = userData.questions[count]
+                    userData.mission.question = userData.mission.questions[count]
                 }
                 
             }

@@ -24,11 +24,11 @@ struct SetupView: View {
             
             Spacer()
             
-            SelectableButton(title: "Вперемешку", selected: self.$selected, index: 5) { self.userData.arithmetic = nil }
+            SelectableButton(title: "Вперемешку", selected: self.$selected, index: 5) { self.userData.mission.arithmetic = nil }
             
             ForEach(Arithmetic.allCases.indices, id: \.self) { index in
                 
-                SelectableButton(title: Arithmetic.allCases[index].id, selected: self.$selected, index: index) { self.userData.arithmetic = Arithmetic.allCases[index] }
+                SelectableButton(title: Arithmetic.allCases[index].id, selected: self.$selected, index: index) { self.userData.mission.arithmetic = Arithmetic.allCases[index] }
             }
             
             Spacer()
@@ -72,18 +72,18 @@ struct SetupView: View {
         //  MARK: FINISH THE CODE
         
         
-        switch userData.missionMode {
+        switch userData.mission.missionMode {
         case .time:
-            userData.missionTimeCount = userData.missionTime
-            userData.question = Question(arithmetic: userData.arithmetic, complexity: settings.сomplexity, ageGroup: settings.ageGroup)
-            userData.questions = []
+            userData.missionTimeCount = userData.mission.missionTime
+            userData.mission.question = Question(arithmetic: userData.mission.arithmetic, complexity: settings.сomplexity, ageGroup: settings.ageGroup)
+            userData.mission.questions = []
         case .qty:
             userData.missionTimeCount = 0
-            userData.questions = QuestionGenerator(questionQty: userData.questionQty,
-                                                   arithmetic: userData.arithmetic,
+            userData.mission.questions = QuestionGenerator(questionQty: userData.mission.questionQty,
+                                                   arithmetic: userData.mission.arithmetic,
                                                    complexity: settings.сomplexity,
                                                    ageGroup: settings.ageGroup).questions
-            userData.question = userData.questions[0]
+            userData.mission.question = userData.mission.questions[0]
         }
         
         

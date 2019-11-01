@@ -16,7 +16,7 @@ struct MissionOptionsSelector: View {
             //            Text("Выбери миссию".uppercased())
             //                .font(.headline)
             //                .foregroundColor(.white)
-            Picker("Миссия", selection: $userData.missionMode
+            Picker("Миссия", selection: $userData.mission.missionMode
                 .animation(Animation.easeOut(duration: 0.5))) {
                     
                     ForEach(MissionMode.allCases, id: \.self) { mission in
@@ -26,7 +26,7 @@ struct MissionOptionsSelector: View {
             .pickerStyle(SegmentedPickerStyle())
             .labelsHidden()
             
-            if userData.missionMode == .qty {
+            if userData.mission.missionMode == .qty {
                 MissionQtySelector()
             } else {
                 MissionTimeSelector()
@@ -46,7 +46,7 @@ struct MissionQtySelector: View {
     }
     
     var body: some View {
-        Picker("Количество вопросов", selection: $userData.questionQty.animation()) {
+        Picker("Количество вопросов", selection: $userData.mission.questionQty.animation()) {
             ForEach(qtyArray, id: \.self) { qty in
                 Text("\(qty)").tag(qty)
             }
@@ -54,8 +54,8 @@ struct MissionQtySelector: View {
         .pickerStyle(SegmentedPickerStyle())
         .labelsHidden()
         .onAppear {
-            if self.userData.questionQty == 0 {
-                self.userData.questionQty = 10 }
+            if self.userData.mission.questionQty == 0 {
+                self.userData.mission.questionQty = 10 }
         }
     }
 }
@@ -72,7 +72,7 @@ struct MissionTimeSelector: View {
     }
     
     var body: some View {
-        Picker("Время миссии", selection: $userData.missionTime.animation()) {
+        Picker("Время миссии", selection: $userData.mission.missionTime.animation()) {
             ForEach(timeArray, id: \.self) { item in
                 Text("\(item) минут").tag(TimeInterval(item * 60))
             }
@@ -80,9 +80,9 @@ struct MissionTimeSelector: View {
         .pickerStyle(SegmentedPickerStyle())
         .labelsHidden()
         .onAppear {
-            if self.userData.missionTime == 0 {
+            if self.userData.mission.missionTime == 0 {
                 //  10 minutes = 600 seconds
-                self.userData.missionTime = 600
+                self.userData.mission.missionTime = 600
             }
         }
     }

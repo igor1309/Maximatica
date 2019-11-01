@@ -23,7 +23,7 @@ struct ClockView: View {
             .font(.subheadline)
             .foregroundColor(.white)
             .onReceive(timer) { _ in
-                switch self.userData.missionMode {
+                switch self.userData.mission.missionMode {
                 case .qty:
                     //  MARK: what here??????
                     self.userData.missionTimeCount += 1

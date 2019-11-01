@@ -36,7 +36,7 @@ struct GameSelectionView: View {
         
         //  MARK: додумать анимацию
         //  rotation?
-            questions = QuestionGenerator(questionQty: userData.questionQty,
+            questions = QuestionGenerator(questionQty: userData.mission.questionQty,
                                           arithmetic: arithmetic,
                                           complexity: settings.сomplexity,
                                           ageGroup: settings.ageGroup).questions
