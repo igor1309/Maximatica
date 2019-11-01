@@ -11,7 +11,7 @@ import Foundation
 enum Status { case score, setup, play, result }
 
 
-enum Mission: String, CaseIterable, Codable, Hashable {
+enum MissionMode: String, CaseIterable, Codable, Hashable {
     case time = "На время"
     case qty = "Количество"
     

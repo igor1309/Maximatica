@@ -34,6 +34,11 @@ struct SetupView: View {
 
             Spacer()
             
+            Text("За прерывание миссии штраф 10 баллов.")
+                .font(.subheadline)
+                .foregroundColor(.white)
+                .shadow(color: .systemIndigo, radius: 8)
+            
             HStack {
                 GameButton(color: .clear, action: { self.status = .score }) {
                     Text("Отмена".uppercased())
@@ -42,7 +47,7 @@ struct SetupView: View {
                 
                 GameButton(action: {
                     //  MARK: FINISH THE CODE
-                    self.status = .play
+                    self.runGame()
                 }) {
                     Text("играть".uppercased())
                 }
@@ -54,19 +59,26 @@ struct SetupView: View {
         }
     }
     
-    private func run(_ arithmetic: Arithmetic?) {
+    private func runGame() {
         if hapticsAvailable {
             let generator = UIImpactFeedbackGenerator(style: .light)
             generator.impactOccurred()
         }
-        self.arithmetic = arithmetic
+        
+        switch settings.missionMode {
+        case .time:
+            print("settings.missionTime \(settings.missionTime)")
+            settings.gameInterval = settings.missionTime
+        case .qty:
+            settings.gameInterval = 0
+        }
 
         //  MARK: додумать анимацию
         //  rotation?
         
         
         //  MARK: FINISH THE CODE
-        
+        status = .play
     }
 }
 

@@ -172,7 +172,8 @@ struct QuestionView_Previews: PreviewProvider {
                 
                 QuestionView(questions: QuestionGenerator(questionQty: 2,
                                                           arithmetic: .addition,
-                                                          complexity: .basic).questions,
+                                                          complexity: .basic,
+                                                          ageGroup: .sevenToNine).questions,
                              isRunning: .constant(true),
                              arithmetic: nil)
             }

@@ -10,15 +10,16 @@ import Foundation
 
 struct QuestionGenerator {
     var questionQty: Int
-    var arithmetic: Arithmetic
+    var arithmetic: Arithmetic?
     var complexity: Complexity
+    var ageGroup: AgeGroup
 }
 
 extension QuestionGenerator {
     var questions: [Question] {
         var questions: [Question] = []
         for _ in (0..<questionQty) {
-            let question = Question(arithmetic: arithmetic, complexity: complexity)
+            let question = Question(arithmetic: arithmetic, complexity: complexity, ageGroup: ageGroup)
             questions.append(question)
         }
         return questions

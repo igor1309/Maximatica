@@ -16,17 +16,17 @@ struct MissionOptionsSelector: View {
 //            Text("Выбери миссию".uppercased())
 //                .font(.headline)
 //                .foregroundColor(.white)
-            Picker("Миссия", selection: $settings.mission
+            Picker("Миссия", selection: $settings.missionMode
                 .animation(Animation.easeOut(duration: 0.5))) {
                     
-                    ForEach(Mission.allCases, id: \.self) { mission in
+                    ForEach(MissionMode.allCases, id: \.self) { mission in
                         Text(mission.id.uppercased()).tag(mission)
                     }
             }
             .pickerStyle(SegmentedPickerStyle())
             .labelsHidden()
             
-            if settings.mission == .qty {
+            if settings.missionMode == .qty {
                 MissionQtySelector()
             } else {
                 MissionTimeSelector()
@@ -65,20 +65,25 @@ struct MissionTimeSelector: View {
     @EnvironmentObject var settings: SettingsStore
     
     private var timeArray: [Int] {
-        [5, 10, 15, 20]
+        #if DEBUG
+        return [1, 5, 10, 15]
+        #else
+        return [5, 10, 15, 20]
+        #endif
     }
     
     var body: some View {
         Picker("Время миссии", selection: $settings.missionTime.animation()) {
             ForEach(timeArray, id: \.self) { item in
-                Text("\(item) минут").tag(item)
+                Text("\(item) минут").tag(TimeInterval(item * 60))
             }
         }
         .pickerStyle(SegmentedPickerStyle())
         .labelsHidden()
         .onAppear {
             if self.settings.missionTime == 0 {
-                self.settings.missionTime = 10
+                //  10 minutes = 600 seconds
+                self.settings.missionTime = 600
             }
         }
     }

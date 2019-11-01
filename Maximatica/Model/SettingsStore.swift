@@ -9,9 +9,11 @@
 import Foundation
 
 final class SettingsStore: ObservableObject {
-    @Published var mission = Mission(rawValue: UserDefaults.standard.string(forKey: "mission") ?? Mission.time.id)! {
+    @Published var gameInterval: TimeInterval = 0
+    
+    @Published var missionMode = MissionMode(rawValue: UserDefaults.standard.string(forKey: "missionMode") ?? MissionMode.time.id)! {
         didSet {
-            UserDefaults.standard.set(mission.rawValue, forKey: "mission")
+            UserDefaults.standard.set(missionMode.rawValue, forKey: "missionMode")
         }
     }
     
@@ -41,7 +43,7 @@ final class SettingsStore: ObservableObject {
         }
     }
     
-    @Published var missionTime = UserDefaults.standard.integer(forKey: "missionTime") {
+    @Published var missionTime = TimeInterval(UserDefaults.standard.integer(forKey: "missionTime")) {
         didSet {
             UserDefaults.standard.set(missionTime, forKey: "missionTime")
         }

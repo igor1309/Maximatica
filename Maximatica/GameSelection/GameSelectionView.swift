@@ -36,8 +36,9 @@ struct GameSelectionView: View {
         //  MARK: додумать анимацию
         //  rotation?
             questions = QuestionGenerator(questionQty: settings.questionQty,
-                                          arithmetic: arithmetic ?? Arithmetic.allCases.randomElement()!,
-                                          complexity: settings.сomplexity).questions
+                                          arithmetic: arithmetic,
+                                          complexity: settings.сomplexity,
+                                          ageGroup: settings.ageGroup).questions
         withAnimation() {
             isRunning = true
         }

@@ -11,6 +11,7 @@ import Foundation
 struct Question {
     var arithmetic: Arithmetic
     var complexity: Complexity
+    var ageGroup: AgeGroup
     
     var left: Int
     var right: Int
@@ -18,9 +19,10 @@ struct Question {
     
     var sign: String
     
-    init(arithmetic: Arithmetic, complexity: Complexity) {
+    init(arithmetic: Arithmetic, complexity: Complexity, ageGroup: AgeGroup) {
         self.arithmetic = arithmetic
         self.complexity = complexity
+        self.ageGroup = ageGroup
         
         //        switch complexity {
         //        case .basic:
@@ -55,5 +57,13 @@ struct Question {
             sign = "÷"
         }
         self.sign = sign
+    }
+    
+    init(arithmetic: Arithmetic?, complexity: Complexity, ageGroup: AgeGroup) {
+        if arithmetic == nil {
+            self = Question(arithmetic: Arithmetic.allCases.randomElement()!, complexity: complexity, ageGroup: ageGroup)
+        } else {
+            self = Question(arithmetic: arithmetic!, complexity: complexity, ageGroup: ageGroup)
+        }
     }
 }
