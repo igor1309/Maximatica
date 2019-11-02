@@ -101,13 +101,13 @@ struct QuestionView: View {
             self.isRunning = false
         } else {
             //  save result
-            saveHistory()
+            saveHistoryOLD()
             //  show result
             showResult = true
         }
     }
     
-    func saveHistory() {
+    func saveHistoryOLD() {
         userData.history.add(TestResult(dateTime: Date(),
                                         totalAnswers: Double(progress + 1),
                                         correctAnswers: Double(correctAnswerCount),

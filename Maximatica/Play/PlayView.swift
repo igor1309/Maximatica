@@ -61,9 +61,10 @@ struct PlayView: View {
                 HStack {
                     ProgressView(progress: Double(progress))
                     ClockView()
-                        .onReceive(self.userData.isGameOver) { isGameOver in
-                            if isGameOver { self.stopMission() }
-                    }
+                        .onReceive(self.userData.$missionTimeCount) {
+                            if $0 <= 0 && self.userData.missionMode == .time {
+                                self.stopMission()
+                            }}
                 }
                 .frame(height: 56)
                 
@@ -121,11 +122,9 @@ struct PlayView: View {
                 //  сгенерировать следующий вопрос
                 userData.nextQuestion()
             }
-            return
+        } else {
+            stopMission()
         }
-        
-        
-        stopMission()
     }
     
     func stopMission() {
@@ -163,6 +162,7 @@ struct PlayView: View {
     }
     
     func saveHistory() {
+        print("saveHistory CALLED")
         //  MARK: FINISH THIS
         
         let timeSpent: TimeInterval

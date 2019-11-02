@@ -21,17 +21,13 @@ final class UserData: ObservableObject {
     
     @Published var missionTimeCount: TimeInterval = 0
     
-    var isGameOver: AnyPublisher<Bool, Never> {
-        $missionTimeCount
-            .map { $0 == 0 && self.missionMode == .time }
-            .eraseToAnyPublisher()
-    }
-    
     @Published var missionMode = MissionMode(rawValue: UserDefaults.standard.string(forKey: "missionMode") ?? MissionMode.time.id)! {
         didSet {
             UserDefaults.standard.set(missionMode.rawValue, forKey: "missionMode")
         }
     }
+    
+    var missionStart = Date()
     
     @Published var missionTime = TimeInterval(UserDefaults.standard.integer(forKey: "missionTime")) {
         didSet {

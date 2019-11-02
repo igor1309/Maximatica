@@ -75,6 +75,7 @@ struct SetupView: View {
         userData.nextQuestion()
 
         //  set time count
+        userData.missionStart = Date()
         switch userData.missionMode {
         case .time:
             #if DEBUG
