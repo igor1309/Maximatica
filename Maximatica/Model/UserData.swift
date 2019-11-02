@@ -11,23 +11,29 @@ import Combine
 
 final class UserData: ObservableObject {
     
-    func nextQuestion() {
-        question = Question(arithmetic: arithmetic, complexity: complexity, ageGroup: ageGroup)
+    @Published var gameStatus: GameStatus = .score
+    
+    ///  `параметры миссии` (инициализация)
+    
+    @Published var ageGroup = AgeGroup(rawValue: UserDefaults.standard.string(forKey: "ageGroup") ?? AgeGroup.sevenToNine.id)! {
+        didSet {
+            UserDefaults.standard.set(ageGroup.rawValue, forKey: "ageGroup")
+        }
     }
     
-    @Published var status: Status = .score
+    @Published var complexity = Complexity(rawValue: UserDefaults.standard.string(forKey: "complexity") ?? Complexity.basic.id)! {
+        didSet {
+            UserDefaults.standard.set(complexity.rawValue, forKey: "complexity")
+        }
+    }
     
-    var question = Question()
-    
-    @Published var missionTimeCount: TimeInterval = 0
+    var arithmetic: Arithmetic?
     
     @Published var missionMode = MissionMode(rawValue: UserDefaults.standard.string(forKey: "missionMode") ?? MissionMode.time.id)! {
         didSet {
             UserDefaults.standard.set(missionMode.rawValue, forKey: "missionMode")
         }
     }
-    
-    var missionStart = Date()
     
     @Published var missionTime = TimeInterval(UserDefaults.standard.integer(forKey: "missionTime")) {
         didSet {
@@ -41,24 +47,25 @@ final class UserData: ObservableObject {
         }
     }
     
-    var arithmetic: Arithmetic?
+    ///  `миссия`
     
+    var missionStart = Date()
+
+    @Published var missionTimeCount: TimeInterval = 0
+    
+    var question = Question()
+    
+    func nextQuestion() {
+        question = Question(arithmetic: arithmetic, complexity: complexity, ageGroup: ageGroup)
+    }
+    
+    
+    
+    ///  `история` и результаты
     @Published var history: History = historyData {
         didSet {    // save data to local JSON
             saveJSON(data: history, filename: "history.json")
         }
     }
     
-    @Published var ageGroup = AgeGroup(rawValue: UserDefaults.standard.string(forKey: "ageGroup") ?? AgeGroup.sevenToNine.id)! {
-        didSet {
-            UserDefaults.standard.set(ageGroup.rawValue, forKey: "ageGroup")
-        }
-    }
-    
-    @Published var complexity = Complexity(rawValue: UserDefaults.standard.string(forKey: "complexity") ?? Complexity.basic.id)!
-        {
-        didSet {
-            UserDefaults.standard.set(complexity.rawValue, forKey: "complexity")
-        }
-    }
 }

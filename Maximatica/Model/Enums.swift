@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Status { case score, setup, play, result }
+enum GameStatus { case score, setup, play, result }
 
 
 enum MissionMode: String, CaseIterable, Codable, Hashable {

@@ -61,7 +61,7 @@ struct ResultView: View {
             
             Spacer()
             
-            GameButton(action: { self.userData.status = .score }) {
+            GameButton(action: { self.userData.gameStatus = .score }) {
                 Text("Ok".uppercased())
             }
             

@@ -56,7 +56,7 @@ struct SetupView: View {
     }
     
     private func goBack() {
-        userData.status = .score
+        userData.gameStatus = .score
     }
     
     private func runGame() {
@@ -86,7 +86,7 @@ struct SetupView: View {
             userData.missionTimeCount = 0
         }
         
-        userData.status = .play
+        userData.gameStatus = .play
     }
 }
 

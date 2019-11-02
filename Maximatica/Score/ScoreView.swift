@@ -22,7 +22,7 @@ struct ScoreView: View {
             
             Spacer()
             
-            GameButton(action: { self.userData.status = .setup }) {
+            GameButton(action: { self.userData.gameStatus = .setup }) {
                 //  выбрать миссию
                 Text("Хочу еще!".uppercased())
             }

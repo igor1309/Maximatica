@@ -14,13 +14,13 @@ struct MainView: View {
     
     var body: some View {
         VStack(spacing: 32) {
-            if userData.status == .score { ScoreView() }
+            if userData.gameStatus == .score { ScoreView() }
             
-            if userData.status == .setup { SetupView() }
+            if userData.gameStatus == .setup { SetupView() }
             
-            if userData.status == .play { PlayView() }
+            if userData.gameStatus == .play { PlayView() }
             
-            if userData.status == .result { ResultView() }
+            if userData.gameStatus == .result { ResultView() }
         }
     }
 }

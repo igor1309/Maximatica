@@ -142,7 +142,7 @@ struct PlayView: View {
         //  save result
         saveHistory()
         //  show result
-        userData.status = .result
+        userData.gameStatus = .result
     }
     
     func abortMission() {
