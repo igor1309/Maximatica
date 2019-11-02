@@ -42,6 +42,7 @@ extension History {
     
     enum HistoryDataType: String, CaseIterable, Codable, Hashable {
         case correct = "Доля правильных ответов, %"
+        case timeSpent = "Время занятий"
         case total = "Количество задач, всего"
         case velocity = "Скорость, задач в минуту"
         case pace = "Темп, секунд на задачу"
@@ -76,6 +77,8 @@ extension History {
             //  делать формат для 1 как 100% неправильно —
             //  тогда модет некорректно отображаться темп
             return slice.map { $0.correctAnswersShare * 100 }
+        case .timeSpent:
+            return slice.map { $0.timeSpent / 60 }
         case .total:
             return slice.map { $0.totalAnswers }
         case .velocity:
@@ -99,6 +102,8 @@ extension History {
             //  тогда модет некорректно отображаться темп
             let correctAnswers = slice.reduce(0, { $0 + $1.correctAnswers }) * 100
             return totalAnswers == 0 ? 0 : correctAnswers / totalAnswers
+        case .timeSpent:
+            return slice.reduce(0, { $0 + $1.timeSpent / 60 })
         case .total:
             return slice.reduce(0, { $0 + $1.totalAnswers })
         case .velocity:
