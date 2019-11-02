@@ -71,8 +71,19 @@ struct SetupView: View {
         
         //  MARK: FINISH THE CODE
         
-        
-        
+        //  сформировать вопрос чтобы PlayView мог инициализироваться
+        userData.nextQuestion()
+
+        //  set time count
+        switch userData.missionMode {
+        case .time:
+            #if DEBUG
+            userData.missionTime = 10
+            #endif
+            userData.missionTimeCount = userData.missionTime
+        case .qty:
+            userData.missionTimeCount = 0
+        }
         
         userData.status = .play
     }

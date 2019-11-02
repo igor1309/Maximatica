@@ -11,13 +11,13 @@ import Combine
 
 final class UserData: ObservableObject {
     
-    func question() -> Question {
-        Question(arithmetic: arithmetic, complexity: complexity, ageGroup: ageGroup)
+    func nextQuestion() {
+        question = Question(arithmetic: arithmetic, complexity: complexity, ageGroup: ageGroup)
     }
     
     @Published var status: Status = .score
     
-//    var question = Question(arithmetic: arithmetic, complexity: complexity, ageGroup: ageGroup)
+    var question = Question()
     
     @Published var missionTimeCount: TimeInterval = 0
     

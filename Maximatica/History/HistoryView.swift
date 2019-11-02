@@ -49,6 +49,6 @@ struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
         HistoryView()
             .environmentObject(UserData())
-            .environmentObject(SettingsStore())
+        .environmentObject(SettingsStore())
     }
 }

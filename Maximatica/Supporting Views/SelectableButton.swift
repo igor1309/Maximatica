@@ -10,12 +10,13 @@ import SwiftUI
 import CoreHaptics
 
 struct SelectableButton: View {
+    var hapticsAvailable: Bool { CHHapticEngine.capabilitiesForHardware().supportsHaptics }
+    let smallScreen = UIScreen.main.bounds.height < 700
+    
     var title: String
     @Binding var selected: Int
     var index: Int
     var action: () -> Void
-    
-    var hapticsAvailable: Bool { CHHapticEngine.capabilitiesForHardware().supportsHaptics }
     
     var body: some View {
         return Button(action: {
@@ -31,7 +32,7 @@ struct SelectableButton: View {
             Text(verbatim: title.uppercased())
                 .font(.headline)
                 .foregroundColor(.white)
-                .frame(width: 200, height: 24)
+                .frame(width: 200, height: smallScreen ? 12 : 24)
                 .padding()
                 .padding(.horizontal)
                 .background(Color.white.opacity(selected == index ? 0.3 : 0))
@@ -45,9 +46,11 @@ struct SelectableButton: View {
 
 struct SelectableButton_Previews: PreviewProvider {
     static var previews: some View {
-        VStack {
+        VStack(spacing: 16) {
             SelectableButton(title: "selected", selected: .constant(2), index: 2) {}
             SelectableButton(title: "selected", selected: .constant(1), index: 2) {}
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.blue).opacity(1)
     }
 }

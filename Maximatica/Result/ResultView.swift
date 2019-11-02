@@ -11,6 +11,8 @@ import SwiftUI
 struct ResultView: View {
     @EnvironmentObject var userData: UserData
     
+    //  в реальности userData.history.results[0] не может быть пустым — на этот экран попадаем после прохождения теста
+    //  но при отладке может быть пустой массив результатов - поэтому dummy data
     var result: TestResult { userData.history.isListEmpty ? TestResult(dateTime: Date(),
                                                                        totalAnswers: 10,
                                                                        correctAnswers: 9,

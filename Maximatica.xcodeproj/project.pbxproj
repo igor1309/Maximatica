@@ -363,8 +363,8 @@
 		2AF572B6236B871400AB6A2D /* OLD - CHECK AND DELETE */ = {
 			isa = PBXGroup;
 			children = (
-				2AF5728C236B284400AB6A2D /* StatusView.swift */,
 				2A4805CA2366C08D00E95FE7 /* ContentViewOLD.swift */,
+				2AF5728C236B284400AB6A2D /* StatusView.swift */,
 				2AF5728A236B25EE00AB6A2D /* MainViewOLD.swift */,
 				2AA9070C23677E750051CCB1 /* ResultViewOLD.swift */,
 				2A7718D42367045900BF9408 /* QuestionView.swift */,

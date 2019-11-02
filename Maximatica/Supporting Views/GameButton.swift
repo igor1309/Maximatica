@@ -11,7 +11,8 @@ import CoreHaptics
 
 struct GameButton<Something: View>: View {
     var hapticsAvailable: Bool { CHHapticEngine.capabilitiesForHardware().supportsHaptics }
-    
+    let smallScreen = UIScreen.main.bounds.height < 700
+
     let color: Color
     let action: () -> Void
     let content: Something
@@ -35,7 +36,7 @@ struct GameButton<Something: View>: View {
             content
                 .font(color == .red ? .footnote : .headline)
                 .foregroundColor(.white)
-                .padding(color == .red ? 4 : 16)
+                .padding(color == .red ? 4 : smallScreen ? 8 : 16)
                 .padding(.horizontal)
                 .background(Capsule(style: .circular)
                     .fill(color)

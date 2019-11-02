@@ -12,15 +12,11 @@ struct PlayView: View {
     @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore
     
-    //  MARK: инициализирую question случайным вопросом (потому что userData еще не инициализирован), но в body генерирую вопрос по теме (arithmetic), с учетом complexity и ageGroup
-    //  (плохо)
-    //  MARK: как исправить????
-    @State private var question = Question()
     @State private var answer = ""
     @State private var count = 0
     @State private var correctAnswerCount = 0
     
-    @State private var showCancelGame = false
+    @State private var showAbortAlert = false
     @State private var showSolveTheProblem = false
     
     var progress: Double {
@@ -34,16 +30,39 @@ struct PlayView: View {
         }
     }
     
+    var abortAndNextButtons: some View {
+        HStack {
+            GameButton(color: .clear, action: { self.showAbortAlert = true }) {
+                Text("Стоп".uppercased())
+            }
+            .actionSheet(isPresented: $showAbortAlert) {
+                ActionSheet(title: Text("Остановить миссию?".uppercased()),
+                            message: Text("За отмену миссии начисляется штраф 10 баллов."),
+                            buttons: [
+                                .default(Text("Продолжить миссию")),
+                                .destructive(Text("Принять штраф"),
+                                             action: { self.abortMission() })])
+            }
+            
+            Spacer()
+            
+            GameButton(action: { self.nextStep() }) {
+                Text("Дальше".uppercased())
+            }
+        }
+        .padding(.horizontal)
+        .padding(.horizontal)
+        .padding(.bottom)
+    }
+    
     var body: some View {
-        question = userData.question()
-        
-        return VStack(spacing: 32) {
+        VStack(spacing: 32) {
             ZStack {
                 HStack {
                     ProgressView(progress: Double(progress))
                     ClockView()
                         .onReceive(self.userData.isGameOver) { isGameOver in
-                            if isGameOver { self.stopGame() }
+                            if isGameOver { self.stopMission() }
                     }
                 }
                 .frame(height: 56)
@@ -56,49 +75,20 @@ struct PlayView: View {
             
             Spacer()
             
-            QuestionSubView(question: question, answer: answer)
+            QuestionSubView(question: userData.question, answer: answer)
             
             NumberPad(text: $answer)
             
             Spacer()
             
-            HStack {
-                GameButton(color: .clear, action: { self.showCancelGame = true }) {
-                    Text("Стоп".uppercased())
-                }
-                .actionSheet(isPresented: $showCancelGame) {
-                    ActionSheet(title: Text("Остановить миссию?".uppercased()),
-                                message: Text("За отмену миссии начисляется штраф 10 баллов."),
-                                buttons: [
-                                    .default(Text("Продолжить миссию")),
-                                    .destructive(Text("Принять штраф"),
-                                                 action: { self.abort() })])
-                }
-                
-                Spacer()
-                
-                GameButton(action: { self.nextStep() }) {
-                    Text("Дальше".uppercased())
-                }
-            }
-            .padding(.horizontal)
-            .padding(.horizontal)
-            .padding(.bottom)
+            abortAndNextButtons
             
-            //            Spacer()
+            Spacer()
         }
     }
     
-    func abort() {
-        //  MARK: FINISH THIS
-        
-        //  MARK: Начислить штраф
-        
-        userData.status = .setup
-    }
-    
     func nextStep() {
-        
+        //  no answer is not accepted
         if answer.isEmpty {
             if hapticsAvailable {
                 let generator = UINotificationFeedbackGenerator()
@@ -112,13 +102,13 @@ struct PlayView: View {
             }
             return
         }
-
-        
-        // записать правильный ли ответ
-        if Int(answer) == question.result { correctAnswerCount += 1 }
         
         
-        if count < userData.questionQty - 1 {
+        //  записать правильный ли ответ
+        if Int(answer) == userData.question.result { correctAnswerCount += 1 }
+        
+        //  следующий вопрос
+        if count < userData.questionQty - 1 || userData.missionMode == .time {
             if hapticsAvailable {
                 let generator = UIImpactFeedbackGenerator(style: .light)
                 generator.impactOccurred()
@@ -128,24 +118,71 @@ struct PlayView: View {
             withAnimation {
                 count += 1
                 
-                question = userData.question()
-                                
+                //  сгенерировать следующий вопрос
+                userData.nextQuestion()
             }
             return
         }
         
-        stopGame()
         
+        stopMission()
+    }
+    
+    func stopMission() {
+        //  MARK: FINISH THIS
+        
+        
+        if hapticsAvailable {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+        }
+        
+        //  stop timer
+        //  check result
+        
+        //  save result
+        saveHistory()
+        //  show result
+        userData.status = .result
+    }
+    
+    func abortMission() {
+        //  MARK: FINISH THIS
+        
+        
+        if hapticsAvailable {
+            let generator = UIImpactFeedbackGenerator(style: .medium)
+            generator.impactOccurred()
+        }
+        
+        //  MARK: Начислить штраф
+        
+        
+        //  закончить миссию
+        stopMission()
     }
     
     func saveHistory() {
-    }
-    
-    func stopGame() {
         //  MARK: FINISH THIS
         
-        //  MARK: JUST TESTINGGGG!!!!!
-        userData.status = .result
+        let timeSpent: TimeInterval
+        switch userData.missionMode {
+        case .time:
+            timeSpent = userData.missionTime - userData.missionTimeCount
+        case .qty:
+            timeSpent = userData.missionTimeCount
+        }
+        
+        userData.history.add(TestResult(dateTime: Date(),
+                                        totalAnswers: Double(count + 1),
+                                        correctAnswers: Double(correctAnswerCount),
+                                        timeSpent: timeSpent,
+                                        ageGroup: userData.ageGroup,
+                                        complexity: userData.complexity,
+                                        arithmetic: userData.arithmetic))
+        
+        //  MARK: как записать штраф?
+        //        как начислить и записать баллы?
     }
 }
 
