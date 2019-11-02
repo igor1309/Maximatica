@@ -34,7 +34,7 @@ struct HistoryCharts: View {
                 VStack(spacing: 44) {
                     #if DEBUG
                     BarChartView(title: "ОТЛАДКА: 7 последних сессий: доля правильных ответов",
-                                 bars: userData.history.results
+                                 bars: userData.history.results.reversed()
                                     .prefix(7)
                                     .map { $0.correctAnswersShare })
                     #endif

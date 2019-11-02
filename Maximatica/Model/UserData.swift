@@ -68,4 +68,11 @@ final class UserData: ObservableObject {
         }
     }
     
+    var scores: [Double] {
+        history.results.map { Score(testResult: $0).finalScore }
+    }
+    
+    var score: Double {
+        history.results.map { Score(testResult: $0).finalScore }.reduce(0, { $0 + $1 })
+    }
 }

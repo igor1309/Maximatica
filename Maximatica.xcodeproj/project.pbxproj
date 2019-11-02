@@ -12,6 +12,7 @@
 		2A0184EA2369B41A000DFFA5 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0184E92369B41A000DFFA5 /* BarChartView.swift */; };
 		2A1EE39E236A138A00FFF5C3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EE39D236A138A00FFF5C3 /* HistoryView.swift */; };
 		2A1EE3A0236A13CC00FFF5C3 /* HistoryCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EE39F236A13CC00FFF5C3 /* HistoryCharts.swift */; };
+		2A4114D8236D9F7C0022F500 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4114D7236D9F7C0022F500 /* Score.swift */; };
 		2A420EF8236781D3002B628A /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A420EF7236781D3002B628A /* TimerView.swift */; };
 		2A420EFC236783FC002B628A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A420EFB236783FC002B628A /* CustomButton.swift */; };
 		2A436881236C90FB00FDA11F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A436880236C90FB00FDA11F /* ClockView.swift */; };
@@ -64,6 +65,7 @@
 		2A0184E92369B41A000DFFA5 /* BarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 		2A1EE39D236A138A00FFF5C3 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		2A1EE39F236A13CC00FFF5C3 /* HistoryCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCharts.swift; sourceTree = "<group>"; };
+		2A4114D7236D9F7C0022F500 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		2A420EF7236781D3002B628A /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		2A420EFB236783FC002B628A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		2A436880236C90FB00FDA11F /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				2A7718D62367047000BF9408 /* Question.swift */,
 				2A54D9B22368204100A50CF1 /* History.swift */,
 				2A54D9AE23681E3A00A50CF1 /* TestResult.swift */,
+				2A4114D7236D9F7C0022F500 /* Score.swift */,
 				2A54D9AC23681DEF00A50CF1 /* WorkWithJSON.swift */,
 			);
 			path = Model;
@@ -514,6 +517,7 @@
 				2AA9070F23677EF80051CCB1 /* SolveTheProblemBanner.swift in Sources */,
 				2AF57287236B0C9300AB6A2D /* MissionOptionsSelector.swift in Sources */,
 				2A0184E82369B3F1000DFFA5 /* VerticalBar.swift in Sources */,
+				2A4114D8236D9F7C0022F500 /* Score.swift in Sources */,
 				2A4805C92366C08D00E95FE7 /* SceneDelegate.swift in Sources */,
 				2A54D9B123681F5000A50CF1 /* Data.swift in Sources */,
 				2AF572D6236C1BEF00AB6A2D /* SelectableButton.swift in Sources */,
@@ -664,7 +668,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_ASSET_PATHS = "\"Maximatica/Preview Content\"";
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
 				ENABLE_PREVIEWS = YES;
@@ -674,7 +678,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.095;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.Maximatica;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -687,7 +691,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_ASSET_PATHS = "\"Maximatica/Preview Content\"";
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
 				ENABLE_PREVIEWS = YES;
@@ -697,7 +701,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.095;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.Maximatica;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

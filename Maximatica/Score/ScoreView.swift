@@ -16,9 +16,20 @@ struct ScoreView: View {
         VStack(spacing: 32) {
             GameStatusTitle(title: "Maximatica", withButtons: true)
             
-            Spacer()
+//            Spacer()
             
-            Text("статус игрока")
+            VStack(spacing: 0) {
+                Text(userData.score.formattedGrouped)
+                    .font(Font.system(size: 80))
+                    .fontWeight(.heavy)
+                
+                Text("Количество баллов".uppercased())
+                    .font(.subheadline)
+                    .opacity(0.6)
+            }
+            .foregroundColor(.white)
+            
+            BarChartView(bars: userData.scores.reversed())
             
             Spacer()
             
