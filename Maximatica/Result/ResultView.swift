@@ -28,32 +28,68 @@ struct ResultView: View {
             
             VStack(alignment: .leading, spacing: 3) {
                 Group {
-                    Text("Правильно ")
-                        + Text("\(result.correctAnswers.formattedGrouped) из \(result.totalAnswers.formattedGrouped) ").bold()
+                    HStack {
+                        Text("Баллы")
+                            .bold()
+                        Spacer()
+                        Text(Score(testResult: result).finalScore.formattedGrouped)
+                            .bold()
+                    }
+                    .font(.largeTitle)
                     
-                    Text("\(result.correctAnswersShare.formattedPercentage) ")
+                    HStack {
+                        Text("Верно")
+                        Spacer()
+                        Text("\(result.correctAnswers.formattedGrouped) из \(result.totalAnswers.formattedGrouped)").bold()
+                    }
+                    HStack {
+                        Spacer()
+                        Text("\(result.correctAnswersShare.formattedPercentage) ")
+                    }
+                    .font(.headline)
                     
-                    Text("время \(result.timeSpent.formatMinuteSecond)")
+                    HStack {
+                        Text("Время")
+                        Spacer()
+                        Text(result.timeSpent.formatMinuteSecond)
+                    }
                 }
                 .foregroundColor(.white)
                 
                 Group {
-                    Text("\(result.velocity.formattedGrouped) ответов в минуту")
-                    Text("(\(result.pace.formattedGroupedWith1Decimal) сек. на ответ)")
-                }
-                .foregroundColor(.white)
-                .opacity(0.7)
-                
-                Group {
-                    Text("Арифметика: \(result.arithmetic?.id ?? "все")")
+                    Group {
+                        HStack {
+                            Text("Ответов в минуту")
+                            Spacer()
+                            Text(result.velocity.formattedGrouped)
+                        }
+                        HStack {
+                            Text("Секунд на ответ")
+                            Spacer()
+                            Text(result.pace.formattedGroupedWith1Decimal)
+                        }
+                    }
+                    .foregroundColor(.white)
+                    .opacity(0.7)
+                    
+                    Group {
+                        HStack {
+                            Text("Арифметика")
+                            Spacer()
+                            Text("\(result.arithmetic?.id ?? "все")")
+                        }
                         .padding(.top)
-                    Text("\(result.complexity.id), ")
-                        + Text("\(result.ageGroup.id)")
-                    Text(result.dateTime.dateAndTimetoString())
-                        .font(.subheadline)
-                        .padding(.top)
+                        
+                        Text("\(result.complexity.id), ")
+                            + Text("\(result.ageGroup.id)")
+                        
+                        Text(result.dateTime.dateAndTimetoString())
+                            .font(.subheadline)
+                            .padding(.top)
+                    }
+                    .foregroundColor(.systemTeal)
                 }
-                .foregroundColor(.systemTeal)
+                .font(.headline)
             }
             .font(.title)
             .padding(.horizontal)

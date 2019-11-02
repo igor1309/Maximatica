@@ -38,7 +38,9 @@ extension Score {
     
     func velocityScore() -> Double {
         //  ученик полностью, до автоматизма усвоил тему, если решает пример и записывает в ответ за 4-7 секунд
-        if testResult.pace < 8 {
+        if testResult.pace < 5 {
+            return 7
+        } else if testResult.pace < 8 {
             return 5
         } else if testResult.pace < 12 {
             return 3
@@ -56,7 +58,7 @@ extension Score {
             return 7
         }
         
-        if testResult.correctAnswersShare > 0.5 {
+        if testResult.correctAnswersShare > 0.4 {
             return 3
         } else {
             return 0
