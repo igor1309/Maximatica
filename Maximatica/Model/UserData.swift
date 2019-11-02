@@ -67,12 +67,4 @@ final class UserData: ObservableObject {
             saveJSON(data: history, filename: "history.json")
         }
     }
-    
-    var scores: [Double] {
-        history.results.map { Score(testResult: $0).finalScore }
-    }
-    
-    var score: Double {
-        history.results.map { Score(testResult: $0).finalScore }.reduce(0, { $0 + $1 })
-    }
 }

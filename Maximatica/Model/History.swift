@@ -13,6 +13,31 @@ struct History: Codable {
 }
 
 extension History {
+    var scoresForLastWeek: [Double] {
+        results
+            .filter { $0.dateTime >= Date().startOfDay.addDays(-7) }
+            .map { Score(testResult: $0).finalScore }.reversed()
+    }
+    
+    var scoreForLastWeek: Double {
+        results
+            .filter { $0.dateTime >= Date().startOfDay.addDays(-7) }
+            .map { Score(testResult: $0).finalScore }.reduce(0, { $0 + $1 })
+    }
+
+    var timeSpentForLastWeek: Double {
+        results
+            .filter { $0.dateTime >= Date().startOfDay.addDays(-7) }
+            .reduce(0, { $0 + $1.timeSpent }) / 60
+    }
+
+    var score: Double {
+        results.map { Score(testResult: $0).finalScore }.reduce(0, { $0 + $1 })
+    }
+
+}
+
+extension History {
     var isListEmpty: Bool { results.isEmpty }
     
     enum HistoryDataType: String, CaseIterable, Codable, Hashable {
