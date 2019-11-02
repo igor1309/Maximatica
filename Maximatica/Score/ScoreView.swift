@@ -24,9 +24,8 @@ struct DashboardElement: View {
             }
             Text(title.uppercased())
                 .font(.caption)
-                .opacity(0.7)
+                .opacity(0)
         }
-        .foregroundColor(.white)
     }
 }
 
@@ -45,7 +44,7 @@ struct ScoreView: View {
             
             VStack(spacing: 0) {
                 Text(userData.history.score.formattedGrouped)
-                    .font(Font.system(size: 80))
+                    .font(Font.system(size: 88))
                     .fontWeight(.heavy)
                 
                 Text("Баллов всего".uppercased())
@@ -54,25 +53,28 @@ struct ScoreView: View {
             }
             .foregroundColor(.white)
             
-            //            Spacer()
+                        Spacer()
             
-            VStack(spacing: 0) {
-                Text("За неделю".uppercased())
-                    .font(.subheadline)
-                    .foregroundColor(.white)
-                
-                HStack {
-                    Spacer()
-                    DashboardElement(title: "баллов".uppercased(),
-                                     amount: userData.history.scoreForLastWeek,
-                                     image: "metronome")
-                    Spacer()
-                    DashboardElement(title: "Минут".uppercased(),
-                                     amount: userData.history.timeSpentForLastWeek,
-                                     image: "stopwatch")
-                    Spacer()
+            Group {
+                VStack(spacing: 0) {
+                    Text("За неделю".uppercased())
+                        .font(.subheadline)
+                    
+                    HStack {
+                        Spacer()
+                        DashboardElement(title: "баллов".uppercased(),
+                                         amount: userData.history.scoreForLastWeek,
+                                         image: "sum")
+                        Spacer()
+                        DashboardElement(title: "Минут".uppercased(),
+                                         amount: userData.history.timeSpentForLastWeek,
+                                         image: "stopwatch")
+                        Spacer()
+                    }
                 }
-            }.opacity(0.75)
+            }
+            .foregroundColor(.yellow)
+                .opacity(0.9)
             
             //            if !smallScreen {
             //                BarChartView(bars: userData.history.scoresForLastWeek)
