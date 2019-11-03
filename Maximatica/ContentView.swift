@@ -13,12 +13,18 @@ struct ContentView: View {
     @EnvironmentObject var settings: SettingsStore
     
     var body: some View {
-        ZStack {
-            MainGradient()
-            
-            MainView()
-                .environmentObject(UserData())
-                .environmentObject(SettingsStore())
+        Group {
+            if settings.hasLaunchedBefor {
+                ZStack {
+                    MainGradient()
+                    
+                    MainView()
+                        .environmentObject(UserData())
+                        .environmentObject(SettingsStore())
+                }
+            } else {
+                OnboardingView()
+            }
         }
     }
 }

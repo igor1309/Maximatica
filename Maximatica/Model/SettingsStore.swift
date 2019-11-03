@@ -27,4 +27,10 @@ final class SettingsStore: ObservableObject {
             UserDefaults.standard.set(hideTimer, forKey: "hideTimer")
         }
     }
+    
+    @Published var hasLaunchedBefor = UserDefaults.standard.bool(forKey: "hasLaunchedBefor") {
+        didSet {
+            UserDefaults.standard.set(hasLaunchedBefor, forKey: "hasLaunchedBefor")
+        }
+    }
 }
