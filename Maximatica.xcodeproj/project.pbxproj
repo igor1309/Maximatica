@@ -36,6 +36,7 @@
 		2A54D9BB236825CF00A50CF1 /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9BA236825CF00A50CF1 /* HistoryRow.swift */; };
 		2A6102C9236EB76D0029C92C /* HorizontalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6102C8236EB76D0029C92C /* HorizontalBar.swift */; };
 		2A6102EB236ED1BF0029C92C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6102EA236ED1BF0029C92C /* ProgressBar.swift */; };
+		2A6102ED236F11980029C92C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6102EC236F11980029C92C /* OnboardingView.swift */; };
 		2A7718D52367045900BF9408 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718D42367045900BF9408 /* QuestionView.swift */; };
 		2A7718D72367047000BF9408 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718D62367047000BF9408 /* Question.swift */; };
 		2A7718D92367421400BF9408 /* NumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718D82367421400BF9408 /* NumberPad.swift */; };
@@ -93,6 +94,7 @@
 		2A54D9BA236825CF00A50CF1 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
 		2A6102C8236EB76D0029C92C /* HorizontalBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBar.swift; sourceTree = "<group>"; };
 		2A6102EA236ED1BF0029C92C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		2A6102EC236F11980029C92C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		2A7718D42367045900BF9408 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		2A7718D62367047000BF9408 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		2A7718D82367421400BF9408 /* NumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPad.swift; sourceTree = "<group>"; };
@@ -170,7 +172,8 @@
 				2A4805C62366C08D00E95FE7 /* AppDelegate.swift */,
 				2A4805C82366C08D00E95FE7 /* SceneDelegate.swift */,
 				2AF572B2236B86A300AB6A2D /* ContentView.swift */,
-				2AF572B4236B870900AB6A2D /* MainView.swift */,
+				2A6102EE236F12000029C92C /* Onboarding */,
+				2A6102EC236F11980029C92C /* OnboardingView.swift */,
 				2AF572D3236B8B9700AB6A2D /* Score */,
 				2AF572D4236B8B9E00AB6A2D /* Setup */,
 				2AF572D2236B8B8700AB6A2D /* Play */,
@@ -223,6 +226,14 @@
 				2A54D9AC23681DEF00A50CF1 /* WorkWithJSON.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2A6102EE236F12000029C92C /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				2AF572B4236B870900AB6A2D /* MainView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		2A9B56F523697B3100ACEE8F /* Data */ = {
@@ -534,6 +545,7 @@
 				2A54D9B32368204100A50CF1 /* History.swift in Sources */,
 				2A6102EB236ED1BF0029C92C /* ProgressBar.swift in Sources */,
 				2A4805E52366CC4600E95FE7 /* MathCardButton.swift in Sources */,
+				2A6102ED236F11980029C92C /* OnboardingView.swift in Sources */,
 				2A4805CB2366C08D00E95FE7 /* ContentViewOLD.swift in Sources */,
 				2AF572CE236B8A5F00AB6A2D /* ResultView.swift in Sources */,
 				2A1EE39E236A138A00FFF5C3 /* HistoryView.swift in Sources */,

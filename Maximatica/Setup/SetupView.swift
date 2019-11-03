@@ -45,7 +45,7 @@ struct SetupView: View {
                 Spacer()
                 
                 GameButton(action: { self.runGame() }) {
-                    Text("играть".uppercased())
+                    Text("Начать".uppercased())
                 }
             }
             .padding(.horizontal)

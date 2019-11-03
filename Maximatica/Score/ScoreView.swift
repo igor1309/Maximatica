@@ -85,7 +85,7 @@ struct ScoreView: View {
             
             GameButton(action: { self.userData.gameStatus = .setup }) {
                 //  выбрать миссию
-                Text((userData.history.score == 0 ? "Хочу баллы!" : "Хочу еще!").uppercased())
+                Text("Играть!".uppercased())
             }
             
             Spacer()
