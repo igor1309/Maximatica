@@ -11,6 +11,8 @@ import SwiftUI
 struct ResultView: View {
     @EnvironmentObject var userData: UserData
     
+    @State private var showProgress = false
+    
     //  в реальности userData.history.results[0] не может быть пустым — на этот экран попадаем после прохождения теста
     //  но при отладке может быть пустой массив результатов - поэтому dummy data
     var result: TestResult { userData.history.isListEmpty ? TestResult(dateTime: Date(),
@@ -35,19 +37,28 @@ struct ResultView: View {
                             .bold()
                     }
                     .font(.largeTitle)
-
+                    
                     HStack {
                         Text("Верно")
                         Spacer()
                         Text("\(result.correctAnswers.formattedGrouped) из \(result.totalAnswers.formattedGrouped)").bold()
                     }
                     HStack {
-                        ProgressBar(progress: result.correctAnswersShare, width: 240, height: 8)
+                        if showProgress {
+                            ProgressBar(progress: result.correctAnswersShare, width: 240, height: 8)
+                                .offset(CGSize(width: 5, height: 0))
+                                .transition(AnyTransition.opacity.combined(with: .scale).animation(.easeOut(duration: 2.0)))
+                        }
                         Spacer()
                         Text("\(result.correctAnswersShare.formattedPercentage) ")
                     }
                     .font(.headline)
-
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                self.showProgress = true
+                            }
+                    }
+                    
                     HStack {
                         Text("Время")
                         Spacer()
@@ -55,7 +66,7 @@ struct ResultView: View {
                     }
                 }
                 .foregroundColor(.white)
-
+                
                 Group {
                     Group {
                         HStack {
@@ -71,7 +82,7 @@ struct ResultView: View {
                     }
                     .foregroundColor(.white)
                     .opacity(0.7)
-
+                    
                     Group {
                         HStack {
                             Text("Арифметика")
@@ -79,10 +90,10 @@ struct ResultView: View {
                             Text("\(result.arithmetic?.id ?? "все")")
                         }
                         .padding(.top)
-
+                        
                         Text("\(result.complexity.id), ")
                             + Text("\(result.ageGroup.id)")
-
+                        
                         Text(result.dateTime.dateAndTimetoString())
                             .font(.subheadline)
                             .padding(.top)
