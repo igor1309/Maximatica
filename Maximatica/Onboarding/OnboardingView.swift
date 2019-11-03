@@ -68,7 +68,7 @@ struct OnboardingView: View {
                         .padding(.horizontal)
                         
                         SelectableButton(title: "Понятно, поехали", selected: .constant(0), index: 1, color: .primary) { self.settings.hasLaunchedBefor = true }
-                            .padding(.top)
+                            .padding(.vertical)
                     }
                 }
 //                .foregroundColor(.black)
