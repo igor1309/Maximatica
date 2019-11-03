@@ -106,6 +106,7 @@ struct MissionOptionsSelector_Previews: PreviewProvider {
                 .padding()
             }
         }
+        .environmentObject(UserData())
         .environmentObject(SettingsStore())
     }
 }

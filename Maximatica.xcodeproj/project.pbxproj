@@ -43,6 +43,7 @@
 		2A7718DB2367479E00BF9408 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718DA2367479E00BF9408 /* ProgressView.swift */; };
 		2A9B56F2236967A800ACEE8F /* HistoryGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B56F1236967A800ACEE8F /* HistoryGradient.swift */; };
 		2A9B56F42369683500ACEE8F /* MainGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B56F32369683500ACEE8F /* MainGradient.swift */; };
+		2AA56FDE236F597A00AFB280 /* OnboardingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA56FDD236F597A00AFB280 /* OnboardingSection.swift */; };
 		2AA9070D23677E750051CCB1 /* ResultViewOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9070C23677E750051CCB1 /* ResultViewOLD.swift */; };
 		2AA9070F23677EF80051CCB1 /* SolveTheProblemBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9070E23677EF80051CCB1 /* SolveTheProblemBanner.swift */; };
 		2AB5C4822368670D009D0613 /* GameSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5C4812368670D009D0613 /* GameSelectionView.swift */; };
@@ -101,6 +102,7 @@
 		2A7718DA2367479E00BF9408 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		2A9B56F1236967A800ACEE8F /* HistoryGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryGradient.swift; sourceTree = "<group>"; };
 		2A9B56F32369683500ACEE8F /* MainGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGradient.swift; sourceTree = "<group>"; };
+		2AA56FDD236F597A00AFB280 /* OnboardingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSection.swift; sourceTree = "<group>"; };
 		2AA9070C23677E750051CCB1 /* ResultViewOLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewOLD.swift; sourceTree = "<group>"; };
 		2AA9070E23677EF80051CCB1 /* SolveTheProblemBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveTheProblemBanner.swift; sourceTree = "<group>"; };
 		2AB5C4812368670D009D0613 /* GameSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectionView.swift; sourceTree = "<group>"; };
@@ -172,8 +174,8 @@
 				2A4805C62366C08D00E95FE7 /* AppDelegate.swift */,
 				2A4805C82366C08D00E95FE7 /* SceneDelegate.swift */,
 				2AF572B2236B86A300AB6A2D /* ContentView.swift */,
+				2AF572B4236B870900AB6A2D /* MainView.swift */,
 				2A6102EE236F12000029C92C /* Onboarding */,
-				2A6102EC236F11980029C92C /* OnboardingView.swift */,
 				2AF572D3236B8B9700AB6A2D /* Score */,
 				2AF572D4236B8B9E00AB6A2D /* Setup */,
 				2AF572D2236B8B8700AB6A2D /* Play */,
@@ -231,7 +233,8 @@
 		2A6102EE236F12000029C92C /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				2AF572B4236B870900AB6A2D /* MainView.swift */,
+				2A6102EC236F11980029C92C /* OnboardingView.swift */,
+				2AA56FDD236F597A00AFB280 /* OnboardingSection.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				2AF5728B236B25EE00AB6A2D /* MainViewOLD.swift in Sources */,
 				2AF572CC236B8A5F00AB6A2D /* ScoreView.swift in Sources */,
 				2AF572B3236B86A300AB6A2D /* ContentView.swift in Sources */,
+				2AA56FDE236F597A00AFB280 /* OnboardingSection.swift in Sources */,
 				2A7718D92367421400BF9408 /* NumberPad.swift in Sources */,
 				2A7718D52367045900BF9408 /* QuestionView.swift in Sources */,
 				2A1EE3A0236A13CC00FFF5C3 /* HistoryCharts.swift in Sources */,
