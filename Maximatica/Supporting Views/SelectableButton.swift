@@ -16,6 +16,7 @@ struct SelectableButton: View {
     var title: String
     @Binding var selected: Int
     var index: Int
+    var color: Color = .white
     var action: () -> Void
     
     var body: some View {
@@ -31,7 +32,7 @@ struct SelectableButton: View {
         }) {
             Text(verbatim: title.uppercased())
                 .font(.headline)
-                .foregroundColor(.white)
+                .foregroundColor(color)
                 .frame(width: 200, height: smallScreen ? 12 : 24)
                 .padding()
                 .padding(.horizontal)
@@ -39,7 +40,7 @@ struct SelectableButton: View {
                 .cornerRadius(16)
                 .background(RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .stroke()
-                    .foregroundColor(.white))
+                    .foregroundColor(color))
         }
     }
 }
@@ -49,6 +50,10 @@ struct SelectableButton_Previews: PreviewProvider {
         VStack(spacing: 16) {
             SelectableButton(title: "selected", selected: .constant(2), index: 2) {}
             SelectableButton(title: "selected", selected: .constant(1), index: 2) {}
+            SelectableButton(title: "selected", selected: .constant(2), index: 2) {}
+                .environment(\.colorScheme, .dark)
+            SelectableButton(title: "selected", selected: .constant(1), index: 2) {}
+                .environment(\.colorScheme, .dark)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.blue).opacity(1)

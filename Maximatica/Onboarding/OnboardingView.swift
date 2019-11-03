@@ -11,12 +11,15 @@ import SwiftUI
 struct OnboardingView: View {
     @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore
+    @Environment(\.presentationMode) var presentation
+    
+    @Environment(\.colorScheme) var colorScheme
     let smallScreen = UIScreen.main.bounds.height < 700
     
     var body: some View {
         ZStack {
             LinearGradient(gradient:
-                Gradient(colors: [.systemTeal, .yellow]),
+                Gradient(colors: colorScheme == .dark ? [.blue, .systemIndigo] : [.systemTeal, .yellow]),
                            startPoint: .topLeading,
                            endPoint: .bottomTrailing)
                 .opacity(0.9)
@@ -34,15 +37,15 @@ struct OnboardingView: View {
                             Group {
                                 Text("Максиматика – это приложение для тренировки навыков счёта у детей.")
                                     .font(.headline)
-                                
+
                                 OnboardingSection(image: "cursor.rays", title: "Миссия", text: "Миссия — это набор примеров, которые нужно решить.")
-                                
+
                                 OnboardingSection(image: "stopwatch", title: "Миссия «НА ВРЕМЯ»", text: "Нужно решить максимальное количество примеров за 5, 10, 15 или 20 минут:")
-                                
+
                                 MissionTimeSelector()
-                                
+
                                 OnboardingSection(image: "number", title: "Миссия «КОЛИЧЕСТВО»", text: "Требуется решить 10, 20, 50 или 100 примеров как можно быстрее:")
-                                
+
                                 MissionQtySelector()
                             }
                             
@@ -64,11 +67,11 @@ struct OnboardingView: View {
                         }
                         .padding(.horizontal)
                         
-                        SelectableButton(title: "Понятно, поехали", selected: .constant(0), index: 1) { self.settings.hasLaunchedBefor = true }
+                        SelectableButton(title: "Понятно, поехали", selected: .constant(0), index: 1, color: .primary) { self.settings.hasLaunchedBefor = true }
                             .padding(.top)
                     }
                 }
-                .foregroundColor(.black)
+//                .foregroundColor(.black)
                 .padding([.top, .horizontal])
                 
                 Divider()
@@ -78,7 +81,7 @@ struct OnboardingView: View {
                     Text("слово «Максиматика» придумал Макс в 2016.")
                 }
                 .font(.subheadline)
-                .foregroundColor(.systemBlue)
+//                .foregroundColor(.systemBlue)
                 .padding(smallScreen ? [.horizontal, .bottom] : [.horizontal])
             }
             .padding(.top)
@@ -89,6 +92,7 @@ struct OnboardingView: View {
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingView()
+            .environment(\.colorScheme, .dark)
             .environmentObject(UserData())
             .environmentObject(SettingsStore())
     }
