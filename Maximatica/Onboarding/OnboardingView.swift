@@ -35,21 +35,21 @@ struct OnboardingView: View {
                     ScrollView(.vertical, showsIndicators: true) {
                         VStack(alignment: .leading, spacing: 8) {
                             Group {
-//                                Image("onboarding")
-//                                    .scaledToFit()
-//                                    .frame(maxWidth: .infinity, alignment: .center)
-    
+                                //                                Image("onboarding")
+                                //                                    .scaledToFit()
+                                //                                    .frame(maxWidth: .infinity, alignment: .center)
+                                
                                 Text("Максиматика – это приложение для тренировки навыков счёта у детей.")
                                     .font(.headline)
-
+                                
                                 OnboardingSection(image: "cursor.rays", title: "Миссия", text: "Миссия — это набор примеров, которые нужно решить.")
-
+                                
                                 OnboardingSection(image: "stopwatch", title: "Миссия «НА ВРЕМЯ»", text: "Нужно решить максимальное количество примеров за 5, 10, 15 или 20 минут:")
-
+                                
                                 MissionTimeSelector()
-
+                                
                                 OnboardingSection(image: "number", title: "Миссия «КОЛИЧЕСТВО»", text: "Требуется решить 10, 20, 50 или 100 примеров как можно быстрее:")
-
+                                
                                 MissionQtySelector()
                             }
                             
@@ -75,7 +75,6 @@ struct OnboardingView: View {
                             .padding(.vertical)
                     }
                 }
-//                .foregroundColor(.black)
                 .padding([.top, .horizontal])
                 
                 Divider()
@@ -85,7 +84,6 @@ struct OnboardingView: View {
                     Text("слово «Максиматика» придумал Макс в четыре года.")
                 }
                 .font(.subheadline)
-//                .foregroundColor(.systemBlue)
                 .padding(smallScreen ? [.horizontal, .bottom] : [.horizontal])
             }
             .padding(.top)

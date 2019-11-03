@@ -23,7 +23,7 @@ struct ContentView: View {
                         .environmentObject(SettingsStore())
                 }
             } else {
-                OnboardingView()
+                OnboardingView().transition(.scale)
             }
         }
     }
