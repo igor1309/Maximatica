@@ -35,6 +35,10 @@ struct OnboardingView: View {
                     ScrollView(.vertical, showsIndicators: true) {
                         VStack(alignment: .leading, spacing: 8) {
                             Group {
+//                                Image("onboarding")
+//                                    .scaledToFit()
+//                                    .frame(maxWidth: .infinity, alignment: .center)
+    
                                 Text("Максиматика – это приложение для тренировки навыков счёта у детей.")
                                     .font(.headline)
 
@@ -78,7 +82,7 @@ struct OnboardingView: View {
                 
                 HStack(alignment: .firstTextBaseline, spacing: 3) {
                     Text("* ")
-                    Text("слово «Максиматика» придумал Макс в 2016.")
+                    Text("слово «Максиматика» придумал Макс в четыре года.")
                 }
                 .font(.subheadline)
 //                .foregroundColor(.systemBlue)
