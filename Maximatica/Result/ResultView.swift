@@ -25,7 +25,6 @@ struct ResultView: View {
     var body: some View {
         VStack() {
             GameStatusTitle(title: "Результат")
-            
             VStack(alignment: .leading, spacing: 3) {
                 Group {
                     HStack {
@@ -36,18 +35,19 @@ struct ResultView: View {
                             .bold()
                     }
                     .font(.largeTitle)
-                    
+
                     HStack {
                         Text("Верно")
                         Spacer()
                         Text("\(result.correctAnswers.formattedGrouped) из \(result.totalAnswers.formattedGrouped)").bold()
                     }
                     HStack {
+                        HorizontalBar(bar: result.correctAnswersShare, maxBar: 1, width: 150, height: 8, colors: [.yellow, .systemTeal])
                         Spacer()
                         Text("\(result.correctAnswersShare.formattedPercentage) ")
                     }
                     .font(.headline)
-                    
+
                     HStack {
                         Text("Время")
                         Spacer()
@@ -55,7 +55,7 @@ struct ResultView: View {
                     }
                 }
                 .foregroundColor(.white)
-                
+
                 Group {
                     Group {
                         HStack {
@@ -71,7 +71,7 @@ struct ResultView: View {
                     }
                     .foregroundColor(.white)
                     .opacity(0.7)
-                    
+
                     Group {
                         HStack {
                             Text("Арифметика")
@@ -79,10 +79,10 @@ struct ResultView: View {
                             Text("\(result.arithmetic?.id ?? "все")")
                         }
                         .padding(.top)
-                        
+
                         Text("\(result.complexity.id), ")
                             + Text("\(result.ageGroup.id)")
-                        
+
                         Text(result.dateTime.dateAndTimetoString())
                             .font(.subheadline)
                             .padding(.top)

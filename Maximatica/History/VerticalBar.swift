@@ -13,15 +13,16 @@ struct VerticalBar: View {
     var bar: CGFloat
     var minBar: CGFloat = 0
     var maxBar: CGFloat
-    var width: CGFloat
-    var height: CGFloat
+    var width: CGFloat = 12
+    var height: CGFloat = 200
+    var colors: [Color] = [.blue, .systemTeal]
     
     var body: some View {
         
-        let spectrum = Gradient(colors: [.blue, .systemTeal])
+        let spectrum = Gradient(colors: colors)
         let linear = LinearGradient(gradient: spectrum, startPoint: .top, endPoint: .bottom)
        
-        let spectrumMinMax = Gradient(colors: [.systemIndigo, .purple])
+        let spectrumMinMax = Gradient(colors: colors)
         let linearMin = LinearGradient(gradient: spectrumMinMax, startPoint: .top, endPoint: .bottom)
         let linearMax = LinearGradient(gradient: spectrumMinMax, startPoint: .top, endPoint: .bottom)
 

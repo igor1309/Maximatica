@@ -42,7 +42,7 @@ extension History {
     
     enum HistoryDataType: String, CaseIterable, Codable, Hashable {
         case correct = "Доля правильных ответов, %"
-        case timeSpent = "Время занятий"
+        case timeSpent = "Время занятий, всего"
         case total = "Количество задач, всего"
         case velocity = "Скорость, задач в минуту"
         case pace = "Темп, секунд на задачу"
