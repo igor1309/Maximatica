@@ -35,6 +35,7 @@
 		2A54D9B32368204100A50CF1 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9B22368204100A50CF1 /* History.swift */; };
 		2A54D9BB236825CF00A50CF1 /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9BA236825CF00A50CF1 /* HistoryRow.swift */; };
 		2A6102C9236EB76D0029C92C /* HorizontalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6102C8236EB76D0029C92C /* HorizontalBar.swift */; };
+		2A6102EB236ED1BF0029C92C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6102EA236ED1BF0029C92C /* ProgressBar.swift */; };
 		2A7718D52367045900BF9408 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718D42367045900BF9408 /* QuestionView.swift */; };
 		2A7718D72367047000BF9408 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718D62367047000BF9408 /* Question.swift */; };
 		2A7718D92367421400BF9408 /* NumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718D82367421400BF9408 /* NumberPad.swift */; };
@@ -91,6 +92,7 @@
 		2A54D9B22368204100A50CF1 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		2A54D9BA236825CF00A50CF1 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
 		2A6102C8236EB76D0029C92C /* HorizontalBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBar.swift; sourceTree = "<group>"; };
+		2A6102EA236ED1BF0029C92C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		2A7718D42367045900BF9408 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		2A7718D62367047000BF9408 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		2A7718D82367421400BF9408 /* NumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPad.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				2AF433872369B2D80087C782 /* BarsView.swift */,
 				2A0184E72369B3F1000DFFA5 /* VerticalBar.swift */,
 				2A6102C8236EB76D0029C92C /* HorizontalBar.swift */,
+				2A6102EA236ED1BF0029C92C /* ProgressBar.swift */,
 				2AB5C48423687CC4009D0613 /* HistoryTableView.swift */,
 				2AB5C48623687FCA009D0613 /* HistoryTable.swift */,
 				2A54D9BA236825CF00A50CF1 /* HistoryRow.swift */,
@@ -529,6 +532,7 @@
 				2A54D9AD23681DEF00A50CF1 /* WorkWithJSON.swift in Sources */,
 				2A7718DB2367479E00BF9408 /* ProgressView.swift in Sources */,
 				2A54D9B32368204100A50CF1 /* History.swift in Sources */,
+				2A6102EB236ED1BF0029C92C /* ProgressBar.swift in Sources */,
 				2A4805E52366CC4600E95FE7 /* MathCardButton.swift in Sources */,
 				2A4805CB2366C08D00E95FE7 /* ContentViewOLD.swift in Sources */,
 				2AF572CE236B8A5F00AB6A2D /* ResultView.swift in Sources */,
@@ -672,7 +676,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 28;
 				DEVELOPMENT_ASSET_PATHS = "\"Maximatica/Preview Content\"";
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
 				ENABLE_PREVIEWS = YES;
@@ -682,7 +686,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.Maximatica;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -695,7 +699,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 28;
 				DEVELOPMENT_ASSET_PATHS = "\"Maximatica/Preview Content\"";
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
 				ENABLE_PREVIEWS = YES;
@@ -705,7 +709,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.Maximatica;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

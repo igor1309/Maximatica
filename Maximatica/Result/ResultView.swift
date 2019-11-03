@@ -42,7 +42,7 @@ struct ResultView: View {
                         Text("\(result.correctAnswers.formattedGrouped) из \(result.totalAnswers.formattedGrouped)").bold()
                     }
                     HStack {
-                        HorizontalBar(bar: result.correctAnswersShare, maxBar: 1, width: 150, height: 8, colors: [.yellow, .systemTeal])
+                        ProgressBar(progress: result.correctAnswersShare, width: 240, height: 8)
                         Spacer()
                         Text("\(result.correctAnswersShare.formattedPercentage) ")
                     }
