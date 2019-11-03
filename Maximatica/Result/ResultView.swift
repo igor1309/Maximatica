@@ -46,7 +46,6 @@ struct ResultView: View {
                     HStack {
                         if showProgress {
                             ProgressBar(progress: result.correctAnswersShare, width: 240, height: 8)
-                                .offset(CGSize(width: 5, height: 0))
                                 .transition(AnyTransition.opacity.combined(with: .scale).animation(.easeOut(duration: 2.0)))
                         }
                         Spacer()

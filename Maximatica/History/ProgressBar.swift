@@ -11,7 +11,8 @@ import SwiftUI
 struct ProgressShape: Shape {
     let progress: Double
     
-    func path(in rect: CGRect) -> Path {
+    func path(in rect1: CGRect) -> Path {
+        let rect = rect1.insetBy(dx: rect1.maxY / 2 + 1, dy: 0)
         var path = Path()
         path.addLines([CGPoint(x: rect.minX, y: rect.midY), CGPoint(x: rect.maxX * CGFloat(progress), y: rect.midY)])
         //        path.addRect(rect)
@@ -50,7 +51,7 @@ struct ProgressBar: View {
                             dash: [],
                         dashPhase: 0))
         }
-        .frame(width: CGFloat(width - height), height: CGFloat(height))
+        .frame(width: CGFloat(width), height: CGFloat(height))
     }
 }
 struct ProgressBar_Previews: PreviewProvider {
