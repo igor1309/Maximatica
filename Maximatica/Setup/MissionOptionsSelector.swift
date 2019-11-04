@@ -55,7 +55,7 @@ struct MissionQtySelector: View {
         .labelsHidden()
         .onAppear {
             if self.userData.questionQty == 0 {
-                self.userData.questionQty = 10 }
+                self.userData.questionQty = 20 }
         }
     }
 }
