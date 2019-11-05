@@ -86,6 +86,7 @@ struct PlayView: View {
             
             Spacer()
         }
+        .frame(maxWidth: 600, maxHeight: 900)
     }
     
     func nextStep() {

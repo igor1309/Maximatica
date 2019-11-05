@@ -18,7 +18,7 @@ struct Settings: View {
     @EnvironmentObject var settings: SettingsStore
     @State private var showModal = false
     @State private var showModal2 = false
-
+    
     init() {
         //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.systemTeal]
@@ -42,13 +42,13 @@ struct Settings: View {
                 
                 Section(header: Text("Сложность".uppercased()),
                         footer: Text("Уровень сложности вопросов.")) {
-                    Picker("Сложность", selection: $userData.complexity) {
-                        ForEach(Complexity.allCases, id: \.self) { complexity in
-                            Text(complexity.rawValue).tag(complexity)
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .labelsHidden()
+                            Picker("Сложность", selection: $userData.complexity) {
+                                ForEach(Complexity.allCases, id: \.self) { complexity in
+                                    Text(complexity.rawValue).tag(complexity)
+                                }
+                            }
+                            .pickerStyle(SegmentedPickerStyle())
+                            .labelsHidden()
                 }
                 
                 Section(header: Text("Вопросы".uppercased()),
@@ -66,21 +66,14 @@ struct Settings: View {
                             .environmentObject(self.userData) }
                 }
                 
-                Section(
-                    //header: Text("Инфо".uppercased()),
-                        footer: Text("Политика конфиденциальности откроется в браузере.")) {
-                            Button("О приложении") {
-                                self.showModal2 = true
-                            }
-                            .sheet(isPresented: $showModal2) {
-                                OnboardingView()
-                                    .environmentObject(self.userData)
-                            }
-                            
-                            Button("Политика конфиденциальности") {
-                                let url = URL(string: "https://www.maximatica.app/policy")!
-                                UIApplication.shared.open(url)
-                            }
+                Section(header: Text("Инфо".uppercased())) {
+                    Button("О приложении") {
+                        self.showModal2 = true
+                    }
+                    .sheet(isPresented: $showModal2) {
+                        OnboardingView()
+                            .environmentObject(self.userData)
+                    }
                 }
                 
                 #if DEBUG
@@ -103,6 +96,7 @@ struct Settings: View {
             .navigationBarTitle("Настройки")
             .navigationBarItems(leading: LeadingButton("Закрыть") { self.presentation.wrappedValue.dismiss() })
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

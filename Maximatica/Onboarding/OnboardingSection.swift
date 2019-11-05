@@ -19,7 +19,7 @@ struct OnboardingSection: View {
             Image(systemName: image)
                 .imageScale(.large)
                 .offset(x: 0, y: 6)
-                .frame(width: 40, alignment: .leading)
+                .frame(width: 44, alignment: .leading)
             //                .foregroundColor(.purple)
             
             VStack(alignment: .leading, spacing: 6) {
@@ -28,9 +28,11 @@ struct OnboardingSection: View {
                 Text(text)
                     .font(.subheadline)
                     .lineLimit(nil)
-                Text(comment)
-                    .font(.footnote)
-                    .opacity(0.4)
+                if comment.isNotEmpty {
+                    Text(comment)
+                        .font(.footnote)
+                        .opacity(0.4)
+                }
             }
         }
         .fixedSize(horizontal: false, vertical: true)
@@ -48,6 +50,7 @@ struct OnboardingSection_Previews: PreviewProvider {
             OnboardingSection(image: "chart.bar",
                               title: "Это заголовок",
                               text: "это поясняющий текст, не супердлинный, но всё же.")
+            .border(Color.pink)
         }
     }
 }

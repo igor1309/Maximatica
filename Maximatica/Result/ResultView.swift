@@ -113,6 +113,7 @@ struct ResultView: View {
             
             Spacer()
         }
+        .frame(maxWidth: 600, maxHeight: 900)
     }
 }
 

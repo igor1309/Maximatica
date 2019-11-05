@@ -51,6 +51,7 @@ struct HistoryCharts: View {
                         .foregroundColor(.white)
                         .opacity(0.2)
                 }
+//                        .frame(maxWidth: 600, maxHeight: 900)
             }
         }
     }
@@ -69,5 +70,6 @@ struct HistoryCharts_Previews: PreviewProvider {
             }
         }
         .environmentObject(UserData())
+        .environmentObject(SettingsStore())
     }
 }

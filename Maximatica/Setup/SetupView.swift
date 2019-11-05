@@ -53,6 +53,7 @@ struct SetupView: View {
             
             Spacer()
         }
+        .frame(maxWidth: 600, maxHeight: 900)
     }
     
     private func goBack() {

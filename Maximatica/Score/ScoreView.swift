@@ -90,6 +90,7 @@ struct ScoreView: View {
             
             Spacer()
         }
+        .frame(maxWidth: 600, maxHeight: 900)
     }
 }
 
