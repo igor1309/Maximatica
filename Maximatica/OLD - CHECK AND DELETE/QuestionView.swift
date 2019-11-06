@@ -51,10 +51,8 @@ struct QuestionView: View {
                         }
                         Spacer()
                         
-                        if !settings.hideTimer {
                             TimerView(timer: $timer)
                             Spacer()
-                        }
                         
                         ProgressView(progress: Double(progress) / Double(userData.questionQty))
                     }

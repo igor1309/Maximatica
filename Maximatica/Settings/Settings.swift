@@ -76,23 +76,6 @@ struct Settings: View {
                             .environmentObject(SettingsStore())
                     }
                 }
-                
-                #if DEBUG
-                Text("Следующие секции показываются только при отладке:")
-                    .font(.subheadline).bold()
-                
-                Section(header: Text("Правильный ответ".uppercased()),
-                        footer: Text("Правильный ответ можно показывать сразу или в конце.")) {
-                            Toggle("Показывать сразу", isOn: $settings.showCorrectAnswer)
-                                .font(.subheadline)
-                }
-                
-                Section(header: Text("Таймер".uppercased()),
-                        footer: Text("Скрывать ли таймер при выполнении задания.")) {
-                            Toggle("Скрывать таймер", isOn: $settings.hideTimer)
-                                .font(.subheadline)
-                }
-                #endif
             }
             .navigationBarTitle("Настройки")
             .navigationBarItems(leading: LeadingButton("Закрыть") { self.presentation.wrappedValue.dismiss() })

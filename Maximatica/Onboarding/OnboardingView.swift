@@ -14,7 +14,7 @@ struct OnboardingView: View {
 
     @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore
-
+    
     var buttonTitle: String
     let smallScreen = UIScreen.main.bounds.height < 700
     

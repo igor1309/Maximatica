@@ -16,18 +16,6 @@ final class SettingsStore: ObservableObject {
         }
     }
     
-    @Published var showCorrectAnswer = UserDefaults.standard.bool(forKey: "showCorrectAnswer") {
-        didSet {
-            UserDefaults.standard.set(showCorrectAnswer, forKey: "showCorrectAnswer")
-        }
-    }
-    
-    @Published var hideTimer = UserDefaults.standard.bool(forKey: "hideTimer") {
-        didSet {
-            UserDefaults.standard.set(hideTimer, forKey: "hideTimer")
-        }
-    }
-    
     @Published var hasLaunchedBefor = UserDefaults.standard.bool(forKey: "hasLaunchedBefor") {
         didSet {
             UserDefaults.standard.set(hasLaunchedBefor, forKey: "hasLaunchedBefor")
