@@ -69,7 +69,6 @@ struct OnboardingView: View {
                         
                         SelectableButton(title: buttonTitle, selected: .constant(0), index: 1, color: .primary) {
                             if self.settings.hasLaunchedBefor {
-                                print(self.presentation.wrappedValue)
                                 self.presentation.wrappedValue.dismiss()
                             } else {
                                 self.settings.hasLaunchedBefor = true
