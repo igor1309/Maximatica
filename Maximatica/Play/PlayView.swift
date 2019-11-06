@@ -34,22 +34,20 @@ struct PlayView: View {
     
     var abortAndNextButtons: some View {
         HStack {
-            if isIPad {
-                GameButton(color: .clear, action: { self.abortMission() }) {
-                    Text("Стоп".uppercased())
-                }
-            } else {
-                GameButton(color: .clear, action: { self.showAbortAlert = true }) {
-                    Text("Стоп".uppercased())
-                }
-                .actionSheet(isPresented: $showAbortAlert) {
-                    ActionSheet(title: Text("Остановить миссию?".uppercased()),
-                                message: Text("За отмену миссии начисляется штраф 10 баллов."),
-                                buttons: [
-                                    .default(Text("Продолжить миссию")),
-                                    .destructive(Text("Принять штраф"),
-                                                 action: { self.abortMission() })])
-                }
+            GameButton(color: .clear, action: {
+                if self.isIPad {
+                    self.abortMission()
+                } else {
+                    self.showAbortAlert = true }}) {
+                        Text("Стоп".uppercased())
+            }
+            .actionSheet(isPresented: $showAbortAlert) {
+                ActionSheet(title: Text("Остановить миссию?".uppercased()),
+                            message: Text("За отмену миссии начисляется штраф 10 баллов."),
+                            buttons: [
+                                .default(Text("Продолжить миссию")),
+                                .destructive(Text("Принять штраф"),
+                                             action: { self.abortMission() })])
             }
             
             Spacer()

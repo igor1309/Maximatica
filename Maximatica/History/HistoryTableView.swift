@@ -14,6 +14,8 @@ struct HistoryTableView: View {
     @EnvironmentObject var userData: UserData
     @State private var showAction = false
     
+    var isIPad: Bool { UIDevice.current.userInterfaceIdiom == .pad }
+    
     var body: some View {
         NavigationView {
             HistoryTable()
@@ -22,7 +24,10 @@ struct HistoryTableView: View {
                     leading: LeadingButton("Закрыть") {
                         self.presentation.wrappedValue.dismiss() },
                     trailing: TrailingButtonSFSymbol("trash") {
-                        self.showAction = true })
+                        if self.isIPad {
+                            self.resetHistory()
+                        } else {
+                            self.showAction = true }})
                 .actionSheet(isPresented: $showAction) {
                     ActionSheet(title: Text("Удалить все записи в истории?".uppercased()),
                                 message: Text("Это действие невозможно отменить."),

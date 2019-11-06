@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         Group {
-            if settings.hasLaunchedBefor {
+//            if settings.hasLaunchedBefor {
                 ZStack {
                     MainGradient()
                     
@@ -22,12 +22,12 @@ struct ContentView: View {
                         .environmentObject(UserData())
                         .environmentObject(SettingsStore())
                 }
-            } else {
-                OnboardingView(buttonTitle: "Понятно, поехали")
-                    .environmentObject(UserData())
-                    .environmentObject(SettingsStore())
-                    .transition(.scale)
-            }
+//            } else {
+//                OnboardingView(buttonTitle: "Понятно, поехали")
+//                    .environmentObject(UserData())
+//                    .environmentObject(SettingsStore())
+//                    .transition(.scale)
+//            }
         }
     }
 }

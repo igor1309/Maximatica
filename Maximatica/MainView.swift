@@ -14,13 +14,20 @@ struct MainView: View {
     
     var body: some View {
         VStack(spacing: 32) {
-            if userData.gameStatus == .score { ScoreView().transition(.scale) }
-            
-            if userData.gameStatus == .setup { SetupView().transition(.scale) }
-            
-            if userData.gameStatus == .play { PlayView().transition(.scale) }
-            
-            if userData.gameStatus == .result { ResultView().transition(.scale) }
+            if !settings.hasLaunchedBefor { OnboardingView(buttonTitle: "Понятно, поехали")
+                //            .environmentObject(UserData())
+                //            .environmentObject(SettingsStore())
+                            .transition(.scale)
+                 }
+            else {
+                if userData.gameStatus == .score { ScoreView().transition(.scale) }
+                
+                if userData.gameStatus == .setup { SetupView().transition(.scale) }
+                
+                if userData.gameStatus == .play { PlayView().transition(.scale) }
+                
+                if userData.gameStatus == .result { ResultView().transition(.scale) }
+            }
         }
     }
 }
