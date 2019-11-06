@@ -9,11 +9,13 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @Environment(\.presentationMode) var presentation
+    @Environment(\.colorScheme) var colorScheme
+
     @EnvironmentObject var userData: UserData
     @EnvironmentObject var settings: SettingsStore
-    @Environment(\.presentationMode) var presentation
-    
-    @Environment(\.colorScheme) var colorScheme
+
+    var buttonTitle: String
     let smallScreen = UIScreen.main.bounds.height < 700
     
     var body: some View {
@@ -35,38 +37,45 @@ struct OnboardingView: View {
                     ScrollView(.vertical, showsIndicators: true) {
                         VStack(alignment: .leading, spacing: 8) {
                             Group {
-                                //                                Image("onboarding")
-                                //                                    .scaledToFit()
-                                //                                    .frame(maxWidth: .infinity, alignment: .center)
+                                //Image("onboarding")
+                                //    .scaledToFit()
+                                //    .frame(maxWidth: .infinity, alignment: .center)
                                 
                                 Text("Максиматика – это приложение для тренировки навыков счёта у детей.")
                                     .font(.headline)
-
+                                
                                 OnboardingSection(image: "cursor.rays", title: "Миссия", text: "Миссия — это набор примеров, которые нужно решить.")
-
+                                
                                 OnboardingSection(image: "stopwatch", title: "Миссия «НА ВРЕМЯ»", text: "Нужно решить максимальное количество примеров за 5, 10, 15 или 20 минут:")
-
+                                
                                 MissionTimeSelector()
-
+                                
                                 OnboardingSection(image: "number", title: "Миссия «КОЛИЧЕСТВО»", text: "Требуется решить 10, 20, 50 или 100 примеров как можно быстрее:")
                                 
                                 MissionQtySelector()
                             }
                             
-                            Group {
-                                OnboardingSection(image: "sum", title: "Баллы" , text: "Начисляются за правильность, сложность и скорость прохождения миссии.", comment: "Система начисления баллов продолжает совершенствоваться, поэтому значения могут меняться, но не переживайте, всё считается честно!")
-                                
-                                OnboardingSection(image: "gear", title: "Сложность и возраст", text: "В Настройках можно менять уровень сложности решаемых примеров и возраст ребёнка.")
-                                
-                                OnboardingSection(image: "chart.bar", title: "Графики", text: "Показывают динамику результатов тренировок; можно выбрать период, отображаемый на графике.")
-                                
-                                OnboardingSection(image: "lock.shield", title: "Конфиденциальность", text: "Приложение никуда не отправляет никакие данные. Вообще. Совершенно.")
-                            }
+//                            Group {
+//                                OnboardingSection(image: "sum", title: "Баллы" , text: "Начисляются за правильность, сложность и скорость прохождения миссии.", comment: "Система начисления баллов продолжает совершенствоваться, поэтому значения могут меняться, но не переживайте, всё считается честно!")
+//
+//                                OnboardingSection(image: "gear", title: "Сложность и возраст", text: "В Настройках можно менять уровень сложности решаемых примеров и возраст ребёнка.")
+//
+//                                OnboardingSection(image: "chart.bar", title: "Графики", text: "Показывают динамику результатов тренировок; можно выбрать период, отображаемый на графике.")
+//
+//                                OnboardingSection(image: "lock.shield", title: "Конфиденциальность", text: "Приложение никуда не отправляет никакие данные. Вообще. Совершенно.")
+//                            }
                         }
                         .padding(.horizontal)
                         
-                        SelectableButton(title: "Понятно, поехали", selected: .constant(0), index: 1, color: .primary) { self.settings.hasLaunchedBefor = true }
-                            .padding(.vertical)
+                        SelectableButton(title: buttonTitle, selected: .constant(0), index: 1, color: .primary) {
+                            if self.settings.hasLaunchedBefor {
+                                print(self.presentation.wrappedValue)
+                                self.presentation.wrappedValue.dismiss()
+                            } else {
+                                self.settings.hasLaunchedBefor = true
+                            }
+                        }
+                        .padding(.vertical)
                     }
                 }
                 .padding([.top, .horizontal])
@@ -89,8 +98,8 @@ struct OnboardingView: View {
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView()
-//            .environment(\.colorScheme, .dark)
+        OnboardingView(buttonTitle: "Понятно, поехали")
+            //            .environment(\.colorScheme, .dark)
             .environmentObject(UserData())
             .environmentObject(SettingsStore())
     }

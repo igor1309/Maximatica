@@ -19,6 +19,8 @@ struct PlayView: View {
     @State private var showAbortAlert = false
     @State private var showSolveTheProblem = false
     
+    var isIPad: Bool { UIDevice.current.userInterfaceIdiom == .pad }
+    
     var progress: Double {
         withAnimation {
             switch userData.missionMode {
@@ -32,16 +34,22 @@ struct PlayView: View {
     
     var abortAndNextButtons: some View {
         HStack {
-            GameButton(color: .clear, action: { self.showAbortAlert = true }) {
-                Text("Стоп".uppercased())
-            }
-            .actionSheet(isPresented: $showAbortAlert) {
-                ActionSheet(title: Text("Остановить миссию?".uppercased()),
-                            message: Text("За отмену миссии начисляется штраф 10 баллов."),
-                            buttons: [
-                                .default(Text("Продолжить миссию")),
-                                .destructive(Text("Принять штраф"),
-                                             action: { self.abortMission() })])
+            if isIPad {
+                GameButton(color: .clear, action: { self.abortMission() }) {
+                    Text("Стоп".uppercased())
+                }
+            } else {
+                GameButton(color: .clear, action: { self.showAbortAlert = true }) {
+                    Text("Стоп".uppercased())
+                }
+                .actionSheet(isPresented: $showAbortAlert) {
+                    ActionSheet(title: Text("Остановить миссию?".uppercased()),
+                                message: Text("За отмену миссии начисляется штраф 10 баллов."),
+                                buttons: [
+                                    .default(Text("Продолжить миссию")),
+                                    .destructive(Text("Принять штраф"),
+                                                 action: { self.abortMission() })])
+                }
             }
             
             Spacer()

@@ -23,7 +23,10 @@ struct ContentView: View {
                         .environmentObject(SettingsStore())
                 }
             } else {
-                OnboardingView().transition(.scale)
+                OnboardingView(buttonTitle: "Понятно, поехали")
+                    .transition(.scale)
+                    .environmentObject(UserData())
+                    .environmentObject(SettingsStore())
             }
         }
     }

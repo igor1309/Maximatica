@@ -46,7 +46,7 @@ struct ResultView: View {
                     HStack {
                         if showProgress {
                             ProgressBar(progress: result.correctAnswersShare, width: 240, height: 8)
-                                .transition(AnyTransition.opacity.combined(with: .scale).animation(.easeOut(duration: 2.0)))
+                                .transition(AnyTransition.opacity.combined(with: .scale).animation(.easeOut(duration: 1.20)))
                         }
                         Spacer()
                         Text("\(result.correctAnswersShare.formattedPercentage) ")

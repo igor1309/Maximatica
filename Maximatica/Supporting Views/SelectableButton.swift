@@ -19,6 +19,14 @@ struct SelectableButton: View {
     var color: Color = .white
     var action: () -> Void
     
+    init(title: String, selected: Binding<Int>, index: Int, color: Color = .white, action: @escaping () -> Void) {
+        self.title = title
+        self._selected = selected
+        self.index = index
+        self.color = color
+        self.action = action
+    }
+    
     var body: some View {
         return Button(action: {
             if self.hapticsAvailable {

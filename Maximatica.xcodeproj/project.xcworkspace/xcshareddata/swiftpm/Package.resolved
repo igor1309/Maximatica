@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftPI",
+        "repositoryURL": "https://github.com/igor1309/SwiftPI.git",
+        "state": {
+          "branch": "master",
+          "revision": "45e03bf347adbc8b88d6d413e4799ce9252550c4",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -71,8 +71,9 @@ struct Settings: View {
                         self.showModal2 = true
                     }
                     .sheet(isPresented: $showModal2) {
-                        OnboardingView()
+                        OnboardingView(buttonTitle: "OK, ЗАКРЫТЬ")
                             .environmentObject(self.userData)
+                            .environmentObject(SettingsStore())
                     }
                 }
                 

@@ -30,6 +30,7 @@ struct HistoryTableView: View {
                                           .destructive(Text("Да, удалить все"),
                                                        action: { self.resetHistory() })])}
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     private func resetHistory() {
