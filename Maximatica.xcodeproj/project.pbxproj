@@ -10,6 +10,7 @@
 		2A0184E62369B383000DFFA5 /* SwiftPI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A0184E52369B383000DFFA5 /* SwiftPI */; };
 		2A0184E82369B3F1000DFFA5 /* VerticalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0184E72369B3F1000DFFA5 /* VerticalBar.swift */; };
 		2A0184EA2369B41A000DFFA5 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0184E92369B41A000DFFA5 /* BarChartView.swift */; };
+		2A09C5AC237437E600C23359 /* MAXImaticaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A09C5AB237437E600C23359 /* MAXImaticaUITests.swift */; };
 		2A1EE39E236A138A00FFF5C3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EE39D236A138A00FFF5C3 /* HistoryView.swift */; };
 		2A1EE3A0236A13CC00FFF5C3 /* HistoryCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EE39F236A13CC00FFF5C3 /* HistoryCharts.swift */; };
 		2A4114D8236D9F7C0022F500 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4114D7236D9F7C0022F500 /* Score.swift */; };
@@ -37,6 +38,8 @@
 		2A6102C9236EB76D0029C92C /* HorizontalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6102C8236EB76D0029C92C /* HorizontalBar.swift */; };
 		2A6102EB236ED1BF0029C92C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6102EA236ED1BF0029C92C /* ProgressBar.swift */; };
 		2A6102ED236F11980029C92C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6102EC236F11980029C92C /* OnboardingView.swift */; };
+		2A63AEA323746005003A378D /* OnboardingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A63AEA223746005003A378D /* OnboardingUITests.swift */; };
+		2A63AEA5237460CB003A378D /* XCUIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A63AEA4237460CB003A378D /* XCUIApplication+Extension.swift */; };
 		2A7718D52367045900BF9408 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718D42367045900BF9408 /* QuestionView.swift */; };
 		2A7718D72367047000BF9408 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718D62367047000BF9408 /* Question.swift */; };
 		2A7718D92367421400BF9408 /* NumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718D82367421400BF9408 /* NumberPad.swift */; };
@@ -64,9 +67,22 @@
 		2AF572D6236C1BEF00AB6A2D /* SelectableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF572D5236C1BEF00AB6A2D /* SelectableButton.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2A09C5AE237437E600C23359 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A4805BB2366C08D00E95FE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A4805C22366C08D00E95FE7;
+			remoteInfo = Maximatica;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2A0184E72369B3F1000DFFA5 /* VerticalBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalBar.swift; sourceTree = "<group>"; };
 		2A0184E92369B41A000DFFA5 /* BarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
+		2A09C5A9237437E600C23359 /* MAXImaticaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MAXImaticaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A09C5AB237437E600C23359 /* MAXImaticaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAXImaticaUITests.swift; sourceTree = "<group>"; };
+		2A09C5AD237437E600C23359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A1EE39D236A138A00FFF5C3 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		2A1EE39F236A13CC00FFF5C3 /* HistoryCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCharts.swift; sourceTree = "<group>"; };
 		2A4114D7236D9F7C0022F500 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
@@ -96,6 +112,8 @@
 		2A6102C8236EB76D0029C92C /* HorizontalBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBar.swift; sourceTree = "<group>"; };
 		2A6102EA236ED1BF0029C92C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		2A6102EC236F11980029C92C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		2A63AEA223746005003A378D /* OnboardingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUITests.swift; sourceTree = "<group>"; };
+		2A63AEA4237460CB003A378D /* XCUIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Extension.swift"; sourceTree = "<group>"; };
 		2A7718D42367045900BF9408 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		2A7718D62367047000BF9408 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		2A7718D82367421400BF9408 /* NumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPad.swift; sourceTree = "<group>"; };
@@ -139,6 +157,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2A09C5A6237437E600C23359 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2A4805C02366C08D00E95FE7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -150,11 +175,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A09C5AA237437E600C23359 /* MAXImaticaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2A09C5AB237437E600C23359 /* MAXImaticaUITests.swift */,
+				2A63AEA223746005003A378D /* OnboardingUITests.swift */,
+				2A09C5AD237437E600C23359 /* Info.plist */,
+				2A63AEA4237460CB003A378D /* XCUIApplication+Extension.swift */,
+			);
+			path = MAXImaticaUITests;
+			sourceTree = "<group>";
+		};
 		2A4805BA2366C08D00E95FE7 = {
 			isa = PBXGroup;
 			children = (
 				2AC9C9852369B36D0025835B /* SwiftPI */,
 				2A4805C52366C08D00E95FE7 /* Maximatica */,
+				2A09C5AA237437E600C23359 /* MAXImaticaUITests */,
 				2A4805C42366C08D00E95FE7 /* Products */,
 				2AA70A9F2369ABAD00080F1E /* Frameworks */,
 			);
@@ -164,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				2A4805C32366C08D00E95FE7 /* MAXImatica.app */,
+				2A09C5A9237437E600C23359 /* MAXImaticaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -431,6 +469,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2A09C5A8237437E600C23359 /* MAXImaticaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A09C5B2237437E600C23359 /* Build configuration list for PBXNativeTarget "MAXImaticaUITests" */;
+			buildPhases = (
+				2A09C5A5237437E600C23359 /* Sources */,
+				2A09C5A6237437E600C23359 /* Frameworks */,
+				2A09C5A7237437E600C23359 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A09C5AF237437E600C23359 /* PBXTargetDependency */,
+			);
+			name = MAXImaticaUITests;
+			productName = MAXImaticaUITests;
+			productReference = 2A09C5A9237437E600C23359 /* MAXImaticaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		2A4805C22366C08D00E95FE7 /* Maximatica */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A4805D72366C08E00E95FE7 /* Build configuration list for PBXNativeTarget "Maximatica" */;
@@ -461,6 +517,10 @@
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Igor Malyarov";
 				TargetAttributes = {
+					2A09C5A8237437E600C23359 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 2A4805C22366C08D00E95FE7;
+					};
 					2A4805C22366C08D00E95FE7 = {
 						CreatedOnToolsVersion = 11.2;
 					};
@@ -483,11 +543,19 @@
 			projectRoot = "";
 			targets = (
 				2A4805C22366C08D00E95FE7 /* Maximatica */,
+				2A09C5A8237437E600C23359 /* MAXImaticaUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2A09C5A7237437E600C23359 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2A4805C12366C08D00E95FE7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -501,6 +569,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2A09C5A5237437E600C23359 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A63AEA323746005003A378D /* OnboardingUITests.swift in Sources */,
+				2A09C5AC237437E600C23359 /* MAXImaticaUITests.swift in Sources */,
+				2A63AEA5237460CB003A378D /* XCUIApplication+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2A4805BF2366C08D00E95FE7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -561,6 +639,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2A09C5AF237437E600C23359 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A4805C22366C08D00E95FE7 /* Maximatica */;
+			targetProxy = 2A09C5AE237437E600C23359 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		2A4805D12366C08E00E95FE7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -573,6 +659,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2A09C5B0237437E600C23359 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VRVJ9YNRQU;
+				INFOPLIST_FILE = MAXImaticaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.MAXImaticaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Maximatica;
+			};
+			name = Debug;
+		};
+		2A09C5B1237437E600C23359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VRVJ9YNRQU;
+				INFOPLIST_FILE = MAXImaticaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.MAXImaticaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Maximatica;
+			};
+			name = Release;
+		};
 		2A4805D52366C08E00E95FE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -692,7 +816,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_ASSET_PATHS = "\"Maximatica/Preview Content\"";
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
 				ENABLE_PREVIEWS = YES;
@@ -715,7 +839,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_ASSET_PATHS = "\"Maximatica/Preview Content\"";
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
 				ENABLE_PREVIEWS = YES;
@@ -736,6 +860,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2A09C5B2237437E600C23359 /* Build configuration list for PBXNativeTarget "MAXImaticaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A09C5B0237437E600C23359 /* Debug */,
+				2A09C5B1237437E600C23359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2A4805BE2366C08D00E95FE7 /* Build configuration list for PBXProject "Maximatica" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

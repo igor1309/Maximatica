@@ -83,6 +83,7 @@ struct PlayView: View {
             Spacer()
             
             QuestionSubView(question: userData.question, answer: answer)
+            .accessibility(identifier: "playView")
             
             NumberPad(text: $answer)
             

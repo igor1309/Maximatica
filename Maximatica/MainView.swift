@@ -18,6 +18,7 @@ struct MainView: View {
                 //            .environmentObject(UserData())
                 //            .environmentObject(SettingsStore())
                             .transition(.scale)
+                .accessibility(identifier: "onboardingView")
                  }
             else {
                 if userData.gameStatus == .score { ScoreView().transition(.scale) }

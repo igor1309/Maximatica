@@ -37,6 +37,7 @@ struct SetupView: View {
                 .font(.subheadline)
                 .foregroundColor(.white)
                 .shadow(color: .systemIndigo, radius: 8)
+                .accessibility(identifier: "setupView")
             
             HStack {
                 GameButton(color: .clear, action: { self.goBack() }) {

@@ -88,8 +88,9 @@ struct OnboardingView: View {
                 .padding(smallScreen ? [.horizontal, .bottom] : [.horizontal])
             }
             .padding(.top)
-            .frame(maxWidth: 600, maxHeight: 1000)
+            .frame(maxWidth: 600, maxHeight: 1000)    
         }
+        .accessibility(identifier: "onboardingView")
     }
 }
 

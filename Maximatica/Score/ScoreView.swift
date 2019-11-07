@@ -40,12 +40,11 @@ struct ScoreView: View {
         VStack(spacing: 32) {
             GameStatusTitle(title: "Maximatica", withButtons: true)
             
-            //                        Spacer()
-            
             VStack(spacing: 0) {
                 Text(userData.history.score.formattedGrouped)
                     .font(Font.system(size: 88))
                     .fontWeight(.heavy)
+                    .accessibility(identifier: "scoreView")
                 
                 Text("Баллов всего".uppercased())
                     .font(.subheadline)
@@ -75,11 +74,6 @@ struct ScoreView: View {
             }
             .foregroundColor(.yellow)
                 .opacity(0.9)
-            
-            //            if !smallScreen {
-            //                BarChartView(bars: userData.history.scoresForLastWeek)
-            //                //                .scaleEffect(0.5).frame(width: 200, height: 130)
-            //            }
             
             Spacer()
             
