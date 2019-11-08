@@ -74,7 +74,7 @@ struct MissionTimeSelector: View {
     var body: some View {
         Picker("Время миссии", selection: $userData.missionTime.animation()) {
             ForEach(timeArray, id: \.self) { item in
-                Text("\(item) минут").tag(TimeInterval(item * 60))
+                Text("\(String(item)) min").tag(TimeInterval(item * 60))
             }
         }
         .pickerStyle(SegmentedPickerStyle())

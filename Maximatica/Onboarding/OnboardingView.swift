@@ -39,28 +39,28 @@ struct OnboardingView: View {
                             Group {
                                 //Image("onboarding").scaledToFit().frame(maxWidth: .infinity, alignment: .center)
                                 
-                                Text("Максиматика – это приложение для тренировки навыков счёта у детей.")
+                                Text("shortAbout")
                                     .font(.headline)
                                 
-                                OnboardingSection(image: "cursor.rays", title: "Миссия", text: "Миссия — это набор примеров, которые нужно решить.")
+                                OnboardingSection(image: "cursor.rays", title: "mission", text: "missionAbout")
                                 
-                                OnboardingSection(image: "stopwatch", title: "Миссия «НА ВРЕМЯ»", text: "Нужно решить максимальное количество примеров за 5, 10, 15 или 20 минут:")
+                                OnboardingSection(image: "stopwatch", title: "timeMission", text: "timeMissionAbout")
                                 
                                 MissionTimeSelector()
                                 
-                                OnboardingSection(image: "number", title: "Миссия «КОЛИЧЕСТВО»", text: "Требуется решить 10, 20, 50 или 100 примеров как можно быстрее:")
+                                OnboardingSection(image: "number", title: "qtyMssion", text: "qtyMssionAbout")
                                 
                                 MissionQtySelector()
                             }
                             
                             Group {
-                                OnboardingSection(image: "sum", title: "Баллы" , text: "Начисляются за правильность, сложность и скорость прохождения миссии.", comment: "Система начисления баллов продолжает совершенствоваться, поэтому значения могут меняться, но не переживайте, всё считается честно!")
+                                OnboardingSection(image: "sum", title: "score" , text: "scoreAbout", comment: "scoreNote")
                                 
-                                OnboardingSection(image: "gear", title: "Сложность и возраст", text: "В Настройках можно менять уровень сложности решаемых примеров и возраст ребёнка.")
+                                OnboardingSection(image: "gear", title: "complexityAndAge", text: "complexityAndAgeAbout")
                                 
-                                OnboardingSection(image: "chart.bar", title: "Графики", text: "Показывают динамику результатов тренировок; можно выбрать период, отображаемый на графике.")
+                                OnboardingSection(image: "chart.bar", title: "charts", text: "chartsAbout")
                                 
-                                OnboardingSection(image: "lock.shield", title: "Конфиденциальность", text: "Приложение никуда не отправляет никакие данные. Вообще. Совершенно.")
+                                OnboardingSection(image: "lock.shield", title: "privacy", text: "privacyAbout")
                             }
                         }
                         .padding(.horizontal)
@@ -81,7 +81,7 @@ struct OnboardingView: View {
                 
                 HStack(alignment: .firstTextBaseline, spacing: 3) {
                     Text("* ")
-                    Text("слово «Максиматика» придумал Макс в четыре года.")
+                    Text("wordMAXImatica")
                 }
                 .font(.subheadline)
                 .foregroundColor(colorScheme == .dark ? .systemYellow : .systemIndigo)

@@ -14,7 +14,7 @@ struct MainView: View {
     
     var body: some View {
         VStack(spacing: 32) {
-            if !settings.hasLaunchedBefor { OnboardingView(buttonTitle: "Понятно, поехали")
+            if !settings.hasLaunchedBefor { OnboardingView(buttonTitle: "ok go")
                 //            .environmentObject(UserData())
                 //            .environmentObject(SettingsStore())
                             .transition(.scale)

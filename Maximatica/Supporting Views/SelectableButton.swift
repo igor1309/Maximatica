@@ -38,7 +38,7 @@ struct SelectableButton: View {
                 self.action()
             }
         }) {
-            Text(verbatim: title.uppercased())
+            Text(NSLocalizedString(title, comment: "").uppercased())
                 .font(.headline)
                 .foregroundColor(color)
                 .frame(width: 200, height: smallScreen ? 12 : 24)

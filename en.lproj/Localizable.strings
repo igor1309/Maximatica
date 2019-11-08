@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  Maximatica
+
+  Created by Igor Malyarov on 08.11.2019.
+  Copyright © 2019 Igor Malyarov. All rights reserved.
+*/
+
+//  Onboarding
+
+"ok go" = "OK, Let's go";
+
+"shortAbout" = "Use MAXImatica to master your counting skills: addition, subtraction, multiplication and division.\nApp focus is on kids but adults can have some fun too.";
+"mission" = "Mission";
+"missionAbout" = "Mission is a set of examples to be solved.";
+"timeMission" = "TIME Mission";
+"timeMissionAbout" = "Solve as many examples as you can for selected time:";
+"qtyMssion" = "QUANTITY Mission";
+"qtyMssionAbout" = "Solve as quickly as you can selected number of examples:";
+"score" = "Points";
+"scoreAbout" = "Points are awarded for the accuracy, complexity and speed of completing the mission.";
+"scoreNote" = "The scoring system is still in development, so the values may change, but do not worry everything is totally fair.";
+"complexityAndAge" = "Complexity and Age";
+"complexityAndAgeAbout" = "Go to Settings to change complexity and age.";
+"charts" = "Charts";
+"chartsAbout" = "Show the dynamics of the results of training; you can select the period displayed on the chart.";
+"privacy" = "Privacy";
+"privacyAbout" = "MAXImatica doesn't send your data anywhere.";
+"wordMAXImatica" = "Max created the word 'MAXImatica' beeing four years old.";
+
+
+//  MissionOptionsSelectors
+
+"%@ min" = "%@ min";

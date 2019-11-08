@@ -20,16 +20,15 @@ struct OnboardingSection: View {
                 .imageScale(.large)
                 .offset(x: 0, y: 6)
                 .frame(width: 44, alignment: .leading)
-            //                .foregroundColor(.purple)
             
             VStack(alignment: .leading, spacing: 6) {
-                Text(title)
+                Text(NSLocalizedString(title, comment: ""))
                     .font(.headline)
-                Text(text)
+                Text(NSLocalizedString(text, comment: ""))
                     .font(.subheadline)
                     .lineLimit(nil)
                 if comment.isNotEmpty {
-                    Text(comment)
+                    Text(NSLocalizedString(comment, comment: ""))
                         .font(.footnote)
                         .opacity(0.4)
                 }
