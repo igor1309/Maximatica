@@ -12,7 +12,7 @@
 
 "shortAbout" = "Use MAXImatica to master your counting skills: addition, subtraction, multiplication and division.\nApp focus is on kids but adults can have some fun too.";
 "mission" = "Mission";
-"missionAbout" = "Mission is a set of examples to be solved.";
+"missionAbout" = "Mission is a set of examples to be solved. There are two types of mission:";
 "timeMission" = "TIME Mission";
 "timeMissionAbout" = "Solve as many examples as you can for selected time:";
 "qtyMssion" = "QUANTITY Mission";

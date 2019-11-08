@@ -65,7 +65,7 @@ struct OnboardingView: View {
                         }
                         .padding(.horizontal)
                         
-                        SelectableButton(title: buttonTitle, selected: .constant(0), index: 1, color: .primary) {
+                        SelectableButton(title: buttonTitle, selected: .constant(0), index: 1, color: colorScheme == .dark ? .systemYellow : Color(0x0E4CAB)) {
                             if self.settings.hasLaunchedBefor {
                                 self.presentation.wrappedValue.dismiss()
                             } else {
@@ -84,7 +84,7 @@ struct OnboardingView: View {
                     Text("wordMAXImatica")
                 }
                 .font(.subheadline)
-                .foregroundColor(colorScheme == .dark ? .systemYellow : .systemIndigo)
+                .foregroundColor(colorScheme == .dark ? .systemYellow : .primary)
                 .padding(smallScreen ? [.horizontal, .bottom] : [.horizontal])
             }
             .padding(.top)
@@ -97,7 +97,7 @@ struct OnboardingView: View {
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingView(buttonTitle: "Понятно, поехали")
-            //            .environment(\.colorScheme, .dark)
+                        .environment(\.colorScheme, .dark)
             .environmentObject(UserData())
             .environmentObject(SettingsStore())
     }
