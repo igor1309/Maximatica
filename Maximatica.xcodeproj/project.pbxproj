@@ -44,6 +44,8 @@
 		2A7718D72367047000BF9408 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718D62367047000BF9408 /* Question.swift */; };
 		2A7718D92367421400BF9408 /* NumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718D82367421400BF9408 /* NumberPad.swift */; };
 		2A7718DB2367479E00BF9408 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718DA2367479E00BF9408 /* ProgressView.swift */; };
+		2A79DBD02379B4BF00799DC3 /* HistoryForPeriods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A79DBCF2379B4BF00799DC3 /* HistoryForPeriods.swift */; };
+		2A79DBD22379C1ED00799DC3 /* ChartsForPeriods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A79DBD12379C1ED00799DC3 /* ChartsForPeriods.swift */; };
 		2A9B56F2236967A800ACEE8F /* HistoryGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B56F1236967A800ACEE8F /* HistoryGradient.swift */; };
 		2A9B56F42369683500ACEE8F /* MainGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B56F32369683500ACEE8F /* MainGradient.swift */; };
 		2AA56FDE236F597A00AFB280 /* OnboardingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA56FDD236F597A00AFB280 /* OnboardingSection.swift */; };
@@ -119,6 +121,8 @@
 		2A7718D62367047000BF9408 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		2A7718D82367421400BF9408 /* NumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPad.swift; sourceTree = "<group>"; };
 		2A7718DA2367479E00BF9408 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		2A79DBCF2379B4BF00799DC3 /* HistoryForPeriods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryForPeriods.swift; path = Maximatica/HistoryForPeriods.swift; sourceTree = SOURCE_ROOT; };
+		2A79DBD12379C1ED00799DC3 /* ChartsForPeriods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsForPeriods.swift; sourceTree = "<group>"; };
 		2A9B56F1236967A800ACEE8F /* HistoryGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryGradient.swift; sourceTree = "<group>"; };
 		2A9B56F32369683500ACEE8F /* MainGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGradient.swift; sourceTree = "<group>"; };
 		2AA56FDD236F597A00AFB280 /* OnboardingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSection.swift; sourceTree = "<group>"; };
@@ -312,6 +316,8 @@
 				2AB5C48423687CC4009D0613 /* HistoryTableView.swift */,
 				2AB5C48623687FCA009D0613 /* HistoryTable.swift */,
 				2A54D9BA236825CF00A50CF1 /* HistoryRow.swift */,
+				2A79DBCF2379B4BF00799DC3 /* HistoryForPeriods.swift */,
+				2A79DBD12379C1ED00799DC3 /* ChartsForPeriods.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -595,6 +601,7 @@
 				2A54D9A923680F0100A50CF1 /* MathButtonStyle.swift in Sources */,
 				2AF5728D236B284400AB6A2D /* StatusView.swift in Sources */,
 				2A4805C72366C08D00E95FE7 /* AppDelegate.swift in Sources */,
+				2A79DBD22379C1ED00799DC3 /* ChartsForPeriods.swift in Sources */,
 				2A436881236C90FB00FDA11F /* ClockView.swift in Sources */,
 				2A420EFC236783FC002B628A /* CustomButton.swift in Sources */,
 				2AF572B5236B870900AB6A2D /* MainView.swift in Sources */,
@@ -623,6 +630,7 @@
 				2A6102C9236EB76D0029C92C /* HorizontalBar.swift in Sources */,
 				2AA9070F23677EF80051CCB1 /* SolveTheProblemBanner.swift in Sources */,
 				2AF57287236B0C9300AB6A2D /* MissionOptionsSelector.swift in Sources */,
+				2A79DBD02379B4BF00799DC3 /* HistoryForPeriods.swift in Sources */,
 				2A0184E82369B3F1000DFFA5 /* VerticalBar.swift in Sources */,
 				2A4114D8236D9F7C0022F500 /* Score.swift in Sources */,
 				2A4805C92366C08D00E95FE7 /* SceneDelegate.swift in Sources */,

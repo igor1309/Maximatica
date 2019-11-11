@@ -56,7 +56,7 @@ struct ScoreView: View {
             
             Group {
                 VStack(spacing: 0) {
-                    Text("За неделю".uppercased())
+                    Text("За последние 7 дней".uppercased())
                         .font(.subheadline)
                     
                     HStack {

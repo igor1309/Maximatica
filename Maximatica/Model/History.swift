@@ -7,9 +7,66 @@
 //
 
 import Foundation
+import SwiftPI
 
 struct History: Codable {
     var results: [TestResult]
+}
+
+struct ResultForInterval: Codable, Identifiable {
+    var id = UUID()
+    
+    var interval: DateInterval
+    var sessions: Int
+    var score: Double
+    
+    ///  `from TestResult`
+    var totalAnswers: Double
+    // Количество правильных ответов
+    var correctAnswers: Double
+    // Затраченное время
+    var timeSpent: TimeInterval
+    
+    ///  `computed properties`
+    // Скорость решения, вопросов в минуту
+    var velocity: Double { timeSpent == 0 ? 0 : totalAnswers / timeSpent * 60 }
+    
+    // Тепм(?) решения: секунд на вопрос
+    var pace: Double { totalAnswers == 0 ? 0 : timeSpent / totalAnswers }
+    
+    // Доля правильных ответов
+    var correctAnswersShare: Double { totalAnswers == 0 ? 0 : correctAnswers / totalAnswers }
+}
+
+extension History {
+    var resultsForInterval: [ResultForInterval] {
+        //  MARK: - ПРИДУМАТЬ КАК ИЗМЕНЯТЬ
+        let component = Calendar.Component.weekOfYear
+        
+        let firstDate = results.map { $0.dateTime }.min()!
+        let lastDate = results.map { $0.dateTime }.max()!
+        
+        let intervals = dateIntervals(of: component, startDate: firstDate, endDate: lastDate)
+        
+        var ress = [ResultForInterval]()
+        
+        for interval in intervals {
+            let slice = results.filter { interval.contains($0.dateTime) }
+            
+            let res = ResultForInterval(
+                interval: interval,
+                sessions: slice.count,
+                score: slice.reduce(0, { $0 + Score(testResult: $1).finalScore }),
+                totalAnswers: slice.reduce(0, { $0 + $1.totalAnswers }),
+                correctAnswers: slice.reduce(0, { $0 + $1.correctAnswers }),
+                timeSpent: slice.reduce(0, { $0 + $1.timeSpent })
+            )
+            
+            ress.append(res)
+        }
+        
+        return ress.reversed()
+    }
 }
 
 extension History {
@@ -24,17 +81,17 @@ extension History {
             .filter { $0.dateTime >= Date().startOfDay.addDays(-7) }
             .map { Score(testResult: $0).finalScore }.reduce(0, { $0 + $1 })
     }
-
+    
     var timeSpentForLastWeek: Double {
         results
             .filter { $0.dateTime >= Date().startOfDay.addDays(-7) }
             .reduce(0, { $0 + $1.timeSpent }) / 60
     }
-
+    
     var score: Double {
         results.map { Score(testResult: $0).finalScore }.reduce(0, { $0 + $1 })
     }
-
+    
 }
 
 extension History {

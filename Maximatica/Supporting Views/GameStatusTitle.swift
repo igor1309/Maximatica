@@ -16,12 +16,22 @@ struct GameStatusTitle: View {
     @State private var showModal = false
     @State private var modal: Modal = .settings
     
-    private enum Modal { case settings, history }
+    private enum Modal { case settings, history, test }
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
             if withButtons {
                 HStack {
+                    #if DEBUG
+                    Button(action: {
+                        self.modal = .test
+                        self.showModal = true
+                    }) {
+                        Image(systemName: "chart.bar")
+                            .padding(.top, 8)
+                            .padding(.trailing, 16)
+                    }
+                    #endif
                     Button(action: {
                         self.modal = .settings
                         self.showModal = true
@@ -43,6 +53,11 @@ struct GameStatusTitle: View {
                 .sheet(isPresented: $showModal) {
                     if self.modal == .settings {
                         Settings()
+                            .environmentObject(self.userData)
+                            .environmentObject(self.settings) }
+                    
+                    if self.modal == .test {
+                        ChartsForPeriods()
                             .environmentObject(self.userData)
                             .environmentObject(self.settings) }
                     
