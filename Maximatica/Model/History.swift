@@ -43,8 +43,8 @@ extension History {
         //  MARK: - ПРИДУМАТЬ КАК ИЗМЕНЯТЬ
         let component = Calendar.Component.weekOfYear
         
-        let firstDate = results.map { $0.dateTime }.min()!
-        let lastDate = results.map { $0.dateTime }.max()!
+        let firstDate = results.map { $0.dateTime }.min() ?? Date()
+        let lastDate = results.map { $0.dateTime }.max() ?? Date()
         
         let intervals = dateIntervals(of: component, startDate: firstDate, endDate: lastDate)
         
@@ -59,7 +59,7 @@ extension History {
                 score: slice.reduce(0, { $0 + Score(testResult: $1).finalScore }),
                 totalAnswers: slice.reduce(0, { $0 + $1.totalAnswers }),
                 correctAnswers: slice.reduce(0, { $0 + $1.correctAnswers }),
-                timeSpent: slice.reduce(0, { $0 + $1.timeSpent })
+                timeSpent: slice.reduce(0, { $0 + $1.timeSpent }) / 60
             )
             
             ress.append(res)
@@ -145,7 +145,7 @@ extension History {
         }
     }
     
-    func histotyData(_ type: HistoryDataType, for period: Period) -> Double {
+    func historyData(_ type: HistoryDataType, for period: Period) -> Double {
         let slice = historySlice(period: period)
         
         let totalAnswers = slice.reduce(0, { $0 + $1.totalAnswers })
@@ -156,7 +156,7 @@ extension History {
             //  умножение на 100 чтобы использовать smartFormatted
             //  который 1 показывает как 1, а не 100%
             //  делать формат для 1 как 100% неправильно —
-            //  тогда модет некорректно отображаться темп
+            //  тогда может некорректно отображаться темп
             let correctAnswers = slice.reduce(0, { $0 + $1.correctAnswers }) * 100
             return totalAnswers == 0 ? 0 : correctAnswers / totalAnswers
         case .timeSpent:

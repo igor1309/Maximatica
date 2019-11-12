@@ -42,7 +42,7 @@ struct HistoryCharts: View {
                     ForEach(History.HistoryDataType.allCases, id: \.self) { type in
                         
                         BarChartView(title: type.id,
-                                     subtitle: self.userData.history.histotyData(type, for: self.settings.period).smartFormatted,
+                                     subtitle: self.userData.history.historyData(type, for: self.settings.period).smartFormatted,
                                      bars: self.userData.history.historySlice(type, for: self.settings.period))
                     }
                     

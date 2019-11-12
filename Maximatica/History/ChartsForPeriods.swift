@@ -10,27 +10,11 @@ import SwiftUI
 
 struct ChartsForPeriods: View {
     @EnvironmentObject var userData: UserData
+
     var body: some View {
         NavigationView {
             VStack {
-                ScrollView(.horizontal, showsIndicators: true) {
-                    HStack {
-                        BarChartView(title: "score", subtitle: "\(userData.history.resultsForInterval[0].interval.end.toString())", bars: userData.history.resultsForInterval.map { $0.score }.reversed())
-                        
-                        BarChartView(title: "sessions", subtitle: "\(userData.history.resultsForInterval[0].interval.end.toString())", bars: userData.history.resultsForInterval.map { Double($0.sessions) }.reversed())
-                        
-                        BarChartView(title: "timeSpent", subtitle: "\(userData.history.resultsForInterval[0].interval.end.toString())", bars: userData.history.resultsForInterval.map { $0.timeSpent / 60 }.reversed())
-                        
-                        BarChartView(title: "correctAnswersShare", subtitle: "\(userData.history.resultsForInterval[0].interval.end.toString())", bars: userData.history.resultsForInterval.map { $0.correctAnswersShare }.reversed())
-                        
-                        BarChartView(title: "totalAnswers", subtitle: "\(userData.history.resultsForInterval[0].interval.end.toString())", bars: userData.history.resultsForInterval.map { $0.totalAnswers }.reversed())
-                        
-                        BarChartView(title: "correctAnswers", subtitle: "\(userData.history.resultsForInterval[0].interval.end.toString())", bars: userData.history.resultsForInterval.map { $0.correctAnswers }.reversed())
-                        
-                        BarChartView(title: "velocity", subtitle: "\(userData.history.resultsForInterval[0].interval.end.toString())", bars: userData.history.resultsForInterval.map { $0.velocity }.reversed())
-                    }
-                    .padding(.bottom, 10)
-                }
+                HorizontalCharts()
                 
                 List {
                     ForEach(userData.history.resultsForInterval) { res in

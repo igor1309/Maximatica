@@ -28,6 +28,7 @@
 		2A4805E72366DFB200E95FE7 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4805E62366DFB200E95FE7 /* Enums.swift */; };
 		2A4805EA2366E2C100E95FE7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4805E92366E2C100E95FE7 /* Settings.swift */; };
 		2A4805EC2366E36A00E95FE7 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4805EB2366E36A00E95FE7 /* SettingsStore.swift */; };
+		2A54905B237AF641009B32A3 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54905A237AF641009B32A3 /* BarView.swift */; };
 		2A54D9A923680F0100A50CF1 /* MathButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9A823680F0100A50CF1 /* MathButtonStyle.swift */; };
 		2A54D9AB23681D8500A50CF1 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9AA23681D8500A50CF1 /* UserData.swift */; };
 		2A54D9AD23681DEF00A50CF1 /* WorkWithJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54D9AC23681DEF00A50CF1 /* WorkWithJSON.swift */; };
@@ -48,6 +49,7 @@
 		2A79DBD22379C1ED00799DC3 /* ChartsForPeriods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A79DBD12379C1ED00799DC3 /* ChartsForPeriods.swift */; };
 		2A9B56F2236967A800ACEE8F /* HistoryGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B56F1236967A800ACEE8F /* HistoryGradient.swift */; };
 		2A9B56F42369683500ACEE8F /* MainGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B56F32369683500ACEE8F /* MainGradient.swift */; };
+		2A9CB2C02379F92500429997 /* HorizontalCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB2BF2379F92500429997 /* HorizontalCharts.swift */; };
 		2AA56FDE236F597A00AFB280 /* OnboardingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA56FDD236F597A00AFB280 /* OnboardingSection.swift */; };
 		2AA9070D23677E750051CCB1 /* ResultViewOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9070C23677E750051CCB1 /* ResultViewOLD.swift */; };
 		2AA9070F23677EF80051CCB1 /* SolveTheProblemBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9070E23677EF80051CCB1 /* SolveTheProblemBanner.swift */; };
@@ -105,6 +107,7 @@
 		2A4805E62366DFB200E95FE7 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		2A4805E92366E2C100E95FE7 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2A4805EB2366E36A00E95FE7 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		2A54905A237AF641009B32A3 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = SOURCE_ROOT; };
 		2A54D9A823680F0100A50CF1 /* MathButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathButtonStyle.swift; sourceTree = "<group>"; };
 		2A54D9AA23681D8500A50CF1 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		2A54D9AC23681DEF00A50CF1 /* WorkWithJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkWithJSON.swift; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 		2A79DBD12379C1ED00799DC3 /* ChartsForPeriods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsForPeriods.swift; sourceTree = "<group>"; };
 		2A9B56F1236967A800ACEE8F /* HistoryGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryGradient.swift; sourceTree = "<group>"; };
 		2A9B56F32369683500ACEE8F /* MainGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGradient.swift; sourceTree = "<group>"; };
+		2A9CB2BF2379F92500429997 /* HorizontalCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCharts.swift; sourceTree = "<group>"; };
 		2AA56FDD236F597A00AFB280 /* OnboardingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSection.swift; sourceTree = "<group>"; };
 		2AA9070C23677E750051CCB1 /* ResultViewOLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewOLD.swift; sourceTree = "<group>"; };
 		2AA9070E23677EF80051CCB1 /* SolveTheProblemBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveTheProblemBanner.swift; sourceTree = "<group>"; };
@@ -310,6 +314,7 @@
 				2A9B56F1236967A800ACEE8F /* HistoryGradient.swift */,
 				2A0184E92369B41A000DFFA5 /* BarChartView.swift */,
 				2AF433872369B2D80087C782 /* BarsView.swift */,
+				2A54905A237AF641009B32A3 /* BarView.swift */,
 				2A0184E72369B3F1000DFFA5 /* VerticalBar.swift */,
 				2A6102C8236EB76D0029C92C /* HorizontalBar.swift */,
 				2A6102EA236ED1BF0029C92C /* ProgressBar.swift */,
@@ -318,6 +323,7 @@
 				2A54D9BA236825CF00A50CF1 /* HistoryRow.swift */,
 				2A79DBCF2379B4BF00799DC3 /* HistoryForPeriods.swift */,
 				2A79DBD12379C1ED00799DC3 /* ChartsForPeriods.swift */,
+				2A9CB2BF2379F92500429997 /* HorizontalCharts.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -598,6 +604,7 @@
 			files = (
 				2A4805E72366DFB200E95FE7 /* Enums.swift in Sources */,
 				2AF572CF236B8A5F00AB6A2D /* GameButton.swift in Sources */,
+				2A9CB2C02379F92500429997 /* HorizontalCharts.swift in Sources */,
 				2A54D9A923680F0100A50CF1 /* MathButtonStyle.swift in Sources */,
 				2AF5728D236B284400AB6A2D /* StatusView.swift in Sources */,
 				2A4805C72366C08D00E95FE7 /* AppDelegate.swift in Sources */,
@@ -629,6 +636,7 @@
 				2A420EF8236781D3002B628A /* TimerView.swift in Sources */,
 				2A6102C9236EB76D0029C92C /* HorizontalBar.swift in Sources */,
 				2AA9070F23677EF80051CCB1 /* SolveTheProblemBanner.swift in Sources */,
+				2A54905B237AF641009B32A3 /* BarView.swift in Sources */,
 				2AF57287236B0C9300AB6A2D /* MissionOptionsSelector.swift in Sources */,
 				2A79DBD02379B4BF00799DC3 /* HistoryForPeriods.swift in Sources */,
 				2A0184E82369B3F1000DFFA5 /* VerticalBar.swift in Sources */,
