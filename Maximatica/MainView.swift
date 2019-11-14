@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftPI
 
 struct MainView: View {
     @EnvironmentObject var userData: UserData
@@ -14,16 +15,21 @@ struct MainView: View {
     
     var body: some View {
         if !settings.hasLaunchedBefor {
-            return AnyView(OnboardingView(buttonTitle: "ok go")
+            return OnboardingView(buttonTitle: "ok go")
                 .transition(.scale)
-                .accessibility(identifier: "onboardingView"))
+                .accessibility(identifier: "onboardingView")
+                .typeErased
         }
         else {
             switch userData.gameStatus {
-            case.score: return AnyView(ScoreView().transition(.scale))
-            case.setup: return AnyView(SetupView().transition(.scale))
-            case.play: return AnyView(PlayView().transition(.scale))
-            case.result: return AnyView(ResultView().transition(.scale))
+            case.score:
+                return ScoreView().transition(.scale).typeErased
+            case.setup:
+                return SetupView().transition(.scale).typeErased
+            case.play:
+                return PlayView().transition(.scale).typeErased
+            case.result:
+                return ResultView().transition(.scale).typeErased
             }
         }
     }
