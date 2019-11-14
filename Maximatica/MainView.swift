@@ -13,21 +13,17 @@ struct MainView: View {
     @EnvironmentObject var settings: SettingsStore
     
     var body: some View {
-        VStack(spacing: 32) {
-            if !settings.hasLaunchedBefor { OnboardingView(buttonTitle: "ok go")
-                //            .environmentObject(UserData())
-                //            .environmentObject(SettingsStore())
-                            .transition(.scale)
-                .accessibility(identifier: "onboardingView")
-                 }
-            else {
-                if userData.gameStatus == .score { ScoreView().transition(.scale) }
-                
-                if userData.gameStatus == .setup { SetupView().transition(.scale) }
-                
-                if userData.gameStatus == .play { PlayView().transition(.scale) }
-                
-                if userData.gameStatus == .result { ResultView().transition(.scale) }
+        if !settings.hasLaunchedBefor {
+            return AnyView(OnboardingView(buttonTitle: "ok go")
+                .transition(.scale)
+                .accessibility(identifier: "onboardingView"))
+        }
+        else {
+            switch userData.gameStatus {
+            case.score: return AnyView(ScoreView().transition(.scale))
+            case.setup: return AnyView(SetupView().transition(.scale))
+            case.play: return AnyView(PlayView().transition(.scale))
+            case.result: return AnyView(ResultView().transition(.scale))
             }
         }
     }
