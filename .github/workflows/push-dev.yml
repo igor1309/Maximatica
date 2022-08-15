@@ -29,4 +29,4 @@ jobs:
       run: /usr/bin/xcodebuild -version
       
     - name: Build and Test
-      run: xcodebuild clean build test -project Meme-Ory.xcodeproj -scheme "CI" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 13 Pro" ONLY_ACTIVE_ARCH=YES
+      run: xcodebuild clean build test -project Maximatica.xcodeproj -scheme "CI" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 13 Pro" ONLY_ACTIVE_ARCH=YES
