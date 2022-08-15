@@ -6,6 +6,7 @@
 //  Copyright © 2019 Igor Malyarov. All rights reserved.
 //
 
+import SwiftPI
 import SwiftUI
 
 struct ClockView: View {
@@ -13,7 +14,7 @@ struct ClockView: View {
     let timer = Timer.publish(every: 1, tolerance: 0.1, on: .main, in: .common).autoconnect()
         
     var body: some View {
-        Text(userData.missionTimeCount.formatMinuteSecond)
+        Text(userData.missionTimeCount.formatMinutesSeconds)
             .font(.subheadline)
             .foregroundColor(.white)
             .onReceive(timer) { timer in

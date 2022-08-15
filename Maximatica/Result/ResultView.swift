@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftPI
 
 struct ResultView: View {
     @EnvironmentObject var userData: UserData
@@ -15,12 +16,15 @@ struct ResultView: View {
     
     //  в реальности userData.history.results[0] не может быть пустым — на этот экран попадаем после прохождения теста
     //  но при отладке может быть пустой массив результатов - поэтому dummy data
-    var result: TestResult { userData.history.isListEmpty ? TestResult(dateTime: Date(),
-                                                                       totalAnswers: 10,
-                                                                       correctAnswers: 9,
-                                                                       timeSpent: 14,
-                                                                       ageGroup: .sevenToNine,
-                                                                       complexity: .basic)
+    var result: TestResult {
+        userData.history.isListEmpty
+        ? TestResult(
+            dateTime: Date(),
+            totalAnswers: 10,
+            correctAnswers: 9,
+            timeSpent: 14,
+            ageGroup: .sevenToNine,
+            complexity: .basic)
         : userData.history.results[0]
     }
     
@@ -54,14 +58,14 @@ struct ResultView: View {
                     .font(.headline)
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                                self.showProgress = true
-                            }
+                            self.showProgress = true
+                        }
                     }
                     
                     HStack {
                         Text("Время")
                         Spacer()
-                        Text(result.timeSpent.formatMinuteSecond)
+                        Text(result.timeSpent.formatMinutesSeconds)
                     }
                 }
                 .foregroundColor(.white)
@@ -91,7 +95,7 @@ struct ResultView: View {
                         .padding(.top)
                         
                         Text("\(result.complexity.id), ")
-                            + Text("\(result.ageGroup.id)")
+                        + Text("\(result.ageGroup.id)")
                         
                         Text(result.dateTime.dateAndTimetoString())
                             .font(.subheadline)

@@ -32,7 +32,7 @@ struct HistoryRow: View {
             Text("Правильно ")
                 + Text("\(result.correctAnswersShare.formattedPercentage) ").bold()
                 + Text("[\(result.correctAnswers.formattedGrouped) из \(result.totalAnswers.formattedGrouped)] ")
-                + Text("за \(result.timeSpent.formatMinuteSecond)")
+                + Text("за \(result.timeSpent.formatMinutesSeconds)")
             
             Text("\(result.velocity.formattedGrouped) ответов в минуту (\(result.pace.formattedGrouped) сек. на ответ)")
                 .foregroundColor(.secondary)

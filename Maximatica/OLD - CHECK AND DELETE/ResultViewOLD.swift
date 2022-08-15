@@ -34,7 +34,7 @@ struct ResultViewOLD: View {
                     
                     Text("\(result.correctAnswersShare.formattedPercentage) ")
                     
-                    Text("время \(result.timeSpent.formatMinuteSecond)")
+                    Text("время \(result.timeSpent.formatMinutesSeconds)")
                 }
                 .foregroundColor(.white)
                 

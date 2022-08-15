@@ -15,7 +15,7 @@ struct TimerView: View {
     let timer1 = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        Text(timer.formatMinuteSecond)
+        Text(timer.formatMinutesSeconds)
             .font(.subheadline)
             .foregroundColor(.white)
             .onReceive(timer1) { _ in

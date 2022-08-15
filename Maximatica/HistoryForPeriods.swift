@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftPI
 
 struct ResRow: View {
     var res: ResultForInterval
@@ -25,7 +26,7 @@ struct ResRow: View {
             
             Text("\(res.sessions) session(s) ")
             
-            Text("Total time: \(res.timeSpent.formatMinuteSecond)")
+            Text("Total time: \(res.timeSpent.formatMinutesSeconds)")
             
             Text(res.correctAnswers.formattedGrouped)
                 + Text(" of ")

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A0184E62369B383000DFFA5 /* SwiftPI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A0184E52369B383000DFFA5 /* SwiftPI */; };
 		2A0184E82369B3F1000DFFA5 /* VerticalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0184E72369B3F1000DFFA5 /* VerticalBar.swift */; };
 		2A0184EA2369B41A000DFFA5 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0184E92369B41A000DFFA5 /* BarChartView.swift */; };
 		2A09C5AC237437E600C23359 /* MAXImaticaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A09C5AB237437E600C23359 /* MAXImaticaUITests.swift */; };
@@ -47,6 +46,7 @@
 		2A7718DB2367479E00BF9408 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7718DA2367479E00BF9408 /* ProgressView.swift */; };
 		2A79DBD02379B4BF00799DC3 /* HistoryForPeriods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A79DBCF2379B4BF00799DC3 /* HistoryForPeriods.swift */; };
 		2A79DBD22379C1ED00799DC3 /* ChartsForPeriods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A79DBD12379C1ED00799DC3 /* ChartsForPeriods.swift */; };
+		2A7FE97B28AAEFFB00797A7C /* SwiftPI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A7FE97A28AAEFFB00797A7C /* SwiftPI */; };
 		2A9B56F2236967A800ACEE8F /* HistoryGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B56F1236967A800ACEE8F /* HistoryGradient.swift */; };
 		2A9B56F42369683500ACEE8F /* MainGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B56F32369683500ACEE8F /* MainGradient.swift */; };
 		2A9CB2C02379F92500429997 /* HorizontalCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB2BF2379F92500429997 /* HorizontalCharts.swift */; };
@@ -152,7 +152,6 @@
 		2AC9C97D2369B3540025835B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		2AC9C9802369B3540025835B /* package.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = package.xcworkspace; sourceTree = "<group>"; };
 		2AC9C9842369B3540025835B /* xcschememanagement.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = xcschememanagement.plist; sourceTree = "<group>"; };
-		2AC9C9852369B36D0025835B /* SwiftPI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftPI; path = ../SwiftPI; sourceTree = "<group>"; };
 		2AF433872369B2D80087C782 /* BarsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarsView.swift; sourceTree = "<group>"; };
 		2AF57286236B0C9300AB6A2D /* MissionOptionsSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionOptionsSelector.swift; sourceTree = "<group>"; };
 		2AF5728A236B25EE00AB6A2D /* MainViewOLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewOLD.swift; sourceTree = "<group>"; };
@@ -180,7 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A0184E62369B383000DFFA5 /* SwiftPI in Frameworks */,
+				2A7FE97B28AAEFFB00797A7C /* SwiftPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +200,6 @@
 		2A4805BA2366C08D00E95FE7 = {
 			isa = PBXGroup;
 			children = (
-				2AC9C9852369B36D0025835B /* SwiftPI */,
 				2A4805C52366C08D00E95FE7 /* Maximatica */,
 				2A09C5AA237437E600C23359 /* MAXImaticaUITests */,
 				2A4805C42366C08D00E95FE7 /* Products */,
@@ -518,7 +516,7 @@
 			);
 			name = Maximatica;
 			packageProductDependencies = (
-				2A0184E52369B383000DFFA5 /* SwiftPI */,
+				2A7FE97A28AAEFFB00797A7C /* SwiftPI */,
 			);
 			productName = Maximatica;
 			productReference = 2A4805C32366C08D00E95FE7 /* MAXImatica.app */;
@@ -531,7 +529,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Igor Malyarov";
 				TargetAttributes = {
 					2A09C5A8237437E600C23359 = {
@@ -757,6 +755,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -818,6 +817,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -936,8 +936,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2A0184E52369B383000DFFA5 /* SwiftPI */ = {
+		2A7FE97A28AAEFFB00797A7C /* SwiftPI */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 2A9B571F2369A16700ACEE8F /* XCRemoteSwiftPackageReference "SwiftPI" */;
 			productName = SwiftPI;
 		};
 /* End XCSwiftPackageProductDependency section */
