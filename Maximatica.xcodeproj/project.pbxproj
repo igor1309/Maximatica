@@ -12,6 +12,7 @@
 		2A09C5AC237437E600C23359 /* MAXImaticaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A09C5AB237437E600C23359 /* MAXImaticaUITests.swift */; };
 		2A1EE39E236A138A00FFF5C3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EE39D236A138A00FFF5C3 /* HistoryView.swift */; };
 		2A1EE3A0236A13CC00FFF5C3 /* HistoryCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EE39F236A13CC00FFF5C3 /* HistoryCharts.swift */; };
+		2A3B978328AAF79500FFF437 /* MaximaticaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B978228AAF79500FFF437 /* MaximaticaApp.swift */; };
 		2A4114D8236D9F7C0022F500 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4114D7236D9F7C0022F500 /* Score.swift */; };
 		2A420EF8236781D3002B628A /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A420EF7236781D3002B628A /* TimerView.swift */; };
 		2A420EFC236783FC002B628A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A420EFB236783FC002B628A /* CustomButton.swift */; };
@@ -90,6 +91,7 @@
 		2A09C5AD237437E600C23359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A1EE39D236A138A00FFF5C3 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		2A1EE39F236A13CC00FFF5C3 /* HistoryCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCharts.swift; sourceTree = "<group>"; };
+		2A3B978228AAF79500FFF437 /* MaximaticaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaximaticaApp.swift; sourceTree = "<group>"; };
 		2A4114D7236D9F7C0022F500 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		2A420EF7236781D3002B628A /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		2A420EFB236783FC002B628A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				2A4805C62366C08D00E95FE7 /* AppDelegate.swift */,
+				2A3B978228AAF79500FFF437 /* MaximaticaApp.swift */,
 				2A4805C82366C08D00E95FE7 /* SceneDelegate.swift */,
 				2AADCB102375BE8F007DD2C3 /* Localizable.strings */,
 				2AF572B2236B86A300AB6A2D /* ContentView.swift */,
@@ -613,6 +616,7 @@
 				2AF572D0236B8A5F00AB6A2D /* GameStatusTitle.swift in Sources */,
 				2A9B56F2236967A800ACEE8F /* HistoryGradient.swift in Sources */,
 				2A54D9AF23681E3A00A50CF1 /* TestResult.swift in Sources */,
+				2A3B978328AAF79500FFF437 /* MaximaticaApp.swift in Sources */,
 				2AF572D1236B8A5F00AB6A2D /* PlayView.swift in Sources */,
 				2A0184EA2369B41A000DFFA5 /* BarChartView.swift in Sources */,
 				2AA9070D23677E750051CCB1 /* ResultViewOLD.swift in Sources */,
@@ -780,7 +784,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -836,7 +840,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -856,7 +860,7 @@
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Maximatica/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -879,7 +883,7 @@
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Maximatica/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
