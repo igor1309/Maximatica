@@ -6,7 +6,6 @@
 //  Copyright © 2019 Igor Malyarov. All rights reserved.
 //
 
-import SwiftPI
 import SwiftUI
 
 struct ClockView: View {

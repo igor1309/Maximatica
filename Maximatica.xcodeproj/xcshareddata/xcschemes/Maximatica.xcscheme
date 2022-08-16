@@ -26,22 +26,20 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A09C5A8237437E600C23359"
-               BuildableName = "MAXImaticaUITests.xctest"
-               BlueprintName = "MAXImaticaUITests"
+               BlueprintIdentifier = "2AE0F04028AB7DE0008C94F6"
+               BuildableName = "MAXImaticaTests.xctest"
+               BlueprintName = "MAXImaticaTests"
                ReferencedContainer = "container:Maximatica.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "OnboardingUITests">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

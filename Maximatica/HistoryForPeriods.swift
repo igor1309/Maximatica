@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import SwiftPI
 
 struct ResRow: View {
     var res: ResultForInterval
