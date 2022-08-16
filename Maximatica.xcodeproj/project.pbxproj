@@ -164,6 +164,7 @@
 		2AC9C9842369B3540025835B /* xcschememanagement.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = xcschememanagement.plist; sourceTree = "<group>"; };
 		2AE0F04128AB7DE1008C94F6 /* MAXImaticaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MAXImaticaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AE0F04328AB7DE1008C94F6 /* MAXImaticaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAXImaticaTests.swift; sourceTree = "<group>"; };
+		2AE0F04A28AB84FE008C94F6 /* SwiftPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftPI; path = ../../SwiftPI; sourceTree = "<group>"; };
 		2AF433872369B2D80087C782 /* BarsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarsView.swift; sourceTree = "<group>"; };
 		2AF57286236B0C9300AB6A2D /* MissionOptionsSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionOptionsSelector.swift; sourceTree = "<group>"; };
 		2AF5728A236B25EE00AB6A2D /* MainViewOLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewOLD.swift; sourceTree = "<group>"; };
@@ -219,6 +220,7 @@
 		2A4805BA2366C08D00E95FE7 = {
 			isa = PBXGroup;
 			children = (
+				2AE0F04A28AB84FE008C94F6 /* SwiftPI */,
 				2A4805C52366C08D00E95FE7 /* Maximatica */,
 				2A09C5AA237437E600C23359 /* MAXImaticaUITests */,
 				2AE0F04228AB7DE1008C94F6 /* MAXImaticaTests */,
