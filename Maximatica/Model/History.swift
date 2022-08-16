@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftPI
 
 struct History: Codable {
     var results: [TestResult]

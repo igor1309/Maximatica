@@ -9,7 +9,6 @@
 //
 
 import SwiftUI
-import SwiftPI
 
 struct ContentViewOLD: View {
     @EnvironmentObject var userData: UserData

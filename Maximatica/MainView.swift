@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import SwiftPI
 
 struct MainView: View {
     @EnvironmentObject var userData: UserData
