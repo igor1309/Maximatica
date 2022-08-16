@@ -611,8 +611,8 @@
 			projectRoot = "";
 			targets = (
 				2A4805C22366C08D00E95FE7 /* Maximatica */,
-				2A09C5A8237437E600C23359 /* MAXImaticaUITests */,
 				2AE0F04028AB7DE0008C94F6 /* MAXImaticaTests */,
+				2A09C5A8237437E600C23359 /* MAXImaticaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -925,7 +925,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_ASSET_PATHS = "\"Maximatica/Preview Content\"";
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
 				ENABLE_PREVIEWS = YES;
@@ -935,7 +935,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.Maximatica;
 				PRODUCT_NAME = MAXImatica;
 				SWIFT_VERSION = 5.0;
@@ -948,7 +948,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_ASSET_PATHS = "\"Maximatica/Preview Content\"";
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
 				ENABLE_PREVIEWS = YES;
@@ -958,7 +958,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.Maximatica;
 				PRODUCT_NAME = MAXImatica;
 				SWIFT_VERSION = 5.0;
