@@ -29,6 +29,18 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2AE0F04028AB7DE0008C94F6"
+               BuildableName = "MAXImaticaTests.xctest"
+               BlueprintName = "MAXImaticaTests"
+               ReferencedContainer = "container:Maximatica.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

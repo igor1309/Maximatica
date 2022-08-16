@@ -58,6 +58,7 @@
 		2AB5C4822368670D009D0613 /* GameSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5C4812368670D009D0613 /* GameSelectionView.swift */; };
 		2AB5C48523687CC4009D0613 /* HistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5C48423687CC4009D0613 /* HistoryTableView.swift */; };
 		2AB5C48723687FCA009D0613 /* HistoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5C48623687FCA009D0613 /* HistoryTable.swift */; };
+		2AE0F04428AB7DE1008C94F6 /* MAXImaticaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE0F04328AB7DE1008C94F6 /* MAXImaticaTests.swift */; };
 		2AF4338A2369B2D80087C782 /* BarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF433872369B2D80087C782 /* BarsView.swift */; };
 		2AF57287236B0C9300AB6A2D /* MissionOptionsSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF57286236B0C9300AB6A2D /* MissionOptionsSelector.swift */; };
 		2AF5728B236B25EE00AB6A2D /* MainViewOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5728A236B25EE00AB6A2D /* MainViewOLD.swift */; };
@@ -75,6 +76,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		2A09C5AE237437E600C23359 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A4805BB2366C08D00E95FE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A4805C22366C08D00E95FE7;
+			remoteInfo = Maximatica;
+		};
+		2AE0F04528AB7DE1008C94F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A4805BB2366C08D00E95FE7 /* Project object */;
 			proxyType = 1;
@@ -154,6 +162,8 @@
 		2AC9C97D2369B3540025835B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		2AC9C9802369B3540025835B /* package.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = package.xcworkspace; sourceTree = "<group>"; };
 		2AC9C9842369B3540025835B /* xcschememanagement.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = xcschememanagement.plist; sourceTree = "<group>"; };
+		2AE0F04128AB7DE1008C94F6 /* MAXImaticaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MAXImaticaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AE0F04328AB7DE1008C94F6 /* MAXImaticaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAXImaticaTests.swift; sourceTree = "<group>"; };
 		2AF433872369B2D80087C782 /* BarsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarsView.swift; sourceTree = "<group>"; };
 		2AF57286236B0C9300AB6A2D /* MissionOptionsSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionOptionsSelector.swift; sourceTree = "<group>"; };
 		2AF5728A236B25EE00AB6A2D /* MainViewOLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewOLD.swift; sourceTree = "<group>"; };
@@ -185,6 +195,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2AE0F03E28AB7DE0008C94F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -204,6 +221,7 @@
 			children = (
 				2A4805C52366C08D00E95FE7 /* Maximatica */,
 				2A09C5AA237437E600C23359 /* MAXImaticaUITests */,
+				2AE0F04228AB7DE1008C94F6 /* MAXImaticaTests */,
 				2A4805C42366C08D00E95FE7 /* Products */,
 				2AA70A9F2369ABAD00080F1E /* Frameworks */,
 			);
@@ -214,6 +232,7 @@
 			children = (
 				2A4805C32366C08D00E95FE7 /* MAXImatica.app */,
 				2A09C5A9237437E600C23359 /* MAXImaticaUITests.xctest */,
+				2AE0F04128AB7DE1008C94F6 /* MAXImaticaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -439,6 +458,14 @@
 			path = xcschemes;
 			sourceTree = "<group>";
 		};
+		2AE0F04228AB7DE1008C94F6 /* MAXImaticaTests */ = {
+			isa = PBXGroup;
+			children = (
+				2AE0F04328AB7DE1008C94F6 /* MAXImaticaTests.swift */,
+			);
+			path = MAXImaticaTests;
+			sourceTree = "<group>";
+		};
 		2AF572B6236B871400AB6A2D /* OLD - CHECK AND DELETE */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,13 +552,31 @@
 			productReference = 2A4805C32366C08D00E95FE7 /* MAXImatica.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2AE0F04028AB7DE0008C94F6 /* MAXImaticaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AE0F04928AB7DE1008C94F6 /* Build configuration list for PBXNativeTarget "MAXImaticaTests" */;
+			buildPhases = (
+				2AE0F03D28AB7DE0008C94F6 /* Sources */,
+				2AE0F03E28AB7DE0008C94F6 /* Frameworks */,
+				2AE0F03F28AB7DE0008C94F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2AE0F04628AB7DE1008C94F6 /* PBXTargetDependency */,
+			);
+			name = MAXImaticaTests;
+			productName = MAXImaticaTests;
+			productReference = 2AE0F04128AB7DE1008C94F6 /* MAXImaticaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2A4805BB2366C08D00E95FE7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1120;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Igor Malyarov";
 				TargetAttributes = {
@@ -541,6 +586,10 @@
 					};
 					2A4805C22366C08D00E95FE7 = {
 						CreatedOnToolsVersion = 11.2;
+					};
+					2AE0F04028AB7DE0008C94F6 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 2A4805C22366C08D00E95FE7;
 					};
 				};
 			};
@@ -563,6 +612,7 @@
 			targets = (
 				2A4805C22366C08D00E95FE7 /* Maximatica */,
 				2A09C5A8237437E600C23359 /* MAXImaticaUITests */,
+				2AE0F04028AB7DE0008C94F6 /* MAXImaticaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -583,6 +633,13 @@
 				2AADCB0E2375BE8F007DD2C3 /* Localizable.strings in Resources */,
 				2A4805D02366C08E00E95FE7 /* Preview Assets.xcassets in Resources */,
 				2A4805CD2366C08E00E95FE7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AE0F03F28AB7DE0008C94F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +719,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2AE0F03D28AB7DE0008C94F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AE0F04428AB7DE1008C94F6 /* MAXImaticaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -669,6 +734,11 @@
 			isa = PBXTargetDependency;
 			target = 2A4805C22366C08D00E95FE7 /* Maximatica */;
 			targetProxy = 2A09C5AE237437E600C23359 /* PBXContainerItemProxy */;
+		};
+		2AE0F04628AB7DE1008C94F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A4805C22366C08D00E95FE7 /* Maximatica */;
+			targetProxy = 2AE0F04528AB7DE1008C94F6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -896,6 +966,46 @@
 			};
 			name = Release;
 		};
+		2AE0F04728AB7DE1008C94F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VRVJ9YNRQU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.MAXImaticaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MAXImatica.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MAXImatica";
+			};
+			name = Debug;
+		};
+		2AE0F04828AB7DE1008C94F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VRVJ9YNRQU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.MAXImaticaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MAXImatica.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MAXImatica";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -922,6 +1032,15 @@
 			buildConfigurations = (
 				2A4805D82366C08E00E95FE7 /* Debug */,
 				2A4805D92366C08E00E95FE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AE0F04928AB7DE1008C94F6 /* Build configuration list for PBXNativeTarget "MAXImaticaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AE0F04728AB7DE1008C94F6 /* Debug */,
+				2AE0F04828AB7DE1008C94F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
