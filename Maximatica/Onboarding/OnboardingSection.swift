@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import SwiftPI
 
 struct OnboardingSection: View {
     @Environment(\.colorScheme) var colorScheme

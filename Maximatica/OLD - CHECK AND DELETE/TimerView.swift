@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import SwiftPI
 
 struct TimerView: View {
     @Binding var timer: TimeInterval

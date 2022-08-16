@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import SwiftPI
 
 struct HistoryView: View {
     @Environment(\.presentationMode) var presentation
