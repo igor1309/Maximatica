@@ -17,8 +17,8 @@ struct ContentView: View {
             MainGradient()
             
             MainView()
-                .environmentObject(UserData())
-                .environmentObject(SettingsStore())
+                .environmentObject(userData)
+                .environmentObject(settings)
         }
     }
 }
