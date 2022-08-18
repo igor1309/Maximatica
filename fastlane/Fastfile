@@ -24,8 +24,15 @@ platform :ios do
     # add actions here: https://docs.fastlane.tools/actions
   end
 
-  lane :build do 
+  lane :build do
+    # run tests
     scan
+    # prepare signing certificates
+    cert
+    # prepare provisioning profile
+    sigh
+    # build, sign and package
+    gym
   end
 
   lane :beta do
