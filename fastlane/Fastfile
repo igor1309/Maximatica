@@ -14,7 +14,7 @@
 # update_fastlane
 
 # set timeout for fastlane to resolve dependencies
-ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "600"
+# ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "600"
 
 default_platform(:ios)
 
