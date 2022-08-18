@@ -1,28 +1,5 @@
-# For more information about this configuration visit
-# https://docs.fastlane.tools/actions/scan/#scanfile
-
-# In general, you can use the options available
-# fastlane scan --help
-
-# Remove the # in front of the line to enable the option
-
 scheme("CI")
 
-# Should the HTML report be opened when tests are completed? (SCAN_OPEN_REPORT)
-# open_report(true)
+device("iPhone 13 Pro")
 
 clean(true)
-
-# Enabling this option will automatically erase the simulator before running the
-application (SCAN_RESET_SIMULATOR)
-# reset_simulator(true)
-
-# Enabling this option will disable the simulator from showing the 'Slide to
-type' prompt (SCAN_DISABLE_SLIDE_TO_TYPE)
-disable_slide_to_type(true)
-
-# Should code coverage be generated? (Xcode 7 and up) (SCAN_CODE_COVERAGE)
-code_coverage(true)
-
-# Enable skip_build to skip debug builds for faster test performance
-skip_build(true)
