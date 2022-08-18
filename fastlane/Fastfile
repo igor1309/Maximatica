@@ -55,7 +55,13 @@ platform :ios do
   lane :release do
     build
     
-    deliver(api_key: api_key)
+  # by default deliver will call precheck and warn you of any problems
+  # if you want precheck to halt submitting to app review, you can pass
+  # precheck_default_rule_level: :error
+  deliver(
+    precheck_default_rule_level: :error,
+    api_key: api_key
+  )
     
     increment_build_number
   end
