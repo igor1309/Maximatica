@@ -35,6 +35,13 @@ platform :ios do
     gym
   end
 
+  # Upload to TestFlight
+  lane :alpha do
+    build
+    pilot
+    increment_build_number
+  end
+  
   lane :beta do
     build_app(scheme: "CI")
   end
