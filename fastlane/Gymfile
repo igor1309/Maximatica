@@ -12,6 +12,6 @@ clean(true)
 
 # sdk("iphoneos9.0")
 
-output_directory("./")
+output_directory("./fastlane/builds")
 
 export_method("app-store")
