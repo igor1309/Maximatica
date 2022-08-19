@@ -39,15 +39,9 @@ platform :ios do
   
   desc "Build beta ipa"
   lane :build_beta do
-    # run tests
-    scan
+    scan_cert_sigh
 
-    # prepare signing certificates
-    cert
-
-    # prepare provisioning profile
-    sigh
-
+    # build, sign and package
     gym(
       # Overrides the ASSETCATALOG_COMPILER_APPICON_NAME build setting
       # to force the build into using the previously-generated
@@ -74,6 +68,13 @@ platform :ios do
   end
   
   lane :build do
+    scan_cert_sigh
+
+    # build, sign and package
+    gym
+  end
+  
+  lane :scan_cert_sigh do
     # run tests
     scan
 
@@ -82,9 +83,6 @@ platform :ios do
 
     # prepare provisioning profile
     sigh
-
-    # build, sign and package
-    gym
   end
 
   # run precheck alone
