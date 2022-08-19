@@ -76,4 +76,20 @@ platform :ios do
   lane :beta do
     build_app(scheme: "CI")
   end
+  
+  desc "Overlay the app icon with build information"
+  lane :overlay_icon do
+    # retrieve the current build number
+    build_number = get_build_number
+    
+    # get the current app marketing version
+    version_number = get_version_number
+    
+    # update the app icon with an overlay that shows the app version and build number across the bottom
+    version_icon(
+      appiconset_path: "Maximatica/Assets.xcassets/AppIcon.appiconset",
+      text: "beta: #{version_number} (#{build_number})"
+    )
+  end
+
 end
