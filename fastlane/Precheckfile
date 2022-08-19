@@ -1,0 +1,21 @@
+include_in_app_purchases(false)
+placeholder_text(level: :warn)
+future_functionality(level: :warn)
+test_words(level: :warn)
+free_stuff_in_iap(level: :warn)
+
+# indicates that your metadata will not be checked by this rule
+# negative_apple_sentiment(level: :skip)
+
+# when triggered, this rule will warn you of a potential problem
+curse_words(level: :warn)
+
+# show error and prevent any further commands from running
+# after fastlane precheck finishes
+unreachable_urls(level: :error)
+
+# pass in whatever words you want to check for
+custom_text(
+  data: ["chrome", "webos"],
+  level: :warn
+)

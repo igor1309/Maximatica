@@ -1,0 +1,5 @@
+scheme("CI")
+
+device("iPhone 13 Pro")
+
+clean(true)
