@@ -60,6 +60,8 @@ platform :ios do
   # precheck_default_rule_level: :error
   deliver(
     precheck_default_rule_level: :error,
+    # Precheck cannot check In-app purchases with the App Store Connect API Key (yet).
+    precheck_include_in_app_purchases: false,
     api_key: api_key
   )
     
