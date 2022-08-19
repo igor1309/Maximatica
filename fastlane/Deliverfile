@@ -1,0 +1,8 @@
+# Ignore contents of the `metadata` folder
+skip_metadata(true)
+
+# skip uploading screenshots in the screenshots folder
+skip_screenshots(true)
+
+# skips the review page
+force(true)
